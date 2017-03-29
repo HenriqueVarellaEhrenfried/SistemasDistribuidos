@@ -32,7 +32,7 @@ void main(int argc, char * argv[]){
     nodo = (tnodo*)malloc(sizeof(tnodo)*N);
     for(i = 0; i < N; i++){
         memset(fa_name,'\0',5);
-        sprintf(fa_name, '%d', i);
+        sprintf(fa_name, "%d", i);
         nodo[i].id = facility(fa_name, 1);
     }
     /*Escalonamento de eventos*/
@@ -48,7 +48,7 @@ void main(int argc, char * argv[]){
         switch(event){
             case TEST:
                 if (status(nodo[token].id) != 0) break;
-                printf("O nodo %d testa no tempo %5.1f\n", token, time());
+                printf("O nodo %d TESTOU no tempo %5.1f\n", token, time());
                 schedule(TEST, 30.0, token); /*Escalona próximo teste*/
                 break;
             case FAULT:
@@ -57,11 +57,11 @@ void main(int argc, char * argv[]){
                     puts("Nao consegui falhar nodo");
                     exit(1);
                 }
-                printf("O nodo %d falhou no tempo %5.1f\n", token, time());
+                printf("O nodo %d FALHOU no tempo %5.1f\n", token, time());
                 break;
             case REPAIR:
                 release(nodo[token].id, token);
-                printf("O nodo %d recuperou no tempo %5.1f \n", token, time());
+                printf("O nodo %d RECUPEROU no tempo %5.1f \n", token, time());
                 schedule(TEST, 30.0, token);
                 break;
         }
