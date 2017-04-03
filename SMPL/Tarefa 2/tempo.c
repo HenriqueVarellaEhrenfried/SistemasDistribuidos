@@ -60,7 +60,7 @@ int main(int argc, char * argv[])
  schedule(REPAIR, 61.0, 1); // Nodo 1 recupera no tempo 61
 
  // Checagem de eventos
- while(time() < 200)
+ while(time() < 100)
  {
   cause(&event, &token);
   switch(event)
@@ -68,13 +68,13 @@ int main(int argc, char * argv[])
    case TEST:
      if (status(nodo[token].id) != 0) break;
      int offset = 1, st;
-     testarNodo(token, offset);
+
      // Testa todos os nodos até encontrar um sem falha.
-     // do
-     // {
-     //  st = testarNodo(token, offset++);
-     // }
-     // while (st!=0 || offset==1);
+     do
+     {
+      st = testarNodo(token, offset++);
+     }
+     while (st!=0 || offset==token-1);
 
      schedule(TEST, 30.0, token);
    break;

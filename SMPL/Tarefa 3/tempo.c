@@ -11,21 +11,39 @@
 typedef struct tnodo
 {
  int id;
+ int * state;
 }tnodo;
 tnodo* nodo;
 
 static int N, token, event, r, i;
 static char fa_name[5];
 
+
+void printArray(token){
+  for(int i = 0; i < N; i++){
+    printf("%d ", nodo[token].state[i]);
+  }
+  puts(" ");
+}
+
 // Função que testa um nodo a partir do token do nodo atual
 int testarNodo(int token, int offset)
 {
  int token2 = (token+offset)%N;
  int st = status(nodo[token2].id);
-
- char *c = (st==0?"SEM FALHA":"FALHO");
+ char * c;
+ if (st == 0){
+    c = "SEM FALHA";
+ }
+ else{
+    c = "FALHO";
+ }
+ if ((nodo[token].state[token2]%2) ^ (st)){
+    nodo[token].state[token2]++;
+ }
 
  printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
+ printArray(token);
  return st;
 }
 
@@ -44,11 +62,16 @@ int main(int argc, char * argv[])
  stream(1);
  nodo = (tnodo*)malloc(sizeof(tnodo)*N);
 
+
  for(i = 0; i < N; i++)
  {
   memset(fa_name,'\0',5);
   sprintf(fa_name, "%d", i);
   nodo[i].id = facility(fa_name, 1);
+  nodo[i].state = (int*)malloc(sizeof(int)*N);
+  for(int j = 0; j < N; j++){
+    nodo[i].state[j] = -1;
+  }
  }
 
  // Escalonamento de eventos
@@ -60,7 +83,7 @@ int main(int argc, char * argv[])
  schedule(REPAIR, 61.0, 1); // Nodo 1 recupera no tempo 61
 
  // Checagem de eventos
- while(time() < 200)
+ while(time() < 100)
  {
   cause(&event, &token);
   switch(event)
@@ -68,13 +91,13 @@ int main(int argc, char * argv[])
    case TEST:
      if (status(nodo[token].id) != 0) break;
      int offset = 1, st;
-     testarNodo(token, offset);
+
      // Testa todos os nodos até encontrar um sem falha.
-     // do
-     // {
-     //  st = testarNodo(token, offset++);
-     // }
-     // while (st!=0 || offset==1);
+     do
+     {
+      st = testarNodo(token, offset++);
+     }
+     while (st!=0 || offset==token-1);
 
      schedule(TEST, 30.0, token);
    break;
