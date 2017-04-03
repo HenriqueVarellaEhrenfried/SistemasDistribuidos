@@ -28,6 +28,15 @@ void printArray(token){
   puts("] ");
 }
 
+void updateState(int token2, int st){
+  int i = 0;
+  for(i = 0; i < N; i++){
+    if (nodo[token].state[i] < nodo[token2].state[i] && st == 0)
+      nodo[token].state[i] = nodo[token2].state[i];
+  }
+}
+
+
 // Função que testa um nodo a partir do token do nodo atual
 int testarNodo(int token, int offset)
 {
@@ -39,8 +48,9 @@ int testarNodo(int token, int offset)
  }
 
  printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
+ updateState(token2, st);
  printArray(token);
-  printf("-------------------\n");
+ printf("-------------------\n");
  return st;
 }
 
