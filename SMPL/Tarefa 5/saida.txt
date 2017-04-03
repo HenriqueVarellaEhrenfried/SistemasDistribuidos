@@ -1,0 +1,94 @@
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
+Nodo 0 >> [ -1 0 -1 ] 
+
+	TEMPO:  30.0
+	Event Counter: 1 | Nodo 0 >> [ -1 0 -1 ] 
+	Event Counter: 1 | Nodo 1 >> [ -1 -1 -1 ] 
+	Event Counter: 1 | Nodo 2 >> [ -1 -1 -1 ] 
+---------------------------
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
+Nodo 1 >> [ -1 -1 0 ] 
+
+	TEMPO:  30.0
+	Event Counter: 2 | Nodo 0 >> [ -1 0 -1 ] 
+	Event Counter: 2 | Nodo 1 >> [ -1 -1 0 ] 
+	Event Counter: 2 | Nodo 2 >> [ -1 -1 -1 ] 
+---------------------------
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
+Nodo 2 >> [ 0 0 -1 ] 
+
+	TEMPO:  30.0
+	Event Counter: 3 | Nodo 0 >> [ -1 0 -1 ] 
+	Event Counter: 3 | Nodo 1 >> [ -1 -1 0 ] 
+	Event Counter: 3 | Nodo 2 >> [ 0 0 -1 ] 
+---------------------------
+O nodo 1 FALHOU no tempo  31.0
+
+	TEMPO:  31.0
+	Event Counter: 4 | Nodo 0 >> [ -1 0 -1 ] 
+	Event Counter: 4 | Nodo 1 >> [ -1 -1 0 ] 
+	Event Counter: 4 | Nodo 2 >> [ 0 0 -1 ] 
+---------------------------
+O nodo 0 TESTOU o nodo 1 como FALHO no tempo  60.0
+Nodo 0 >> [ -1 1 -1 ] 
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
+Nodo 0 >> [ 0 1 0 ] 
+
+	TEMPO:  60.0
+	Event Counter: 5 | Nodo 0 >> [ 0 1 0 ] 
+	Event Counter: 5 | Nodo 1 >> [ -1 -1 0 ] 
+	Event Counter: 5 | Nodo 2 >> [ 0 0 -1 ] 
+---------------------------
+
+	TEMPO:  60.0
+	Event Counter: 5 | Nodo 0 >> [ 0 1 0 ] 
+	Event Counter: 5 | Nodo 1 >> [ -1 -1 0 ] 
+	Event Counter: 5 | Nodo 2 >> [ 0 0 -1 ] 
+---------------------------
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
+Nodo 2 >> [ 0 1 0 ] 
+
+	TEMPO:  60.0
+	Event Counter: 6 | Nodo 0 >> [ 0 1 0 ] 
+	Event Counter: 6 | Nodo 1 >> [ -1 -1 0 ] 
+	Event Counter: 6 | Nodo 2 >> [ 0 1 0 ] 
+---------------------------
+O nodo 1 RECUPEROU no tempo  61.0 
+
+	TEMPO:  61.0
+	Event Counter: 7 | Nodo 0 >> [ 0 1 0 ] 
+	Event Counter: 7 | Nodo 1 >> [ -1 -1 0 ] 
+	Event Counter: 7 | Nodo 2 >> [ 0 1 0 ] 
+---------------------------
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
+Nodo 0 >> [ 0 2 0 ] 
+
+	TEMPO:  90.0
+	Event Counter: 8 | Nodo 0 >> [ 0 2 0 ] 
+	Event Counter: 8 | Nodo 1 >> [ -1 -1 0 ] 
+	Event Counter: 8 | Nodo 2 >> [ 0 1 0 ] 
+---------------------------
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
+Nodo 2 >> [ 0 2 0 ] 
+
+	TEMPO:  90.0
+	Event Counter: 9 | Nodo 0 >> [ 0 2 0 ] 
+	Event Counter: 9 | Nodo 1 >> [ -1 -1 0 ] 
+	Event Counter: 9 | Nodo 2 >> [ 0 2 0 ] 
+---------------------------
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  91.0
+Nodo 1 >> [ 0 2 0 ] 
+
+	TEMPO:  91.0
+	Event Counter: 10 | Nodo 0 >> [ 0 2 0 ] 
+	Event Counter: 10 | Nodo 1 >> [ 0 2 0 ] 
+	Event Counter: 10 | Nodo 2 >> [ 0 2 0 ] 
+---------------------------
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
+Nodo 0 >> [ 0 2 0 ] 
+
+	TEMPO: 120.0
+	Event Counter: 11 | Nodo 0 >> [ 0 2 0 ] 
+	Event Counter: 11 | Nodo 1 >> [ 0 2 0 ] 
+	Event Counter: 11 | Nodo 2 >> [ 0 2 0 ] 
+---------------------------
