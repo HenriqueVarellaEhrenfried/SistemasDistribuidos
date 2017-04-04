@@ -19,13 +19,22 @@ static int N, token, event, r, i, eventCounter;
 static char fa_name[5];
 
 
-void printArray(token){
+void printArray(int token){
   int i = 0;
   printf("Nodo %d >> [ ", token);
   for(i = 0; i < N; i++){
     printf("%d ", nodo[token].state[i]);
   }
   puts("] ");
+}
+void printState(char * place){
+  //Começa aqui o print com tabs
+  printf("\n\tTEMPO: %5.1f\n\tNo evento: %s\n", time(), place);
+  for(i = 0; i < N; i++){
+    printf("\tEvent Counter: %d | ", eventCounter);
+    printArray(((N-token)+(token+i))%N);
+  }
+  puts("---------------------------");
 }
 
 void updateState(int token2, int st){
@@ -98,13 +107,15 @@ int main(int argc, char * argv[])
   {
    case TEST:
      if (status(nodo[token].id) != 0) break;
-     eventCounter++;
+    
      int offset = 1, st;
 
      // Testa todos os nodos até encontrar um sem falha.
      do
      {
+      eventCounter++;
       st = testarNodo(token, offset++);
+      printState("TEST");
      }
      while (st!=0 || offset==token-1);
 
@@ -120,23 +131,19 @@ int main(int argc, char * argv[])
       exit(1);
      }
      printf("O nodo %d FALHOU no tempo %5.1f\n", token, time());
+     printState("FAULT");
    break;
 
    case REPAIR:
      eventCounter++;
      release(nodo[token].id, token);
      printf("O nodo %d RECUPEROU no tempo %5.1f \n", token, time());
+     printState("REPAIR");
      schedule(TEST, 30.0, token);
    break;
   }
 
-  //Começa aqui o print com tabs
-  printf("\n\tTEMPO: %5.1f\n", time());
-  for(i = 0; i < N; i++){
-    printf("\tEvent Counter: %d | ", eventCounter);
-    printArray(((N-token)+(token+i))%N);
-  }
-  puts("---------------------------");
+  
  }
 
  return 0;
