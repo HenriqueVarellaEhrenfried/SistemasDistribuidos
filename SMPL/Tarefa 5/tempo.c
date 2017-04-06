@@ -13,11 +13,43 @@ typedef struct tnodo
  int id;
  int * state;
 }tnodo;
+
+typedef struct events{
+  double time;
+  int event;
+}events;
+
+events * evnts;
 tnodo* nodo;
 
 static int N, token, event, r, i, eventCounter;
 static char fa_name[5];
+int size_events = 0;
 
+
+void newEvent(double time, int event){
+  evnts = (events *)realloc(evnts, sizeof(events));
+  evnts[size_events].time = time;
+  evnts[size_events].event = event;
+  size_events++;
+  
+}
+//TODO: Fix!!!
+void deleteEvent(int index){
+  int i;
+  for(i = index; i < size_events - 1; i++) 
+    evnts[i] = evnts[i + 1];
+  events * tmp = (events *)realloc(evnts, (size_events - 1) * sizeof(events) );
+  size_events--;
+  evnts = tmp;
+}
+
+int getLatency(int time){
+  int i, j;
+  for(i = 0; i < N; i++){
+    
+  }
+}
 
 void printArray(int token){
   int i = 0;
@@ -78,7 +110,10 @@ int main(int argc, char * argv[])
  reset();
  stream(1);
  nodo = (tnodo*)malloc(sizeof(tnodo)*N);
+//  evnts = (events*)malloc(sizeof(events));
 
+//  evnts[0].event = 9999;
+//  evnts[0].time = 9999;
 
  for(i = 0; i < N; i++)
  {
@@ -113,9 +148,9 @@ int main(int argc, char * argv[])
      // Testa todos os nodos até encontrar um sem falha.
      do
      {
-      eventCounter++;
+      // eventCounter++;
       st = testarNodo(token, offset++);
-      printState("TEST");
+      // printState("TEST");
      }
      while (st!=0 || offset==token-1);
 
@@ -125,6 +160,7 @@ int main(int argc, char * argv[])
    case FAULT:
      r = request(nodo[token].id, token, 0);
      eventCounter++;
+     newEvent(time(), eventCounter);
      if(r != 0)
      {
       puts("Nao consegui falhar nodo");
@@ -136,15 +172,23 @@ int main(int argc, char * argv[])
 
    case REPAIR:
      eventCounter++;
+     newEvent(time(), eventCounter);
      release(nodo[token].id, token);
-     printf("O nodo %d RECUPEROU no tempo %5.1f \n", token, time());
-     printState("REPAIR");
+     printf("O nodo %d RECUPEROU no tempo %5.1f \n", token, time());     
+     printState("REPAIR");     
      schedule(TEST, 30.0, token);
    break;
-  }
-
-  
+  }  
  }
-
+ printf("SIZE>%d\n",size_events);
+ for(i=0;i<size_events;i++){
+    printf("EVNTS[%d] = %d\n",i, evnts[i].event);
+    printf("TIME[%d] = %f\n",i, evnts[i].time);
+ }
+ deleteEvent(1);
+ for(i=0;i<size_events;i++){
+    printf("EVNTS[%d] = %d\n",i, evnts[i].event);
+    printf("TIME[%d] = %f\n",i, evnts[i].time);
+ }
  return 0;
 }
