@@ -11,6 +11,10 @@
 //Constantes
 #define TEST_INTERVAL 30.0
 #define LATENCY_UNKNOWN -1
+#define EVENT_TIME_UNKNOWN 0.0
+#define EVENT_NUMBER_UNKNOWN 0
+#define EVENT_UNKNOWN 0
+#define EVENT_NODE_UNKNOWN 0
 
 // Nodo
 typedef struct tnodo
@@ -44,6 +48,13 @@ void newEvent(double time, int eventNumber, int event, int nodeNumber){
   evnts.nodeNumber = nodeNumber;
 }
 
+void updateEvent(double time, int eventNumber, int event, int nodeNumber){
+  evnts.time = time;
+  evnts.eventNumber = eventNumber;
+  evnts.event = event;
+  evnts.nodeNumber = nodeNumber;
+}
+
 int getLatency(double time, events e){
   int i, j, sum, latency;
   int states[N];
@@ -65,8 +76,10 @@ int getLatency(double time, events e){
     for(j = 0, sum = 0; j < N; j++){
       sum += e.found[j] = 0; 
     }
+    printf("SUM >> %d\n", sum);
     if(sum >= N-1){
       latency = floor(time/e.time);
+      printf("*****A latência para detectar o evento %d é de %d rodada(s) de teste(s)*****\n", e.eventNumber, latency);
     }
     else{
       latency = LATENCY_UNKNOWN;
@@ -110,7 +123,7 @@ int testarNodo(int token, int offset){
  if ((nodo[token].state[token2]%2) ^ (st)){
     nodo[token].state[token2]++;
  }
-
+ 
  printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
  updateState(token2, st);
  printArray(token);
@@ -133,6 +146,7 @@ int main(int argc, char * argv[])
  reset();
  stream(1);
  nodo = (tnodo*)malloc(sizeof(tnodo)*N);
+ newEvent(EVENT_TIME_UNKNOWN,EVENT_NUMBER_UNKNOWN,EVENT_UNKNOWN,EVENT_NODE_UNKNOWN);
 
  for(i = 0; i < N; i++){
   memset(fa_name,'\0',5);
@@ -154,15 +168,13 @@ int main(int argc, char * argv[])
 
  // Checagem de eventos
  while(time() < 100)
- {
+ {   
   cause(&event, &token);
   switch(event)
   {
    case TEST:
      if (status(nodo[token].id) != 0) break;
-    
      int offset = 1, st;
-
      // Testa todos os nodos até encontrar um sem falha.
      do
      {
@@ -178,7 +190,7 @@ int main(int argc, char * argv[])
    case FAULT:
      r = request(nodo[token].id, token, 0);
      eventCounter++;
-     newEvent(time(), eventCounter,FAULT,(nodo[token].id));
+     updateEvent(time(), eventCounter,FAULT,(nodo[token].id));
      if(r != 0)
      {
       puts("Nao consegui falhar nodo");
@@ -190,7 +202,7 @@ int main(int argc, char * argv[])
 
    case REPAIR:
      eventCounter++;
-     newEvent(time(), eventCounter,REPAIR,(nodo[token].id));
+     updateEvent(time(), eventCounter,REPAIR,(nodo[token].id));
      release(nodo[token].id, token);
      printf("O nodo %d RECUPEROU no tempo %5.1f \n", token, time());     
      printState("REPAIR");     
