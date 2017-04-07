@@ -1,11 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "smpl.h"
 
 // Eventos
 #define TEST 1
 #define FAULT 2
 #define REPAIR 3
+
+//Constantes
+#define TEST_INTERVAL 30.0
+#define LATENCY_UNKNOWN -1
 
 // Nodo
 typedef struct tnodo
@@ -14,12 +19,16 @@ typedef struct tnodo
  int * state;
 }tnodo;
 
+//Eventos
 typedef struct events{
   double time;
+  int eventNumber;
   int event;
+  int nodeNumber;
+  int * found;
 }events;
 
-events * evnts;
+events evnts;
 tnodo* nodo;
 
 static int N, token, event, r, i;
@@ -27,27 +36,43 @@ static char fa_name[5];
 int size_events = 0, eventCounter, oldEventCounter, eventOcc;
 
 
-void newEvent(double time, int event){
-  evnts = (events *)realloc(evnts, sizeof(events));
-  evnts[size_events].time = time;
-  evnts[size_events].event = event;
-  size_events++;  
-}
-//REFACTOR: Free unused memory
-void deleteEvent(int index){
-  int i;
-  for(i = index; i < size_events - 1; i++) 
-    evnts[i] = evnts[i + 1];
-  size_events--;
+void newEvent(double time, int eventNumber, int event, int nodeNumber){
+  evnts.found = (int*)malloc(N*sizeof(int));
+  evnts.time = time;
+  evnts.eventNumber = eventNumber;
+  evnts.event = event;
+  evnts.nodeNumber = nodeNumber;
 }
 
-int* getLatency(double time){
-  int i, j;
-  int* result = (int*)malloc(2*sizeof(int));
-  for(i = 0; i < N; i++){
-    
-  }
-  return result;
+int getLatency(double time, events e){
+  int i, j, sum, latency;
+  int states[N];
+  for(i=0; i<N; i++){
+    for(j = 0, sum = 0; j < N; j++){
+      if(((nodo[j].state[i])%2==0) && (e.event==REPAIR)){
+        e.found[j] = 1;
+      }
+      else{
+        e.found[j] = 0;
+      }
+      if(((nodo[j].state[i])%2==1) && (e.event==FAULT)){
+        e.found[j] = 1;
+      }
+      else{
+        e.found[j] = 0;
+      }
+    }
+    for(j = 0, sum = 0; j < N; j++){
+      sum += e.found[j] = 0; 
+    }
+    if(sum >= N-1){
+      latency = floor(time/e.time);
+    }
+    else{
+      latency = LATENCY_UNKNOWN;
+    }
+  } 
+  return(latency);
 }
 
 void printArray(int token){
@@ -60,7 +85,7 @@ void printArray(int token){
 }
 void printState(char * place){
   //Começa aqui o print com tabs
-  printf("\n\tTEMPO: %5.1f\n\tNo evento: %s\n", time(), place);
+  printf("\n\tTEMPO: %5.1f\n\tAcao Executada: %s\n", time(), place);
   for(i = 0; i < N; i++){
     printf("\tEvent Counter: %d | ", eventCounter);
     printArray(((N-token)+(token+i))%N);
@@ -78,8 +103,7 @@ void updateState(int token2, int st){
 
 
 // Função que testa um nodo a partir do token do nodo atual
-int testarNodo(int token, int offset)
-{
+int testarNodo(int token, int offset){
  int token2 = (token+offset)%N;
  int st = status(nodo[token2].id);
  char *c = (st==0?"SEM FALHA":"FALHO");
@@ -123,7 +147,7 @@ int main(int argc, char * argv[])
  // Escalonamento de eventos
 
  for(i = 0; i < N; i++)
-     schedule(TEST, 30.0, i);
+     schedule(TEST, TEST_INTERVAL, i);
 
  schedule(FAULT, 31.0, 1); // Nodo 1 falha no tempo 31
  schedule(REPAIR, 61.0, 1); // Nodo 1 recupera no tempo 61
@@ -144,17 +168,17 @@ int main(int argc, char * argv[])
      {
       // eventCounter++;
       st = testarNodo(token, offset++);
-      // printState("TEST");
+      printState("TEST");
      }
      while (st!=0 || offset==token-1);
 
-     schedule(TEST, 30.0, token);
+     schedule(TEST, TEST_INTERVAL, token);
    break;
 
    case FAULT:
      r = request(nodo[token].id, token, 0);
      eventCounter++;
-     newEvent(time(), eventCounter);
+     newEvent(time(), eventCounter,FAULT,(nodo[token].id));
      if(r != 0)
      {
       puts("Nao consegui falhar nodo");
@@ -166,35 +190,14 @@ int main(int argc, char * argv[])
 
    case REPAIR:
      eventCounter++;
-     newEvent(time(), eventCounter);
+     newEvent(time(), eventCounter,REPAIR,(nodo[token].id));
      release(nodo[token].id, token);
      printf("O nodo %d RECUPEROU no tempo %5.1f \n", token, time());     
      printState("REPAIR");     
-     schedule(TEST, 30.0, token);
+     schedule(TEST, TEST_INTERVAL, token);
    break;
   } 
-  if(eventCounter!=oldEventCounter){
-    eventOcc++;
-    oldEventCounter++;
-  } 
-  double timeNow = time();
-  if(eventOcc == 1){
-    if (getLatency(timeNow)[0]==1){
-      eventOcc--;
-      printf("Latencia do evento %d: %d",evnts[0].event,getLatency(timeNow)[1]);
-      deleteEvent(0);
-    }
-  }
- }
- printf("SIZE>%d\n",size_events);
- for(i=0;i<size_events;i++){
-    printf("EVNTS[%d] = %d\n",i, evnts[i].event);
-    printf("TIME[%d] = %f\n",i, evnts[i].time);
- }
- deleteEvent(0);
- for(i=0;i<size_events;i++){
-    printf("EVNTS[%d] = %d\n",i, evnts[i].event);
-    printf("TIME[%d] = %f\n",i, evnts[i].time);
+  getLatency(time(),evnts);
  }
  return 0;
 }
