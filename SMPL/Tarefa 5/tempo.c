@@ -22,33 +22,32 @@ typedef struct events{
 events * evnts;
 tnodo* nodo;
 
-static int N, token, event, r, i, eventCounter;
+static int N, token, event, r, i;
 static char fa_name[5];
-int size_events = 0;
+int size_events = 0, eventCounter, oldEventCounter, eventOcc;
 
 
 void newEvent(double time, int event){
   evnts = (events *)realloc(evnts, sizeof(events));
   evnts[size_events].time = time;
   evnts[size_events].event = event;
-  size_events++;
-  
+  size_events++;  
 }
-//TODO: Fix!!!
+//REFACTOR: Free unused memory
 void deleteEvent(int index){
   int i;
   for(i = index; i < size_events - 1; i++) 
     evnts[i] = evnts[i + 1];
-  events * tmp = (events *)realloc(evnts, (size_events - 1) * sizeof(events) );
   size_events--;
-  evnts = tmp;
 }
 
-int getLatency(int time){
+int* getLatency(double time){
   int i, j;
+  int* result = (int*)malloc(2*sizeof(int));
   for(i = 0; i < N; i++){
     
   }
+  return result;
 }
 
 void printArray(int token){
@@ -99,24 +98,19 @@ int testarNodo(int token, int offset)
 int main(int argc, char * argv[])
 {
  int j;
- if(argc !=2)
- {
+ if(argc !=2){
   puts("Uso correto: tempo <num-nodos>");
   exit(1);
  }
-
+ oldEventCounter = eventCounter;
+ eventOcc = 0;
  N = atoi(argv[1]);
  smpl(0, "Tarefa 0 SisDis");
  reset();
  stream(1);
  nodo = (tnodo*)malloc(sizeof(tnodo)*N);
-//  evnts = (events*)malloc(sizeof(events));
 
-//  evnts[0].event = 9999;
-//  evnts[0].time = 9999;
-
- for(i = 0; i < N; i++)
- {
+ for(i = 0; i < N; i++){
   memset(fa_name,'\0',5);
   sprintf(fa_name, "%d", i);
   nodo[i].id = facility(fa_name, 1);
@@ -178,14 +172,26 @@ int main(int argc, char * argv[])
      printState("REPAIR");     
      schedule(TEST, 30.0, token);
    break;
-  }  
+  } 
+  if(eventCounter!=oldEventCounter){
+    eventOcc++;
+    oldEventCounter++;
+  } 
+  double timeNow = time();
+  if(eventOcc == 1){
+    if (getLatency(timeNow)[0]==1){
+      eventOcc--;
+      printf("Latencia do evento %d: %d",evnts[0].event,getLatency(timeNow)[1]);
+      deleteEvent(0);
+    }
+  }
  }
  printf("SIZE>%d\n",size_events);
  for(i=0;i<size_events;i++){
     printf("EVNTS[%d] = %d\n",i, evnts[i].event);
     printf("TIME[%d] = %f\n",i, evnts[i].time);
  }
- deleteEvent(1);
+ deleteEvent(0);
  for(i=0;i<size_events;i++){
     printf("EVNTS[%d] = %d\n",i, evnts[i].event);
     printf("TIME[%d] = %f\n",i, evnts[i].time);

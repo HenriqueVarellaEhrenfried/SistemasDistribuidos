@@ -1,3 +1,20 @@
 Tarefa 5
 
-TP1
+TP1:
+
+O trabalho deve ser feito individualmente (alunos pós-graduação) ou em dupla (alunos graduação).
+
+FASE 1
+
+Especificação: Implemente o algoritmo Adaptive DSD no ambiente de simulação SMPL, e mostre resultados para diversos valores de N e diversos eventos - um evento de cada vez, um evento só ocorre depois do evento anterior ser diagnosticado. Para cada evento mostre claramente o número de testes executados e a latência para completar o diagnóstico do evento. Cada nodo mantém o vetor STATE[0..N-1] de contadores de eventos, inicilizado em -1 (estado unknown). Assume-se que os nodos são inicializados sem-falha, a entrada correspondente ao nodo no vetor STATE[] do testador é setada para zero. Ao descobrir um novo evento em um nodo testado, o testador incrementa a entrada correspondente no vetor STATE[]. 
+Disponibilze no site, além do programa SMPL que implementa o Adaptive-DSD como definido acima, os programas que implementam as Tarefas 0 a 4 feitas em laboratório.
+
+Atenção: Data para disponibilizar o trabalho: 17 de abril de 2017 (segunda-feira) O prazo para fazer o trabalho é de apenas 2 semanas, este prazo não será prorrogado! 
+Os alunos devem informar por e-mail a URL do trabalho, usando o subject "TP* SISDIS 2017-1"
+
+Deve ser feita uma página Web, que contém:
+
+Relatório HTML explicando como o trabalho foi feito (use desenhos, palavras, o que você quiser): o objetivo é detalhar as suas decisões para implementar seu trabalho.
+Código fonte dos programas, comentados. ATENÇÃO: acrescente a todo programa a terminação ".txt" para que possa ser diretamente aberto em um browser. Exemplos: cliente.py.txt ou servidor.c.txt
+Log dos testes executados: mostre explicitamente diversos casos testados, lembre-se é a partir desta listagem de testes que o professor vai medir até que ponto o trabalho está funcionando. 
+Veja este programa exemplo para ilustrar a criação de um bom log.
