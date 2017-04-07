@@ -55,36 +55,41 @@ void updateEvent(double time, int eventNumber, int event, int nodeNumber){
   evnts.nodeNumber = nodeNumber;
 }
 
+void printEvent(events e){
+  int i;
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  printf("TEMPO >> %5.1lf\n", e.time);
+  printf("EVENT NUMBER >> %d\n", e.eventNumber);
+  printf("EVENT >> %d\n", e.event);
+  printf("NODE NUMBER >> %d\n", e.nodeNumber);
+  printf("[");
+  for(i = 0; i < N; i++){
+    printf(" %d ",e.found[i]);
+  }
+  puts("]");
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+}
+
 int getLatency(double time, events e){
   int i, j, sum, latency;
   int states[N];
-  for(i=0; i<N; i++){
-    for(j = 0, sum = 0; j < N; j++){
-      if(((nodo[j].state[i])%2==0) && (e.event==REPAIR)){
-        e.found[j] = 1;
-      }
-      else{
-        e.found[j] = 0;
-      }
-      if(((nodo[j].state[i])%2==1) && (e.event==FAULT)){
-        e.found[j] = 1;
-      }
-      else{
-        e.found[j] = 0;
-      }
+
+  for(i = 0, sum = 0; i < N; i++){
+    if(((nodo[i].state[e.nodeNumber]%2 == 0) && (e.event==REPAIR)) || ((nodo[i].state[e.nodeNumber]%2 == 1) && (e.event==FAULT))){
+      sum += 1;
+      e.found[1] = 1;
     }
-    for(j = 0, sum = 0; j < N; j++){
-      sum += e.found[j] = 0; 
-    }
-    printf("SUM >> %d\n", sum);
-    if(sum >= N-1){
-      latency = floor(time/e.time);
-      printf("*****A latência para detectar o evento %d é de %d rodada(s) de teste(s)*****\n", e.eventNumber, latency);
-    }
-    else{
-      latency = LATENCY_UNKNOWN;
-    }
-  } 
+  }
+  printf("SUM >> %d\n", sum);
+  printEvent(e);
+  if(sum >= N-1){
+    latency = floor(time/e.time);
+    printf("TIME >>> %5.1lf\nEVENT TIME >>> %5.1lf\n",time, e.time);
+    printf("*****A latência para detectar o evento %d é de %d rodada(s) de teste(s)*****\n", e.eventNumber, latency);
+  }
+  else{
+    latency = LATENCY_UNKNOWN;
+  }
   return(latency);
 }
 
