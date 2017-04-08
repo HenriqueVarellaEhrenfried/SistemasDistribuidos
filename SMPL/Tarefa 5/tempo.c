@@ -30,6 +30,7 @@ typedef struct events{
   int event;
   int nodeNumber;
   int * found;
+  int detected;
 }events;
 
 events evnts;
@@ -46,13 +47,19 @@ void newEvent(double time, int eventNumber, int event, int nodeNumber){
   evnts.eventNumber = eventNumber;
   evnts.event = event;
   evnts.nodeNumber = nodeNumber;
+  evnts.detected = 0;
 }
 
 void updateEvent(double time, int eventNumber, int event, int nodeNumber){
+  int i;
   evnts.time = time;
+  evnts.detected = 0;
   evnts.eventNumber = eventNumber;
   evnts.event = event;
   evnts.nodeNumber = nodeNumber;
+  for(i = 0; i < N; i++){
+    evnts.found[i]=0;
+  }
 }
 
 void printEvent(events e){
@@ -62,6 +69,7 @@ void printEvent(events e){
   printf("EVENT NUMBER >> %d\n", e.eventNumber);
   printf("EVENT >> %d\n", e.event);
   printf("NODE NUMBER >> %d\n", e.nodeNumber);
+  printf("DETECTED >> %d\n", e.detected);
   printf("[");
   for(i = 0; i < N; i++){
     printf(" %d ",e.found[i]);
@@ -71,24 +79,29 @@ void printEvent(events e){
 }
 
 int getLatency(double time, events e){
-  int i, j, sum, latency;
+  int i, j, sum;
+  float latency;
   int states[N];
-
-  for(i = 0, sum = 0; i < N; i++){
-    if(((nodo[i].state[e.nodeNumber]%2 == 0) && (e.event==REPAIR)) || ((nodo[i].state[e.nodeNumber]%2 == 1) && (e.event==FAULT))){
-      sum += 1;
-      e.found[1] = 1;
-    }
-  }
-  printf("SUM >> %d\n", sum);
+  printf("^^^^^^DETECTED: %d\n",e.detected);
   printEvent(e);
-  if(sum >= N-1){
-    latency = floor(time/e.time);
-    printf("TIME >>> %5.1lf\nEVENT TIME >>> %5.1lf\n",time, e.time);
-    printf("*****A latência para detectar o evento %d é de %d rodada(s) de teste(s)*****\n", e.eventNumber, latency);
-  }
-  else{
-    latency = LATENCY_UNKNOWN;
+  
+  if(!e.detected){
+    for(i = 0, sum = 0; i < N; i++){
+      if(((nodo[i].state[e.nodeNumber]%2 == 0) && (e.event==REPAIR)) || ((nodo[i].state[e.nodeNumber]%2 == 1) && (e.event==FAULT))){
+        sum += 1;
+        e.found[i] = 1;
+      }
+    }
+    if((( (sum >= N-1) && (e.event==FAULT))  || (sum >= N) && (e.event==REPAIR) )){
+      e.detected = 1;
+      latency = (time/e.time);
+      printf("TIME >>> %5.1lf\nEVENT TIME >>> %5.1lf\n",time, e.time);
+      printf("*****A latência para detectar o evento %d é de %f rodada(s) de teste(s)*****\n", e.eventNumber, latency);
+    }
+    else{
+      latency = LATENCY_UNKNOWN;
+    }
+    printf("/////SUM >> %d\n/////nodeNumber >> %d\n/////LATENCY >> %f\n", sum, e.nodeNumber,latency);
   }
   return(latency);
 }
@@ -168,11 +181,11 @@ int main(int argc, char * argv[])
  for(i = 0; i < N; i++)
      schedule(TEST, TEST_INTERVAL, i);
 
- schedule(FAULT, 31.0, 1); // Nodo 1 falha no tempo 31
- schedule(REPAIR, 61.0, 1); // Nodo 1 recupera no tempo 61
+ schedule(FAULT, 91.0, 1); // Nodo 1 falha no tempo 31
+ schedule(REPAIR, 151.0, 1); // Nodo 1 recupera no tempo 61
 
  // Checagem de eventos
- while(time() < 100)
+ while(time() < 200)
  {   
   cause(&event, &token);
   switch(event)
@@ -195,7 +208,7 @@ int main(int argc, char * argv[])
    case FAULT:
      r = request(nodo[token].id, token, 0);
      eventCounter++;
-     updateEvent(time(), eventCounter,FAULT,(nodo[token].id));
+     updateEvent(time(), eventCounter,FAULT,token);
      if(r != 0)
      {
       puts("Nao consegui falhar nodo");
@@ -207,7 +220,7 @@ int main(int argc, char * argv[])
 
    case REPAIR:
      eventCounter++;
-     updateEvent(time(), eventCounter,REPAIR,(nodo[token].id));
+     updateEvent(time(), eventCounter,REPAIR,token);
      release(nodo[token].id, token);
      printf("O nodo %d RECUPEROU no tempo %5.1f \n", token, time());     
      printState("REPAIR");     
