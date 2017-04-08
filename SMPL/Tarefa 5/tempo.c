@@ -43,7 +43,7 @@ tnodo* nodo;
 
 static int N, token, event, r, i;
 static char fa_name[5];
-int size_events = 0, eventCounter, oldEventCounter, eventOcc;
+int size_events = 0, eventCounter, testCounter;
 
 
 void newEvent(double time, int eventNumber, int event, int nodeNumber){
@@ -67,6 +67,8 @@ void updateEvent(double time, int eventNumber, int event, int nodeNumber){
   for(i = 0; i < N; i++){
     evnts.found[i]=0;
   }
+  evnts.timeFirstDetect = EVENT_FIRST_NODE_TIME_DETECTED;
+  evnts.nodeDetected = EVENT_FIRST_NODE_DETECT;
 }
 
 void printEvent(events e){
@@ -77,6 +79,8 @@ void printEvent(events e){
   printf("EVENT >> %d\n", e.event);
   printf("NODE NUMBER >> %d\n", e.nodeNumber);
   printf("DETECTED >> %d\n", e.detected);
+  printf("FIRST NODE DETECTED >> %d\n", e.nodeDetected);
+  printf("TIME FIRST NODE DETECTED >> %5.1lf\n", e.timeFirstDetect);
   printf("[");
   for(i = 0; i < N; i++){
     printf(" %d ",e.found[i]);
@@ -128,6 +132,7 @@ void printState(char * place){
   printf("\n\tTEMPO: %5.1f\n\tAcao Executada: %s\n", time(), place);
   for(i = 0; i < N; i++){
     printf("\tEvent Counter: %d | ", eventCounter);
+    printf("Test Counter: %d | ", testCounter);
     printArray(((N-token)+(token+i))%N);
   }
   puts("---------------------------");
@@ -144,6 +149,7 @@ void updateState(int token2, int st){
 
 // Função que testa um nodo a partir do token do nodo atual
 int testarNodo(int token, int offset){
+ testCounter++;
  int token2 = (token+offset)%N;
  int st = status(nodo[token2].id);
  char *c = (st==0?"SEM FALHA":"FALHO");
@@ -167,8 +173,6 @@ int main(int argc, char * argv[])
   puts("Uso correto: tempo <num-nodos>");
   exit(1);
  }
- oldEventCounter = eventCounter;
- eventOcc = 0;
  N = atoi(argv[1]);
  smpl(0, "Tarefa 0 SisDis");
  reset();
