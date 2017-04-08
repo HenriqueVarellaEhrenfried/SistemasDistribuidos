@@ -80,10 +80,8 @@ void printEvent(events e){
 
 int getLatency(double time, events e){
   int i, j, sum;
-  float latency;
+  int latency;
   int states[N];
-  printf("^^^^^^DETECTED: %d\n",e.detected);
-  printEvent(e);
   
   if(!e.detected){
     for(i = 0, sum = 0; i < N; i++){
@@ -93,15 +91,15 @@ int getLatency(double time, events e){
       }
     }
     if((( (sum >= N-1) && (e.event==FAULT))  || (sum >= N) && (e.event==REPAIR) )){
-      e.detected = 1;
-      latency = (time/e.time);
+      latency = floor(((time-e.time)/TEST_INTERVAL))+1;
       printf("TIME >>> %5.1lf\nEVENT TIME >>> %5.1lf\n",time, e.time);
-      printf("*****A latência para detectar o evento %d é de %f rodada(s) de teste(s)*****\n", e.eventNumber, latency);
+      printf("*****A latência para detectar o evento %d é de %d rodada(s) de teste(s)*****\n", e.eventNumber, latency);
     }
     else{
       latency = LATENCY_UNKNOWN;
     }
-    printf("/////SUM >> %d\n/////nodeNumber >> %d\n/////LATENCY >> %f\n", sum, e.nodeNumber,latency);
+    printEvent(evnts);
+    printf("/////SUM >> %d\n/////nodeNumber >> %d\n/////LATENCY >> %d\n", sum, e.nodeNumber,latency);
   }
   return(latency);
 }
@@ -152,6 +150,7 @@ int testarNodo(int token, int offset){
 // Programa Principal
 int main(int argc, char * argv[])
 {
+ float lat;
  int j;
  if(argc !=2){
   puts("Uso correto: tempo <num-nodos>");
@@ -227,7 +226,10 @@ int main(int argc, char * argv[])
      schedule(TEST, TEST_INTERVAL, token);
    break;
   } 
-  getLatency(time(),evnts);
+  lat = getLatency(time(),evnts);
+  if(lat != -1){
+    evnts.detected = 1;
+  }
  }
  return 0;
 }
