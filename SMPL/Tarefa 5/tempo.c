@@ -15,6 +15,9 @@
 #define EVENT_NUMBER_UNKNOWN 0
 #define EVENT_UNKNOWN 0
 #define EVENT_NODE_UNKNOWN 0
+#define EVENT_FIRST_NODE_DETECT -1
+#define EVENT_FIRST_NODE_TIME_DETECTED -1
+
 
 // Nodo
 typedef struct tnodo
@@ -31,6 +34,8 @@ typedef struct events{
   int nodeNumber;
   int * found;
   int detected;
+  int nodeDetected;
+  double timeFirstDetect;
 }events;
 
 events evnts;
@@ -48,6 +53,8 @@ void newEvent(double time, int eventNumber, int event, int nodeNumber){
   evnts.event = event;
   evnts.nodeNumber = nodeNumber;
   evnts.detected = 0;
+  evnts.timeFirstDetect = EVENT_FIRST_NODE_TIME_DETECTED;
+  evnts.nodeDetected = EVENT_FIRST_NODE_DETECT;
 }
 
 void updateEvent(double time, int eventNumber, int event, int nodeNumber){
@@ -88,10 +95,14 @@ int getLatency(double time, events e){
       if(((nodo[i].state[e.nodeNumber]%2 == 0) && (e.event==REPAIR)) || ((nodo[i].state[e.nodeNumber]%2 == 1) && (e.event==FAULT))){
         sum += 1;
         e.found[i] = 1;
+        if(e.timeFirstDetect == EVENT_FIRST_NODE_TIME_DETECTED){
+          e.timeFirstDetect = time;
+          e.nodeDetected = i;
+        } 
       }
     }
-    if((( (sum >= N-1) && (e.event==FAULT))  || (sum >= N) && (e.event==REPAIR) )){
-      latency = floor(((time-e.time)/TEST_INTERVAL))+1;
+    if(( ((sum >= N-1) && (e.event==FAULT))  || ((sum >= N) && (e.event==REPAIR)) )){
+      latency = floor(((time-e.timeFirstDetect)/TEST_INTERVAL))+1;
       printf("TIME >>> %5.1lf\nEVENT TIME >>> %5.1lf\n",time, e.time);
       printf("*****A latência para detectar o evento %d é de %d rodada(s) de teste(s)*****\n", e.eventNumber, latency);
     }
