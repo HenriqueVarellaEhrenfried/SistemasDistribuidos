@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <string.h>
 #include "smpl.h"
 
 // Eventos
@@ -44,6 +45,7 @@ tnodo* nodo;
 static int N, token, event, r, i;
 static char fa_name[5];
 int size_events = 0, eventCounter, testCounter;
+char ** tokens; //Vetor com as strings tokenizadas
 
 
 void newEvent(double time, int eventNumber, int event, int nodeNumber){
@@ -163,12 +165,52 @@ int testarNodo(int token, int offset){
 //  printf("-------------------\n");
  return st;
 }
+int words(const char sentence[ ])
+{
+    int counted = 0; // result
+
+    // state:
+    const char* it = sentence;
+    int inword = 0;
+
+    do switch(*it) {
+        case '\0': 
+        case ' ':
+        case '\n': 
+            if (inword) { inword = 0; counted++; }
+            break;
+        default: inword = 1;
+    } while(*it++);
+
+    return counted;
+}
+void split(char * string, char * delimiters){
+  int arraySize = words(string)+1;
+  char * token = strtok (string, delimiters); 
+  free(tokens);
+  tokens = (char**)malloc(arraySize*sizeof(char*));
+
+  tokens[0] = token;
+  i = 1;
+  printf("\t%s | ID = %d\n",tokens[0],0);
+  while (tokens[i-1] != NULL)  {
+    tokens[i] = strtok (NULL, delimiters); // Primeiro atributo do SCHEDULE 
+    printf("\t%s | ID = %d\n",tokens[i],i);
+    i++;
+  }
+  // printf("TOTAL = %d\n",atoi(token)*atoi(numberOfNodes)*3+2);
+  printf("TOTAL = %d\n",arraySize)+1;
+  // return tokens;
+}
 
 // Programa Principal
 int main(int argc, char * argv[])
 {
+ char * configuracao;
  float lat;
  int j;
+ char str[] = "200\n3\nTEST 30.0 1\nFAIL 31.0 2";
+ 
  if(argc !=2){
   puts("Uso correto: tempo <num-nodos>");
   exit(1);
@@ -246,5 +288,10 @@ int main(int argc, char * argv[])
     evnts.detected = 1;
   }
  }
+ split(str, " \n");
+ for(i = 0; i < 8; i++){
+   printf("\t\t%s", tokens[i]);
+ }
+ puts(" ");
  return 0;
 }

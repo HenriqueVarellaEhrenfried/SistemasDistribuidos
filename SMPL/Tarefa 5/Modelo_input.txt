@@ -1,0 +1,12 @@
+tempo
+nodos
+evento tempo_do_evento nodo
+evento tempo_do_evento nodo
+evento tempo_do_evento nodo
+evento tempo_do_evento nodo
+evento tempo_do_evento nodo
+evento tempo_do_evento nodo
+evento tempo_do_evento nodo
+evento tempo_do_evento nodo
+evento tempo_do_evento nodo
+evento tempo_do_evento nodo
