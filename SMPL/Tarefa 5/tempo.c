@@ -165,8 +165,7 @@ int testarNodo(int token, int offset){
 //  printf("-------------------\n");
  return st;
 }
-int words(const char sentence[ ])
-{
+int words(const char sentence[ ]){
     int counted = 0; // result
 
     // state:
@@ -179,6 +178,8 @@ int words(const char sentence[ ])
         case '\n': 
             if (inword) { inword = 0; counted++; }
             break;
+        case '\r':
+            break;
         default: inword = 1;
     } while(*it++);
 
@@ -189,7 +190,8 @@ void split(char * string, char * delimiters){
   char * token = strtok (string, delimiters); 
   free(tokens);
   tokens = (char**)malloc(arraySize*sizeof(char*));
-
+  printf("ARRAY SIZE >> %d\n", arraySize);
+  printf("STRING:\n\n\t%s",string);
   tokens[0] = token;
   i = 1;
   printf("\t%s | ID = %d\n",tokens[0],0);
@@ -202,6 +204,22 @@ void split(char * string, char * delimiters){
   printf("TOTAL = %d\n",arraySize)+1;
   // return tokens;
 }
+char* readinput(){
+  #define CHUNK 200
+   char* input = NULL;
+   char tempbuf[CHUNK];
+   size_t inputlen = 0, templen = 0;
+   do {
+       fgets(tempbuf, CHUNK, stdin);
+       templen = strlen(tempbuf);
+       inputlen += templen;
+       input = realloc(input, inputlen+1);
+       strcat(input, tempbuf);
+    } while (templen==CHUNK-1 && tempbuf[CHUNK-2]!='\n');
+    printf("THE INPUT IS : %s \n\n",input);
+    return input;
+}
+
 
 // Programa Principal
 int main(int argc, char * argv[])
@@ -215,13 +233,19 @@ int main(int argc, char * argv[])
   puts("Uso correto: tempo <num-nodos>");
   exit(1);
  }
- N = atoi(argv[1]);
+ split(readinput(), " \n"); 
+ double simulationTime = strtod(tokens[0], NULL);
+ N = atoi(tokens[1]);
+ int warmUpTime = N*(int)TEST_INTERVAL;
+//  N = atoi(argv[1]);
  smpl(0, "Tarefa 0 SisDis");
  reset();
  stream(1);
- nodo = (tnodo*)malloc(sizeof(tnodo)*N);
+ nodo = (tnodo*)malloc(sizeof(tnodo)*N); 
  newEvent(EVENT_TIME_UNKNOWN,EVENT_NUMBER_UNKNOWN,EVENT_UNKNOWN,EVENT_NODE_UNKNOWN);
-
+//   for(i = 0; tokens[i+1] != NULL; i++){
+//    printf("\t\t%s", tokens[i]);
+//  }
  for(i = 0; i < N; i++){
   memset(fa_name,'\0',5);
   sprintf(fa_name, "%d", i);
@@ -232,18 +256,32 @@ int main(int argc, char * argv[])
   }
  }
  eventCounter = 0;
- // Escalonamento de eventos
 
+ // Escalonamento de eventos
  for(i = 0; i < N; i++)
      schedule(TEST, TEST_INTERVAL, i);
 
- schedule(FAULT, 91.0, 1); // Nodo 1 falha no tempo 31
- schedule(REPAIR, 151.0, 1); // Nodo 1 recupera no tempo 61
+//  schedule(FAULT, 91.0, 1); // Nodo 1 falha no tempo 31
+//  schedule(REPAIR, 151.0, 1); // Nodo 1 recupera no tempo 61
 
+//Escalona eventos lidos
+int eventOcc;
+for(i=2; tokens[i]!=NULL; i+=3){
+  eventOcc = tokens[i][0] == 'F' ? FAULT : REPAIR;
+  printf("\tEscalonando evento:\n\t\tEVENT OCC > %d\n\t\tTIME > %5.1lf\n\t\tNODE > %d\n---\n",eventOcc, strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
+  schedule(eventOcc,strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
+}
+ printf("Tempo de simulacao = %5.1lf\nN = %d\nTempo para Warm Up = %d\n\n", simulationTime, N, warmUpTime);
+ int printedEndOfWarmUp = 0;
  // Checagem de eventos
- while(time() < 200)
- {   
+ //TODO : Permitir que possa-se definir no código os eventos assim como na tarefa 0 e Dinamicamente, como está este código
+ printf("************************** COMECOU O WARMUP **************************\n");
+ while(time() < simulationTime){
   cause(&event, &token);
+  if((time()>(double)warmUpTime) && !printedEndOfWarmUp){
+    printf("************************** TERMINOU O WARMUP**************************\n");
+    printedEndOfWarmUp++;
+  }
   switch(event)
   {
    case TEST:
@@ -288,10 +326,9 @@ int main(int argc, char * argv[])
     evnts.detected = 1;
   }
  }
- split(str, " \n");
- for(i = 0; i < 8; i++){
-   printf("\t\t%s", tokens[i]);
- }
+ 
+
+
  puts(" ");
  return 0;
 }
