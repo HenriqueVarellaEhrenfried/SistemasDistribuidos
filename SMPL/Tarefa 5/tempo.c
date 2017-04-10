@@ -75,48 +75,45 @@ void updateEvent(double time, int eventNumber, int event, int nodeNumber){
 
 void printEvent(events e){
   int i;
-  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-  printf("TEMPO >> %5.1lf\n", e.time);
-  printf("EVENT NUMBER >> %d\n", e.eventNumber);
-  printf("EVENT >> %d\n", e.event);
-  printf("NODE NUMBER >> %d\n", e.nodeNumber);
-  printf("DETECTED >> %d\n", e.detected);
-  printf("FIRST NODE DETECTED >> %d\n", e.nodeDetected);
-  printf("TIME FIRST NODE DETECTED >> %5.1lf\n", e.timeFirstDetect);
-  printf("[");
+  printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  printf("\t\t\t STATUS DO EVENTO\n");
+  printf("Tempo >> %5.1lf\n", e.time);
+  printf("Tempo atual >> %5.1lf\n", time());
+  printf("Quando o primeiro nodo detectou >> %5.1lf\n", e.timeFirstDetect);  
+  printf("Primeiro nodo que detectou >> %d\n", e.nodeDetected);
+  printf("Numero do evento >> %d\n", e.eventNumber);
+  printf("Evento >> %s\n", e.event==FAULT?"Falha":"Recuperação");
+  printf("Nodo em que aconteceu o evento >> %d\n", e.nodeNumber);
+  printf("Foi detectado? >> %s\n", e.detected==1?"Sim":"Não");
+  printf("Nodos que detectaram >> [");
   for(i = 0; i < N; i++){
     printf(" %d ",e.found[i]);
   }
   puts("]");
-  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 }
 
 int getLatency(double time, events e){
   int i, j, sum;
   int latency;
   int states[N];
-  
+
   if(!e.detected){
     for(i = 0, sum = 0; i < N; i++){
       if(((nodo[i].state[e.nodeNumber]%2 == 0) && (e.event==REPAIR)) || ((nodo[i].state[e.nodeNumber]%2 == 1) && (e.event==FAULT))){
         sum += 1;
         e.found[i] = 1;
-        if(e.timeFirstDetect == EVENT_FIRST_NODE_TIME_DETECTED){
-          e.timeFirstDetect = time;
-          e.nodeDetected = i;
-        } 
       }
-    }
+    }    
     if(( ((sum >= N-1) && (e.event==FAULT))  || ((sum >= N) && (e.event==REPAIR)) )){
-      latency = floor(((time-e.timeFirstDetect)/TEST_INTERVAL))+1;
-      printf("TIME >>> %5.1lf\nEVENT TIME >>> %5.1lf\n",time, e.time);
-      printf("*****A latência para detectar o evento %d é de %d rodada(s) de teste(s)*****\n", e.eventNumber, latency);
+      latency =  floor((time - e.timeFirstDetect)/TEST_INTERVAL) + 1;
+      printf("\n\tA latência para detectar o evento %d (que começou no tempo %5.1lf) é de %d rodada(s) de teste(s)  [Tempo atual: %5.1lf] \n\n\n", e.eventNumber, e.time, latency, time);
     }
     else{
       latency = LATENCY_UNKNOWN;
     }
-    printEvent(evnts);
-    printf("/////SUM >> %d\n/////nodeNumber >> %d\n/////LATENCY >> %d\n", sum, e.nodeNumber,latency);
+    // printEvent(evnts);
+    // printf("/////SUM >> %d\n/////nodeNumber >> %d\n/////LATENCY >> %d\n", sum, e.nodeNumber,latency);
   }
   return(latency);
 }
@@ -162,7 +159,6 @@ int testarNodo(int token, int offset){
  printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
  updateState(token2, st);
  printArray(token);
-//  printf("-------------------\n");
  return st;
 }
 int words(const char sentence[ ]){
@@ -226,7 +222,7 @@ int main(int argc, char * argv[])
 {
  char * configuracao;
  float lat;
- int j;
+ int j, lastEventCounter = 0;
  char str[] = "200\n3\nTEST 30.0 1\nFAIL 31.0 2";
  
  if(argc !=2){
@@ -302,6 +298,9 @@ for(i=2; tokens[i]!=NULL; i+=3){
    case FAULT:
      r = request(nodo[token].id, token, 0);
      eventCounter++;
+     for(i = 0; i < N; i++){
+      nodo[token].state[i] = -1;
+     }
      updateEvent(time(), eventCounter,FAULT,token);
      if(r != 0)
      {
@@ -310,6 +309,7 @@ for(i=2; tokens[i]!=NULL; i+=3){
      }
      printf("O nodo %d FALHOU no tempo %5.1f\n", token, time());
      printState("FAULT");
+     printEvent(evnts);
    break;
 
    case REPAIR:
@@ -318,13 +318,28 @@ for(i=2; tokens[i]!=NULL; i+=3){
      release(nodo[token].id, token);
      printf("O nodo %d RECUPEROU no tempo %5.1f \n", token, time());     
      printState("REPAIR");     
+     printEvent(evnts);
      schedule(TEST, TEST_INTERVAL, token);
    break;
   } 
   lat = getLatency(time(),evnts);
   if(lat != -1){
     evnts.detected = 1;
+    if(lastEventCounter < evnts.eventNumber){
+      lastEventCounter=evnts.eventNumber;
+      printEvent(evnts);
+    }
   }
+   
+  
+  for(i = 0; i < N; i++){
+    // printf("I = %d | evnts.found[i] = %d | evnts.timeFirstDetect = %5.1lf\n", i, evnts.found[i],evnts.timeFirstDetect);
+    if((evnts.found[i]!=0) && (evnts.timeFirstDetect == EVENT_FIRST_NODE_TIME_DETECTED)){
+      evnts.timeFirstDetect = time();
+      evnts.nodeDetected = i;
+    }
+  }
+  // printEvent(evnts);
  }
  
 
