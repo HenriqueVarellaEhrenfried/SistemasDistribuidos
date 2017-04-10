@@ -1,3 +1,14 @@
+/*
++------------------------------------------------------------------+
+|Programa de Pós-graduação da Universidade Federal do Paraná - UFPR|
+| Primeiro trabalho prático da disciplina de Sistemas Distribuídos |
+|              Estudante: Henrique Varella Ehrenfried              |
+|                  Professor: Elias P. Duarte Jr.                  |
+|                              2017-1                              |
++------------------------------------------------------------------+
+*/
+
+//Bibliotecas
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -18,6 +29,14 @@
 #define EVENT_NODE_UNKNOWN 0
 #define EVENT_FIRST_NODE_DETECT -1
 #define EVENT_FIRST_NODE_TIME_DETECTED -1
+
+//Constates para criar Header na saída
+#define HEADER_BAR       "+------------------------------------------------------------------+"
+#define HEADER_PROGRAM   "|Programa de Pós-graduação da Universidade Federal do Paraná - UFPR|"
+#define HEADER_PROJECT   "| Primeiro trabalho prático da disciplina de Sistemas Distribuídos |"
+#define HEADER_STUDENT   "|              Estudante: Henrique Varella Ehrenfried              |"
+#define HEADER_PROFESSOR "|                  Professor: Elias P. Duarte Jr.                  |"
+#define HEADER_SEMESTER  "|                              2017-1                              |"
 
 
 // Nodo
@@ -107,7 +126,7 @@ int getLatency(double time, events e){
     }    
     if(( ((sum >= N-1) && (e.event==FAULT))  || ((sum >= N) && (e.event==REPAIR)) )){
       latency =  floor((time - e.timeFirstDetect)/TEST_INTERVAL) + 1;
-      printf("\n\tA latência para detectar o evento %d (que começou no tempo %5.1lf) é de %d rodada(s) de teste(s)  [Tempo atual: %5.1lf] \n\n\n", e.eventNumber, e.time, latency, time);
+      printf("\n\tA latência para detectar o evento %d (que começou no tempo %5.1lf) é de %d rodada(s) de teste(s)  [Tempo atual: %5.1lf] \n", e.eventNumber, e.time, latency, time);
     }
     else{
       latency = LATENCY_UNKNOWN;
@@ -186,19 +205,12 @@ void split(char * string, char * delimiters){
   char * token = strtok (string, delimiters); 
   free(tokens);
   tokens = (char**)malloc(arraySize*sizeof(char*));
-  printf("ARRAY SIZE >> %d\n", arraySize);
-  printf("STRING:\n\n\t%s",string);
   tokens[0] = token;
   i = 1;
-  printf("\t%s | ID = %d\n",tokens[0],0);
   while (tokens[i-1] != NULL)  {
     tokens[i] = strtok (NULL, delimiters); // Primeiro atributo do SCHEDULE 
-    printf("\t%s | ID = %d\n",tokens[i],i);
     i++;
   }
-  // printf("TOTAL = %d\n",atoi(token)*atoi(numberOfNodes)*3+2);
-  printf("TOTAL = %d\n",arraySize)+1;
-  // return tokens;
 }
 char* readinput(){
   #define CHUNK 200
@@ -212,7 +224,6 @@ char* readinput(){
        input = realloc(input, inputlen+1);
        strcat(input, tempbuf);
     } while (templen==CHUNK-1 && tempbuf[CHUNK-2]!='\n');
-    printf("THE INPUT IS : %s \n\n",input);
     return input;
 }
 
@@ -220,6 +231,7 @@ char* readinput(){
 // Programa Principal
 int main(int argc, char * argv[])
 {
+ printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n",HEADER_BAR, HEADER_PROGRAM,HEADER_PROJECT,HEADER_STUDENT,HEADER_PROFESSOR,HEADER_SEMESTER,HEADER_BAR);
  char * configuracao;
  float lat;
  int j, lastEventCounter = 0;
@@ -234,7 +246,7 @@ int main(int argc, char * argv[])
  N = atoi(tokens[1]);
  int warmUpTime = N*(int)TEST_INTERVAL;
 //  N = atoi(argv[1]);
- smpl(0, "Tarefa 0 SisDis");
+ smpl(0, "Trabalho pratico 1 - Sistemas Distribuidos");
  reset();
  stream(1);
  nodo = (tnodo*)malloc(sizeof(tnodo)*N); 
@@ -257,25 +269,25 @@ int main(int argc, char * argv[])
  for(i = 0; i < N; i++)
      schedule(TEST, TEST_INTERVAL, i);
 
-//  schedule(FAULT, 91.0, 1); // Nodo 1 falha no tempo 31
-//  schedule(REPAIR, 151.0, 1); // Nodo 1 recupera no tempo 61
-
 //Escalona eventos lidos
 int eventOcc;
+int countEventsScheduled = 0;
 for(i=2; tokens[i]!=NULL; i+=3){
   eventOcc = tokens[i][0] == 'F' ? FAULT : REPAIR;
-  printf("\tEscalonando evento:\n\t\tEVENT OCC > %d\n\t\tTIME > %5.1lf\n\t\tNODE > %d\n---\n",eventOcc, strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
+  printf("\nEscalonando evento:\n\tEvento: %s\n\tTempo: %5.1lf\n\tNodo > %d\n",eventOcc==FAULT?"Falha":"Recuperação", strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
   schedule(eventOcc,strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
+  countEventsScheduled++;
 }
- printf("Tempo de simulacao = %5.1lf\nN = %d\nTempo para Warm Up = %d\n\n", simulationTime, N, warmUpTime);
+  printf("\n\nNúmero de eventos agendados: %d\n",countEventsScheduled);
+ printf("\n\nN = %d\nTempo para Warm Up = %d.0\nTempo de simulação = %5.1lf\n\n\n",N , warmUpTime, simulationTime);
  int printedEndOfWarmUp = 0;
  // Checagem de eventos
  //TODO : Permitir que possa-se definir no código os eventos assim como na tarefa 0 e Dinamicamente, como está este código
- printf("************************** COMECOU O WARMUP **************************\n");
+ printf("************************** COMECOU O WARMUP **************************\n\n");
  while(time() < simulationTime){
   cause(&event, &token);
   if((time()>(double)warmUpTime) && !printedEndOfWarmUp){
-    printf("************************** TERMINOU O WARMUP**************************\n");
+    printf("************************** TERMINOU O WARMUP**************************\n\n");
     printedEndOfWarmUp++;
   }
   switch(event)
