@@ -61,12 +61,15 @@ typedef struct events{
 events evnts;
 tnodo* nodo;
 
+//Variáveis do SMPL
 static int N, token, event, r, i;
 static char fa_name[5];
-int size_events = 0, eventCounter, testCounter;
+
+int eventCounter; //Variável que contém quantidade de eventos que ocorreram no sistema
+int  testCounter; //Variável com a quantidade de testes executados no sistema
 char ** tokens; //Vetor com as strings tokenizadas
 
-
+//Função para inicializar a variável de tipo events
 void newEvent(double time, int eventNumber, int event, int nodeNumber){
   evnts.found = (int*)malloc(N*sizeof(int));
   evnts.time = time;
@@ -77,7 +80,7 @@ void newEvent(double time, int eventNumber, int event, int nodeNumber){
   evnts.timeFirstDetect = EVENT_FIRST_NODE_TIME_DETECTED;
   evnts.nodeDetected = EVENT_FIRST_NODE_DETECT;
 }
-
+//Função usada para atualizar um evento com os dados do novo evento
 void updateEvent(double time, int eventNumber, int event, int nodeNumber){
   int i;
   evnts.time = time;
@@ -91,7 +94,7 @@ void updateEvent(double time, int eventNumber, int event, int nodeNumber){
   evnts.timeFirstDetect = EVENT_FIRST_NODE_TIME_DETECTED;
   evnts.nodeDetected = EVENT_FIRST_NODE_DETECT;
 }
-
+//Função usada para imprimir os dados de um evento quando ele acontece e quando ele é diagnosticado
 void printEvent(events e){
   int i;
   printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
@@ -111,7 +114,7 @@ void printEvent(events e){
   puts("]");
   printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 }
-
+//Função usada para calcular a latência de um evento
 int getLatency(double time, events e){
   int i, j, sum;
   int latency;
@@ -136,7 +139,7 @@ int getLatency(double time, events e){
   }
   return(latency);
 }
-
+//Função para imprimir o vetor STATE
 void printArray(int token){
   int i = 0;
   printf("Nodo %d >> [ ", token);
@@ -145,17 +148,21 @@ void printArray(int token){
   }
   puts("] ");
 }
+//Função que imprime dados sobre os cada operação agendada (Testes, Falhas e Recuperações).
+//Além dissso esta função é responsável por imprimir o vetor STATE de cada nodo, o contador
+//de eventos e o contador de testes
 void printState(char * place){
   //Começa aqui o print com tabs
-  printf("\n\tTEMPO: %5.1f\n\tAcao Executada: %s\n", time(), place);
+  printf("\n\tTempo atual: %5.1f\n\tAção Executada: %s\n", time(), place);
+  printf("\tContador de eventos: %d\n ", eventCounter);
+  printf("\tContador de testes: %d\n\n ", testCounter);
   for(i = 0; i < N; i++){
-    printf("\tEvent Counter: %d | ", eventCounter);
-    printf("Test Counter: %d | ", testCounter);
+    printf("\t");    
     printArray(((N-token)+(token+i))%N);
   }
-  puts("---------------------------");
+  puts("\n---------------------------\n");
 }
-
+//Função para atualizar o vetor STATE de um nodo
 void updateState(int token2, int st){
   int i = 0;
   for(i = 0; i < N; i++){
@@ -163,9 +170,7 @@ void updateState(int token2, int st){
       nodo[token].state[i] = nodo[token2].state[i];
   }
 }
-
-
-// Função que testa um nodo a partir do token do nodo atual
+//Função que testa um nodo a partir do nodo atual
 int testarNodo(int token, int offset){
  testCounter++;
  int token2 = (token+offset)%N;
@@ -173,13 +178,15 @@ int testarNodo(int token, int offset){
  char *c = (st==0?"SEM FALHA":"FALHO");
  if ((nodo[token].state[token2]%2) ^ (st)){
     nodo[token].state[token2]++;
- }
- 
+ } 
  printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
  updateState(token2, st);
+ printf("\n\tEstado atual do ");
  printArray(token);
  return st;
 }
+//Função que conta número de caracteres '\n' e ' ' para definir quantos indices deve ser considerados
+//na função split
 int words(const char sentence[ ]){
     int counted = 0; // result
 
@@ -200,6 +207,8 @@ int words(const char sentence[ ]){
 
     return counted;
 }
+//Função para quebrar string em um delimitador e gerar tokens que definirão o tempo de simulação,
+//número de nodos e agendamento de eventos
 void split(char * string, char * delimiters){
   int arraySize = words(string)+1;
   char * token = strtok (string, delimiters); 
@@ -212,6 +221,7 @@ void split(char * string, char * delimiters){
     i++;
   }
 }
+//Função para leitura de dados a partir da da entrada padrão
 char* readinput(){
   #define CHUNK 200
    char* input = NULL;
@@ -231,29 +241,37 @@ char* readinput(){
 // Programa Principal
 int main(int argc, char * argv[])
 {
+ //Imprime header 
  printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n",HEADER_BAR, HEADER_PROGRAM,HEADER_PROJECT,HEADER_STUDENT,HEADER_PROFESSOR,HEADER_SEMESTER,HEADER_BAR);
- char * configuracao;
- float lat;
- int j, lastEventCounter = 0;
- char str[] = "200\n3\nTEST 30.0 1\nFAIL 31.0 2";
  
- if(argc !=2){
-  puts("Uso correto: tempo <num-nodos>");
+ char * configuracao; //Variável para leitura das configurações da simulação
+ int lat; //Variável para identificar se um evento foi diagnosticado
+ int j, lastEventCounter = 0; //Variáveis auxiliares
+  
+ //Verifica número de argumentos
+ if(argc == 1){
+  puts("\n\nUso correto: tempo < arquivo.conf\n");
   exit(1);
  }
+
+ //Lê da entrada os parâmetro para a simulação (Tempo, número de nodos e eventos)
  split(readinput(), " \n"); 
+
+ //Extrai tempo de simulção e N da entrada
  double simulationTime = strtod(tokens[0], NULL);
  N = atoi(tokens[1]);
+
+ //Define tempo de warm up
  int warmUpTime = N*(int)TEST_INTERVAL;
-//  N = atoi(argv[1]);
+
+
+ //Inicializa simulção inicializando as variáveis necessárias
  smpl(0, "Trabalho pratico 1 - Sistemas Distribuidos");
  reset();
  stream(1);
  nodo = (tnodo*)malloc(sizeof(tnodo)*N); 
  newEvent(EVENT_TIME_UNKNOWN,EVENT_NUMBER_UNKNOWN,EVENT_UNKNOWN,EVENT_NODE_UNKNOWN);
-//   for(i = 0; tokens[i+1] != NULL; i++){
-//    printf("\t\t%s", tokens[i]);
-//  }
+
  for(i = 0; i < N; i++){
   memset(fa_name,'\0',5);
   sprintf(fa_name, "%d", i);
@@ -265,24 +283,28 @@ int main(int argc, char * argv[])
  }
  eventCounter = 0;
 
- // Escalonamento de eventos
+ // Agenda os eventos de teste para todos os nodos
  for(i = 0; i < N; i++)
      schedule(TEST, TEST_INTERVAL, i);
 
-//Escalona eventos lidos
+//Agenda eventos lidos da entrada
 int eventOcc;
 int countEventsScheduled = 0;
 for(i=2; tokens[i]!=NULL; i+=3){
   eventOcc = tokens[i][0] == 'F' ? FAULT : REPAIR;
+  //Imprime dados sobre o evento que será agendado
   printf("\nEscalonando evento:\n\tEvento: %s\n\tTempo: %5.1lf\n\tNodo > %d\n",eventOcc==FAULT?"Falha":"Recuperação", strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
   schedule(eventOcc,strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
   countEventsScheduled++;
 }
-  printf("\n\nNúmero de eventos agendados: %d\n",countEventsScheduled);
+ //Imprime Estatísticas sobre a simulçao (Número de eventos, tempo de warm up e tempo de simulção)
+ printf("\n\nNúmero de eventos agendados: %d\n",countEventsScheduled);
  printf("\n\nN = %d\nTempo para Warm Up = %d.0\nTempo de simulação = %5.1lf\n\n\n",N , warmUpTime, simulationTime);
+
  int printedEndOfWarmUp = 0;
+
  // Checagem de eventos
- //TODO : Permitir que possa-se definir no código os eventos assim como na tarefa 0 e Dinamicamente, como está este código
+ //Faz a simulação acontecer 
  printf("************************** COMECOU O WARMUP **************************\n\n");
  while(time() < simulationTime){
   cause(&event, &token);
@@ -290,8 +312,7 @@ for(i=2; tokens[i]!=NULL; i+=3){
     printf("************************** TERMINOU O WARMUP**************************\n\n");
     printedEndOfWarmUp++;
   }
-  switch(event)
-  {
+  switch(event){
    case TEST:
      if (status(nodo[token].id) != 0) break;
      int offset = 1, st;
@@ -334,28 +355,23 @@ for(i=2; tokens[i]!=NULL; i+=3){
      schedule(TEST, TEST_INTERVAL, token);
    break;
   } 
-  lat = getLatency(time(),evnts);
-  if(lat != -1){
-    evnts.detected = 1;
-    if(lastEventCounter < evnts.eventNumber){
+
+  lat = getLatency(time(),evnts); //Verifica a latência do evento
+  if(lat != LATENCY_UNKNOWN){ // Se não for indefinida, quer dizer que o evento foi identificado
+    evnts.detected = 1; //Atualiza o evento 
+    if(lastEventCounter < evnts.eventNumber){ //Imprime dados do evento se já não o fez
       lastEventCounter=evnts.eventNumber;
       printEvent(evnts);
     }
-  }
-   
+  }   
   
+  //Verifica qual nodo identifico o evento por primeiro, e atualiza as estatísticas do evento
   for(i = 0; i < N; i++){
-    // printf("I = %d | evnts.found[i] = %d | evnts.timeFirstDetect = %5.1lf\n", i, evnts.found[i],evnts.timeFirstDetect);
     if((evnts.found[i]!=0) && (evnts.timeFirstDetect == EVENT_FIRST_NODE_TIME_DETECTED)){
       evnts.timeFirstDetect = time();
       evnts.nodeDetected = i;
     }
   }
-  // printEvent(evnts);
  }
- 
-
-
- puts(" ");
  return 0;
 }
