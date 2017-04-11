@@ -8,12 +8,12 @@
 
 Agendando evento:
 	Evento: Falha
-	Tempo: 180.0
+	Tempo: 150.0
 	Nodo > 1
 
 Agendando evento:
 	Evento: Falha
-	Tempo: 240.0
+	Tempo: 210.0
 	Nodo > 2
 
 Agendando evento:
@@ -253,63 +253,12 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 120.0
 
 ---------------------------
 
-O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
-
-	Estado atual do Nodo 0 >> [ 0 0 0 ] 
+O nodo 1 FALHOU no tempo 150.0
 
 	Tempo atual: 150.0
-	Ação Executada: TEST
-	Contador de eventos: 0
- 	Contador de testes: 13
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 0 0 ] 
-	Nodo 1 >> [ 0 0 0 ] 
-	Nodo 2 >> [ 0 0 0 ] 
-
----------------------------
-
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 150.0
-
-	Estado atual do Nodo 1 >> [ 0 0 0 ] 
-
-	Tempo atual: 150.0
-	Ação Executada: TEST
-	Contador de eventos: 0
- 	Contador de testes: 14
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 0 0 ] 
-	Nodo 1 >> [ 0 0 0 ] 
-	Nodo 2 >> [ 0 0 0 ] 
-
----------------------------
-
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 150.0
-
-	Estado atual do Nodo 2 >> [ 0 0 0 ] 
-
-	Tempo atual: 150.0
-	Ação Executada: TEST
-	Contador de eventos: 0
- 	Contador de testes: 15
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 0 0 ] 
-	Nodo 1 >> [ 0 0 0 ] 
-	Nodo 2 >> [ 0 0 0 ] 
-
----------------------------
-
-O nodo 1 FALHOU no tempo 180.0
-
-	Tempo atual: 180.0
 	Ação Executada: FAULT
 	Contador de eventos: 1
- 	Contador de testes: 15
+ 	Contador de testes: 12
 
  
 	Vetores STATE: 
@@ -322,8 +271,8 @@ O nodo 1 FALHOU no tempo 180.0
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 180.0
-Tempo atual >> 180.0
+Tempo em que o evento ocorreu >> 150.0
+Tempo atual >> 150.0
 Quando o primeiro nodo detectou >>  -1.0
 Primeiro nodo que detectou >> -1
 Número do evento >> 1
@@ -331,6 +280,73 @@ Evento >> Falha
 Nodo em que aconteceu o evento >> 1
 Foi detectado? >> Não
 Nodos que detectaram >> [ 0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 0 TESTOU o nodo 1 como FALHO no tempo 150.0
+
+	Estado atual do Nodo 0 >> [ 0 1 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 13
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 0 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 0 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 150.0
+
+	Estado atual do Nodo 0 >> [ 0 1 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 14
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 0 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 0 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 150.0
+
+	Estado atual do Nodo 2 >> [ 0 1 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 15
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 0 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ 0 1 0 ] 
+
+---------------------------
+
+
+	A latência para detectar o evento 1 (que começou no tempo 150.0) é de 1 rodada(s) de teste(s)  [Tempo atual: 150.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 150.0
+Tempo atual >> 150.0
+Quando o primeiro nodo detectou >> 150.0
+Primeiro nodo que detectou >> 0
+Número do evento >> 1
+Evento >> Falha
+Nodo em que aconteceu o evento >> 1
+Foi detectado? >> Sim
+Nodos que detectaram >> [ 1  0  1 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 0 TESTOU o nodo 1 como FALHO no tempo 180.0
@@ -346,7 +362,7 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo 180.0
 	Vetores STATE: 
 	Nodo 0 >> [ 0 1 0 ] 
 	Nodo 1 >> [ -1 -1 -1 ] 
-	Nodo 2 >> [ 0 0 0 ] 
+	Nodo 2 >> [ 0 1 0 ] 
 
 ---------------------------
 
@@ -363,7 +379,7 @@ O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
 	Vetores STATE: 
 	Nodo 0 >> [ 0 1 0 ] 
 	Nodo 1 >> [ -1 -1 -1 ] 
-	Nodo 2 >> [ 0 0 0 ] 
+	Nodo 2 >> [ 0 1 0 ] 
 
 ---------------------------
 
@@ -384,79 +400,12 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
 
 ---------------------------
 
-
-	A latência para detectar o evento 1 (que começou no tempo 180.0) é de 1 rodada(s) de teste(s)  [Tempo atual: 180.0] 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 180.0
-Tempo atual >> 180.0
-Quando o primeiro nodo detectou >> 180.0
-Primeiro nodo que detectou >> 0
-Número do evento >> 1
-Evento >> Falha
-Nodo em que aconteceu o evento >> 1
-Foi detectado? >> Sim
-Nodos que detectaram >> [ 1  0  1 ]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-O nodo 0 TESTOU o nodo 1 como FALHO no tempo 210.0
-
-	Estado atual do Nodo 0 >> [ 0 1 0 ] 
+O nodo 2 FALHOU no tempo 210.0
 
 	Tempo atual: 210.0
-	Ação Executada: TEST
-	Contador de eventos: 1
- 	Contador de testes: 19
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 1 0 ] 
-	Nodo 1 >> [ -1 -1 -1 ] 
-	Nodo 2 >> [ 0 1 0 ] 
-
----------------------------
-
-O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 210.0
-
-	Estado atual do Nodo 0 >> [ 0 1 0 ] 
-
-	Tempo atual: 210.0
-	Ação Executada: TEST
-	Contador de eventos: 1
- 	Contador de testes: 20
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 1 0 ] 
-	Nodo 1 >> [ -1 -1 -1 ] 
-	Nodo 2 >> [ 0 1 0 ] 
-
----------------------------
-
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
-
-	Estado atual do Nodo 2 >> [ 0 1 0 ] 
-
-	Tempo atual: 210.0
-	Ação Executada: TEST
-	Contador de eventos: 1
- 	Contador de testes: 21
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 1 0 ] 
-	Nodo 1 >> [ -1 -1 -1 ] 
-	Nodo 2 >> [ 0 1 0 ] 
-
----------------------------
-
-O nodo 2 FALHOU no tempo 240.0
-
-	Tempo atual: 240.0
 	Ação Executada: FAULT
 	Contador de eventos: 2
- 	Contador de testes: 21
+ 	Contador de testes: 18
 
  
 	Vetores STATE: 
@@ -469,8 +418,8 @@ O nodo 2 FALHOU no tempo 240.0
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 240.0
-Tempo atual >> 240.0
+Tempo em que o evento ocorreu >> 210.0
+Tempo atual >> 210.0
 Quando o primeiro nodo detectou >>  -1.0
 Primeiro nodo que detectou >> -1
 Número do evento >> 2
@@ -480,9 +429,60 @@ Foi detectado? >> Não
 Nodos que detectaram >> [ 0  0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-O nodo 0 TESTOU o nodo 1 como FALHO no tempo 240.0
+O nodo 0 TESTOU o nodo 1 como FALHO no tempo 210.0
 
 	Estado atual do Nodo 0 >> [ 0 1 0 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 19
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 0 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como FALHO no tempo 210.0
+
+	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 20
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 1 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
+
+	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 21
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 1 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 1 como FALHO no tempo 240.0
+
+	Estado atual do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 240.0
 	Ação Executada: TEST
@@ -491,7 +491,7 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo 240.0
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ 0 1 0 ] 
+	Nodo 0 >> [ 0 1 1 ] 
 	Nodo 1 >> [ -1 -1 -1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
