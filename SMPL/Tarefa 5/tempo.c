@@ -99,7 +99,7 @@ void printEvent(events e){
   int i;
   printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
   printf("\t\t\t STATUS DO EVENTO\n");
-  printf("Tempo >> %5.1lf\n", e.time);
+  printf("Tempo em que o evento ocorreu >> %5.1lf\n", e.time);
   printf("Tempo atual >> %5.1lf\n", time());
   printf("Quando o primeiro nodo detectou >> %5.1lf\n", e.timeFirstDetect);  
   printf("Primeiro nodo que detectou >> %d\n", e.nodeDetected);
@@ -303,7 +303,6 @@ for(i=2; tokens[i]!=NULL; i+=3){
  printf("\n\nN = %d\nTempo para Warm Up = %d.0\nTempo de simulação = %5.1lf\n\n\n",N , warmUpTime, simulationTime);
 
  int printedEndOfWarmUp = 0;
-
  // Checagem de eventos
  //Faz a simulação acontecer 
  printf("************************** COMECOU O WARMUP **************************\n\n");
@@ -320,11 +319,10 @@ for(i=2; tokens[i]!=NULL; i+=3){
      // Testa todos os nodos até encontrar um sem falha.
      do
      {
-      // eventCounter++;
       st = testarNodo(token, offset++);
       printState("TEST");
      }
-     while (st!=0 || offset==token-1);
+     while ((st!=0));
 
      schedule(TEST, TEST_INTERVAL, token);
    break;
