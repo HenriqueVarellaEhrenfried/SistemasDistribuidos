@@ -6,12 +6,12 @@
 |                              2017-1                              |
 +------------------------------------------------------------------+
 
-Escalonando evento:
+Agendando evento:
 	Evento: Falha
 	Tempo: 150.0
 	Nodo > 2
 
-Escalonando evento:
+Agendando evento:
 	Evento: Recuperação
 	Tempo: 210.0
 	Nodo > 2

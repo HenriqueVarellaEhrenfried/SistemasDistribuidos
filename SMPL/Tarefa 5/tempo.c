@@ -293,7 +293,7 @@ int countEventsScheduled = 0;
 for(i=2; tokens[i]!=NULL; i+=3){
   eventOcc = tokens[i][0] == 'F' ? FAULT : REPAIR;
   //Imprime dados sobre o evento que será agendado
-  printf("\nEscalonando evento:\n\tEvento: %s\n\tTempo: %5.1lf\n\tNodo > %d\n",eventOcc==FAULT?"Falha":"Recuperação", strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
+  printf("\nAgendando evento:\n\tEvento: %s\n\tTempo: %5.1lf\n\tNodo > %d\n",eventOcc==FAULT?"Falha":"Recuperação", strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
   schedule(eventOcc,strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
   countEventsScheduled++;
 }
