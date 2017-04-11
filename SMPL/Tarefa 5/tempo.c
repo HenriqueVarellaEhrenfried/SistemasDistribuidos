@@ -103,7 +103,7 @@ void printEvent(events e){
   printf("Tempo atual >> %5.1lf\n", time());
   printf("Quando o primeiro nodo detectou >> %5.1lf\n", e.timeFirstDetect);  
   printf("Primeiro nodo que detectou >> %d\n", e.nodeDetected);
-  printf("Numero do evento >> %d\n", e.eventNumber);
+  printf("Número do evento >> %d\n", e.eventNumber);
   printf("Evento >> %s\n", e.event==FAULT?"Falha":"Recuperação");
   printf("Nodo em que aconteceu o evento >> %d\n", e.nodeNumber);
   printf("Foi detectado? >> %s\n", e.detected==1?"Sim":"Não");
@@ -156,6 +156,7 @@ void printState(char * place){
   printf("\n\tTempo atual: %5.1f\n\tAção Executada: %s\n", time(), place);
   printf("\tContador de eventos: %d\n ", eventCounter);
   printf("\tContador de testes: %d\n\n ", testCounter);
+  printf("\n\tVetores STATE: \n");
   for(i = 0; i < N; i++){
     printf("\t");    
     printArray(((N-token)+(token+i))%N);
@@ -249,7 +250,7 @@ int main(int argc, char * argv[])
  int j, lastEventCounter = 0; //Variáveis auxiliares
   
  //Verifica número de argumentos
- if(argc == 1){
+ if(argc > 1){
   puts("\n\nUso correto: tempo < arquivo.conf\n");
   exit(1);
  }

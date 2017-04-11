@@ -36,7 +36,9 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
 	Contador de eventos: 0
  	Contador de testes: 1
 
- 	Nodo 0 >> [ -1 0 -1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 ] 
 	Nodo 1 >> [ -1 -1 -1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -51,7 +53,9 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
 	Contador de eventos: 0
  	Contador de testes: 2
 
- 	Nodo 0 >> [ -1 0 -1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 ] 
 	Nodo 1 >> [ -1 -1 0 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -66,7 +70,9 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 	Contador de eventos: 0
  	Contador de testes: 3
 
- 	Nodo 0 >> [ -1 0 -1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 ] 
 	Nodo 1 >> [ -1 -1 0 ] 
 	Nodo 2 >> [ 0 0 -1 ] 
 
@@ -81,7 +87,9 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
 	Contador de eventos: 0
  	Contador de testes: 4
 
- 	Nodo 0 >> [ -1 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 ] 
 	Nodo 1 >> [ -1 -1 0 ] 
 	Nodo 2 >> [ 0 0 -1 ] 
 
@@ -96,7 +104,9 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
 	Contador de eventos: 0
  	Contador de testes: 5
 
- 	Nodo 0 >> [ -1 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ 0 0 -1 ] 
 
@@ -111,7 +121,9 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
 	Contador de eventos: 0
  	Contador de testes: 6
 
- 	Nodo 0 >> [ -1 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ 0 0 0 ] 
 
@@ -126,7 +138,9 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
 	Contador de eventos: 0
  	Contador de testes: 7
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ 0 0 0 ] 
 
@@ -141,7 +155,9 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  90.0
 	Contador de eventos: 0
  	Contador de testes: 8
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ 0 0 0 ] 
 
@@ -156,7 +172,9 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
 	Contador de eventos: 0
  	Contador de testes: 9
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ 0 0 0 ] 
 
@@ -173,7 +191,9 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
 	Contador de eventos: 0
  	Contador de testes: 10
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ 0 0 0 ] 
 
@@ -188,7 +208,9 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 120.0
 	Contador de eventos: 0
  	Contador de testes: 11
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ 0 0 0 ] 
 
@@ -203,7 +225,9 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 120.0
 	Contador de eventos: 0
  	Contador de testes: 12
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ 0 0 0 ] 
 
@@ -216,7 +240,9 @@ O nodo 2 FALHOU no tempo 150.0
 	Contador de eventos: 1
  	Contador de testes: 12
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -229,7 +255,7 @@ Tempo >> 150.0
 Tempo atual >> 150.0
 Quando o primeiro nodo detectou >>  -1.0
 Primeiro nodo que detectou >> -1
-Numero do evento >> 1
+Número do evento >> 1
 Evento >> Falha
 Nodo em que aconteceu o evento >> 2
 Foi detectado? >> Não
@@ -245,7 +271,9 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
 	Contador de eventos: 1
  	Contador de testes: 13
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 0 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -260,7 +288,9 @@ O nodo 1 TESTOU o nodo 2 como FALHO no tempo 150.0
 	Contador de eventos: 1
  	Contador de testes: 14
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -275,7 +305,9 @@ O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 150.0
 	Contador de eventos: 1
  	Contador de testes: 15
 
- 	Nodo 0 >> [ 0 0 0 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 ] 
 	Nodo 1 >> [ 0 0 1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -290,7 +322,9 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 180.0
 	Contador de eventos: 1
  	Contador de testes: 16
 
- 	Nodo 0 >> [ 0 0 1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 1 ] 
 	Nodo 1 >> [ 0 0 1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -305,7 +339,7 @@ Tempo >> 150.0
 Tempo atual >> 180.0
 Quando o primeiro nodo detectou >> 150.0
 Primeiro nodo que detectou >> 1
-Numero do evento >> 1
+Número do evento >> 1
 Evento >> Falha
 Nodo em que aconteceu o evento >> 2
 Foi detectado? >> Sim
@@ -321,7 +355,9 @@ O nodo 1 TESTOU o nodo 2 como FALHO no tempo 180.0
 	Contador de eventos: 1
  	Contador de testes: 17
 
- 	Nodo 0 >> [ 0 0 1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 1 ] 
 	Nodo 1 >> [ 0 0 1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -336,7 +372,9 @@ O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
 	Contador de eventos: 1
  	Contador de testes: 18
 
- 	Nodo 0 >> [ 0 0 1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 1 ] 
 	Nodo 1 >> [ 0 0 1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -349,7 +387,9 @@ O nodo 2 RECUPEROU no tempo 210.0
 	Contador de eventos: 2
  	Contador de testes: 18
 
- 	Nodo 0 >> [ 0 0 1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 1 ] 
 	Nodo 1 >> [ 0 0 1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -362,7 +402,7 @@ Tempo >> 210.0
 Tempo atual >> 210.0
 Quando o primeiro nodo detectou >>  -1.0
 Primeiro nodo que detectou >> -1
-Numero do evento >> 2
+Número do evento >> 2
 Evento >> Recuperação
 Nodo em que aconteceu o evento >> 2
 Foi detectado? >> Não
@@ -378,7 +418,9 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 210.0
 	Contador de eventos: 2
  	Contador de testes: 19
 
- 	Nodo 0 >> [ 0 0 1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 1 ] 
 	Nodo 1 >> [ 0 0 1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -393,7 +435,9 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 210.0
 	Contador de eventos: 2
  	Contador de testes: 20
 
- 	Nodo 0 >> [ 0 0 1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 1 ] 
 	Nodo 1 >> [ 0 0 2 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
@@ -408,7 +452,9 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 240.0
 	Contador de eventos: 2
  	Contador de testes: 21
 
- 	Nodo 0 >> [ 0 0 1 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 1 ] 
 	Nodo 1 >> [ 0 0 2 ] 
 	Nodo 2 >> [ 0 0 1 ] 
 
@@ -423,7 +469,9 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 240.0
 	Contador de eventos: 2
  	Contador de testes: 22
 
- 	Nodo 0 >> [ 0 0 2 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 2 ] 
 	Nodo 1 >> [ 0 0 2 ] 
 	Nodo 2 >> [ 0 0 1 ] 
 
@@ -438,7 +486,9 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 240.0
 	Contador de eventos: 2
  	Contador de testes: 23
 
- 	Nodo 0 >> [ 0 0 2 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 2 ] 
 	Nodo 1 >> [ 0 0 2 ] 
 	Nodo 2 >> [ 0 0 1 ] 
 
@@ -453,7 +503,9 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 270.0
 	Contador de eventos: 2
  	Contador de testes: 24
 
- 	Nodo 0 >> [ 0 0 2 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 2 ] 
 	Nodo 1 >> [ 0 0 2 ] 
 	Nodo 2 >> [ 0 0 2 ] 
 
@@ -468,7 +520,7 @@ Tempo >> 210.0
 Tempo atual >> 270.0
 Quando o primeiro nodo detectou >> 210.0
 Primeiro nodo que detectou >> 1
-Numero do evento >> 2
+Número do evento >> 2
 Evento >> Recuperação
 Nodo em que aconteceu o evento >> 2
 Foi detectado? >> Sim
@@ -484,7 +536,9 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 270.0
 	Contador de eventos: 2
  	Contador de testes: 25
 
- 	Nodo 0 >> [ 0 0 2 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 2 ] 
 	Nodo 1 >> [ 0 0 2 ] 
 	Nodo 2 >> [ 0 0 2 ] 
 
@@ -499,7 +553,9 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 270.0
 	Contador de eventos: 2
  	Contador de testes: 26
 
- 	Nodo 0 >> [ 0 0 2 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 2 ] 
 	Nodo 1 >> [ 0 0 2 ] 
 	Nodo 2 >> [ 0 0 2 ] 
 
@@ -514,7 +570,9 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 300.0
 	Contador de eventos: 2
  	Contador de testes: 27
 
- 	Nodo 0 >> [ 0 0 2 ] 
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 2 ] 
 	Nodo 1 >> [ 0 0 2 ] 
 	Nodo 2 >> [ 0 0 2 ] 
 
