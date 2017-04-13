@@ -56,6 +56,7 @@ typedef struct events {
     int detected;
     int nodeDetected;
     double timeFirstDetect;
+    int numberOfTestsWhenOccured;
 } events;
 
 events evnts;
@@ -79,6 +80,7 @@ void newEvent(double time, int eventNumber, int event, int nodeNumber) {
     evnts.detected = 0;
     evnts.timeFirstDetect = EVENT_FIRST_NODE_TIME_DETECTED;
     evnts.nodeDetected = EVENT_FIRST_NODE_DETECT;
+    evnts.numberOfTestsWhenOccured = 0;
 }
 //Função usada para atualizar um evento com os dados do novo evento
 void updateEvent(double time, int eventNumber, int event, int nodeNumber) {
@@ -93,6 +95,7 @@ void updateEvent(double time, int eventNumber, int event, int nodeNumber) {
     }
     evnts.timeFirstDetect = EVENT_FIRST_NODE_TIME_DETECTED;
     evnts.nodeDetected = EVENT_FIRST_NODE_DETECT;
+    evnts.numberOfTestsWhenOccured = testCounter;
 }
 //Função usada para imprimir os dados de um evento quando ele acontece e quando ele é diagnosticado
 void printEvent(events e) {
@@ -107,6 +110,7 @@ void printEvent(events e) {
     printf("Evento >> %s\n", e.event==FAULT?"Falha":"Recuperação");
     printf("Nodo em que aconteceu o evento >> %d\n", e.nodeNumber);
     printf("Foi detectado? >> %s\n", e.detected==1?"Sim":"Não");
+    printf("Número de testes executados até a detecção do evento>> %d\n", testCounter - evnts.numberOfTestsWhenOccured);
     printf("Nodos que detectaram >> [");
     for(i = 0; i < N; i++) {
         printf(" %d ",e.found[i]);
