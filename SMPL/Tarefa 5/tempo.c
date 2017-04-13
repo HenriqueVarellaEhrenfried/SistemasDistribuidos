@@ -132,6 +132,10 @@ int getLatency(double time, events e) {
             }
         }
         if(( ((sum >= N-1) && (e.event==FAULT))  || ((sum >= N) && (e.event==REPAIR)) )) {
+            if(sum == 1){
+                evnts.timeFirstDetect=e.timeFirstDetect=time;
+                evnts.nodeDetected=e.nodeDetected=token;
+            }
             latency =  floor((time - e.timeFirstDetect)/TEST_INTERVAL) + 1;
             printf("\n\tA latência para detectar o evento %d (que começou no tempo %5.1lf) é de %d rodada(s) de teste(s)  [Tempo atual: %5.1lf] \n", e.eventNumber, e.time, latency, time);
         }

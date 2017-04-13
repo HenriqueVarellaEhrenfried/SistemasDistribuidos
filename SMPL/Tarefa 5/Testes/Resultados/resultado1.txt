@@ -139,14 +139,14 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo  90.0
 ---------------------------
 
 
-	A latência para detectar o evento 1 (que começou no tempo  90.0) é de 4 rodada(s) de teste(s)  [Tempo atual:  90.0] 
+	A latência para detectar o evento 1 (que começou no tempo  90.0) é de 1 rodada(s) de teste(s)  [Tempo atual:  90.0] 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 STATUS DO EVENTO
 Tempo em que o evento ocorreu >>  90.0
 Tempo atual >>  90.0
-Quando o primeiro nodo detectou >>  -1.0
-Primeiro nodo que detectou >> -1
+Quando o primeiro nodo detectou >>  90.0
+Primeiro nodo que detectou >> 0
 Número do evento >> 1
 Evento >> Falha
 Nodo em que aconteceu o evento >> 1
