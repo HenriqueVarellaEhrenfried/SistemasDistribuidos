@@ -184,7 +184,7 @@ int testarNodo(int token, int offset) {
     }
     printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
     updateState(token2, st);
-    printf("\n\tEstado atual do ");
+    printf("\n\tEstado atual do vetor STATE do ");
     printArray(token);
     return st;
 }
