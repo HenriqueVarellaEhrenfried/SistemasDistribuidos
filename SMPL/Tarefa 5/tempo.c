@@ -69,6 +69,7 @@ static char fa_name[5];
 int eventCounter; //Variável que contém quantidade de eventos que ocorreram no sistema
 int  testCounter; //Variável com a quantidade de testes executados no sistema
 char ** tokens; //Vetor com as strings tokenizadas
+int numNotFailed = 0, auxFail = 0, numFailed = 0; //Variáveis para evento
 
 //Função para inicializar a variável de tipo events
 void newEvent(double time, int eventNumber, int event, int nodeNumber) {
@@ -111,6 +112,8 @@ void printEvent(events e) {
     printf("Nodo em que aconteceu o evento >> %d\n", e.nodeNumber);
     printf("Foi detectado? >> %s\n", e.detected==1?"Sim":"Não");
     printf("Número de testes executados até a detecção do evento >> %d\n", testCounter - evnts.numberOfTestsWhenOccured);
+    // printf("numNotFailed >> %d\n",numNotFailed);
+    // printf("numFailed >> %d\n",numFailed);
     printf("Nodos que detectaram >> [");
     for(i = 0; i < N; i++) {
         printf(" %d ",e.found[i]);
@@ -131,7 +134,28 @@ int getLatency(double time, events e) {
                 e.found[i] = 1;
             }
         }
-        if(( ((sum >= N-1) && (e.event==FAULT))  || ((sum >= N) && (e.event==REPAIR)) )) {
+        if((time > N*TEST_INTERVAL)){
+            for(i = 0, numFailed = 0; i < N; i++){
+                for(j = 0, auxFail = 0; j < N; j++){
+                    auxFail+=nodo[i].state[j];
+                }
+                if(auxFail == (-1*N)){
+                    numFailed++;
+                }
+            }
+            if((e.event==REPAIR) && ((floor((time - e.timeFirstDetect)/TEST_INTERVAL) + 1) <= 1)){
+                if(numFailed > 0){
+                    numNotFailed = numFailed-1;
+                }
+                else{
+                    numNotFailed = 0;
+                }
+            }
+        }
+        if(numNotFailed==1 && numFailed == 0){
+            numNotFailed = 0;
+        }
+        if(( ((sum >= N-numFailed) && (e.event==FAULT))  || ((sum >= (N-numNotFailed)) && (e.event==REPAIR)) )) {
             if(sum == 1){
                 evnts.timeFirstDetect=e.timeFirstDetect=time;
                 evnts.nodeDetected=e.nodeDetected=token;
