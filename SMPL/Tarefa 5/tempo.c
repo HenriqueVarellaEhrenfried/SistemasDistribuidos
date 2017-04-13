@@ -324,7 +324,7 @@ int main(int argc, char * argv[]){
             do{
                 st = testarNodo(token, offset++);
                 printState("TEST");
-            }while ((st!=0));
+            }while ((st!=0) && (((token+offset)%N)!= token));
 
             schedule(TEST, TEST_INTERVAL, token);
             break;
