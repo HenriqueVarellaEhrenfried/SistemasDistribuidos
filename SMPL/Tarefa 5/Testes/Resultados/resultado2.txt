@@ -18,22 +18,22 @@ Agendando evento:
 
 Agendando evento:
 	Evento: Recuperação
-	Tempo: 300.0
+	Tempo: 360.0
 	Nodo > 1
 
 Agendando evento:
 	Evento: Falha
-	Tempo: 390.0
+	Tempo: 420.0
 	Nodo > 0
 
 Agendando evento:
 	Evento: Recuperação
-	Tempo: 420.0
+	Tempo: 540.0
 	Nodo > 2
 
 Agendando evento:
 	Evento: Recuperação
-	Tempo: 570.0
+	Tempo: 660.0
 	Nodo > 0
 
 
@@ -42,14 +42,14 @@ Número de eventos agendados: 6
 
 N = 3
 Tempo para Warm Up = 90.0
-Tempo de simulação = 600.0
+Tempo de simulação = 700.0
 
 
 ************************** COMECOU O WARMUP **************************
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
 
-	Estado atual do Nodo 0 >> [ -1 0 -1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 -1 ] 
 
 	Tempo atual:  30.0
 	Ação Executada: TEST
@@ -66,7 +66,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
 
-	Estado atual do Nodo 1 >> [ -1 -1 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ -1 -1 0 ] 
 
 	Tempo atual:  30.0
 	Ação Executada: TEST
@@ -83,7 +83,7 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
 
 O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 
-	Estado atual do Nodo 2 >> [ 0 0 -1 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 ] 
 
 	Tempo atual:  30.0
 	Ação Executada: TEST
@@ -100,7 +100,7 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
 
-	Estado atual do Nodo 0 >> [ -1 0 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 ] 
 
 	Tempo atual:  60.0
 	Ação Executada: TEST
@@ -117,7 +117,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
 
-	Estado atual do Nodo 1 >> [ 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 ] 
 
 	Tempo atual:  60.0
 	Ação Executada: TEST
@@ -134,7 +134,7 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
 
 O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
 
-	Estado atual do Nodo 2 >> [ 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 ] 
 
 	Tempo atual:  60.0
 	Ação Executada: TEST
@@ -151,7 +151,7 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
 
-	Estado atual do Nodo 0 >> [ 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 ] 
 
 	Tempo atual:  90.0
 	Ação Executada: TEST
@@ -168,7 +168,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  90.0
 
-	Estado atual do Nodo 1 >> [ 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 ] 
 
 	Tempo atual:  90.0
 	Ação Executada: TEST
@@ -185,7 +185,7 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  90.0
 
 O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
 
-	Estado atual do Nodo 2 >> [ 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 ] 
 
 	Tempo atual:  90.0
 	Ação Executada: TEST
@@ -204,7 +204,7 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
 
-	Estado atual do Nodo 0 >> [ 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 ] 
 
 	Tempo atual: 120.0
 	Ação Executada: TEST
@@ -221,7 +221,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 120.0
 
-	Estado atual do Nodo 1 >> [ 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 ] 
 
 	Tempo atual: 120.0
 	Ação Executada: TEST
@@ -238,7 +238,7 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 120.0
 
 O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 120.0
 
-	Estado atual do Nodo 2 >> [ 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 ] 
 
 	Tempo atual: 120.0
 	Ação Executada: TEST
@@ -279,12 +279,13 @@ Número do evento >> 1
 Evento >> Falha
 Nodo em que aconteceu o evento >> 1
 Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
 Nodos que detectaram >> [ 0  0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 0 TESTOU o nodo 1 como FALHO no tempo 150.0
 
-	Estado atual do Nodo 0 >> [ 0 1 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 0 ] 
 
 	Tempo atual: 150.0
 	Ação Executada: TEST
@@ -301,7 +302,7 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo 150.0
 
 O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 150.0
 
-	Estado atual do Nodo 0 >> [ 0 1 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 0 ] 
 
 	Tempo atual: 150.0
 	Ação Executada: TEST
@@ -318,7 +319,7 @@ O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 150.0
 
 O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 150.0
 
-	Estado atual do Nodo 2 >> [ 0 1 0 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 1 0 ] 
 
 	Tempo atual: 150.0
 	Ação Executada: TEST
@@ -346,12 +347,13 @@ Número do evento >> 1
 Evento >> Falha
 Nodo em que aconteceu o evento >> 1
 Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 3
 Nodos que detectaram >> [ 1  0  1 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 0 TESTOU o nodo 1 como FALHO no tempo 180.0
 
-	Estado atual do Nodo 0 >> [ 0 1 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 0 ] 
 
 	Tempo atual: 180.0
 	Ação Executada: TEST
@@ -368,7 +370,7 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo 180.0
 
 O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
 
-	Estado atual do Nodo 0 >> [ 0 1 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 0 ] 
 
 	Tempo atual: 180.0
 	Ação Executada: TEST
@@ -385,7 +387,7 @@ O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
 
 O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
 
-	Estado atual do Nodo 2 >> [ 0 1 0 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 1 0 ] 
 
 	Tempo atual: 180.0
 	Ação Executada: TEST
@@ -426,12 +428,13 @@ Número do evento >> 2
 Evento >> Falha
 Nodo em que aconteceu o evento >> 2
 Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
 Nodos que detectaram >> [ 0  0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 0 TESTOU o nodo 1 como FALHO no tempo 210.0
 
-	Estado atual do Nodo 0 >> [ 0 1 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 0 ] 
 
 	Tempo atual: 210.0
 	Ação Executada: TEST
@@ -448,7 +451,7 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo 210.0
 
 O nodo 0 TESTOU o nodo 2 como FALHO no tempo 210.0
 
-	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 210.0
 	Ação Executada: TEST
@@ -465,7 +468,7 @@ O nodo 0 TESTOU o nodo 2 como FALHO no tempo 210.0
 
 O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
 
-	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 210.0
 	Ação Executada: TEST
@@ -482,7 +485,7 @@ O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
 
 O nodo 0 TESTOU o nodo 1 como FALHO no tempo 240.0
 
-	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 240.0
 	Ação Executada: TEST
@@ -499,7 +502,7 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo 240.0
 
 O nodo 0 TESTOU o nodo 2 como FALHO no tempo 240.0
 
-	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 240.0
 	Ação Executada: TEST
@@ -516,7 +519,7 @@ O nodo 0 TESTOU o nodo 2 como FALHO no tempo 240.0
 
 O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 240.0
 
-	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 240.0
 	Ação Executada: TEST
@@ -533,7 +536,7 @@ O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 240.0
 
 O nodo 0 TESTOU o nodo 1 como FALHO no tempo 270.0
 
-	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 270.0
 	Ação Executada: TEST
@@ -550,7 +553,7 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo 270.0
 
 O nodo 0 TESTOU o nodo 2 como FALHO no tempo 270.0
 
-	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 270.0
 	Ação Executada: TEST
@@ -567,7 +570,7 @@ O nodo 0 TESTOU o nodo 2 como FALHO no tempo 270.0
 
 O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 270.0
 
-	Estado atual do Nodo 0 >> [ 0 1 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 270.0
 	Ação Executada: TEST
@@ -582,12 +585,114 @@ O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 270.0
 
 ---------------------------
 
-O nodo 1 RECUPEROU no tempo 300.0 
+O nodo 0 TESTOU o nodo 1 como FALHO no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
 
 	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 28
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 1 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como FALHO no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 29
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 1 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 30
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 1 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 1 como FALHO no tempo 330.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 31
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 1 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como FALHO no tempo 330.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 32
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 1 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 1 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 33
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 1 1 ] 
+	Nodo 1 >> [ -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 RECUPEROU no tempo 360.0 
+
+	Tempo atual: 360.0
 	Ação Executada: REPAIR
 	Contador de eventos: 3
- 	Contador de testes: 27
+ 	Contador de testes: 33
 
  
 	Vetores STATE: 
@@ -600,25 +705,26 @@ O nodo 1 RECUPEROU no tempo 300.0
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 300.0
-Tempo atual >> 300.0
+Tempo em que o evento ocorreu >> 360.0
+Tempo atual >> 360.0
 Quando o primeiro nodo detectou >>  -1.0
 Primeiro nodo que detectou >> -1
 Número do evento >> 3
 Evento >> Recuperação
 Nodo em que aconteceu o evento >> 1
 Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
 Nodos que detectaram >> [ 0  0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 300.0
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 360.0
 
-	Estado atual do Nodo 0 >> [ 0 2 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 2 1 ] 
 
-	Tempo atual: 300.0
+	Tempo atual: 360.0
 	Ação Executada: TEST
 	Contador de eventos: 3
- 	Contador de testes: 28
+ 	Contador de testes: 34
 
  
 	Vetores STATE: 
@@ -628,14 +734,14 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 300.0
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 2 como FALHO no tempo 330.0
+O nodo 1 TESTOU o nodo 2 como FALHO no tempo 390.0
 
-	Estado atual do Nodo 1 >> [ -1 -1 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ -1 -1 0 ] 
 
-	Tempo atual: 330.0
+	Tempo atual: 390.0
 	Ação Executada: TEST
 	Contador de eventos: 3
- 	Contador de testes: 29
+ 	Contador de testes: 35
 
  
 	Vetores STATE: 
@@ -645,182 +751,51 @@ O nodo 1 TESTOU o nodo 2 como FALHO no tempo 330.0
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 390.0
 
-	Estado atual do Nodo 1 >> [ 0 2 1 ] 
-
-	Tempo atual: 330.0
-	Ação Executada: TEST
-	Contador de eventos: 3
- 	Contador de testes: 30
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 2 1 ] 
-	Nodo 1 >> [ 0 2 1 ] 
-	Nodo 2 >> [ -1 -1 -1 ] 
-
----------------------------
-
-O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 330.0
-
-	Estado atual do Nodo 0 >> [ 0 2 1 ] 
-
-	Tempo atual: 330.0
-	Ação Executada: TEST
-	Contador de eventos: 3
- 	Contador de testes: 31
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 2 1 ] 
-	Nodo 1 >> [ 0 2 1 ] 
-	Nodo 2 >> [ -1 -1 -1 ] 
-
----------------------------
-
-O nodo 1 TESTOU o nodo 2 como FALHO no tempo 360.0
-
-	Estado atual do Nodo 1 >> [ 0 2 1 ] 
-
-	Tempo atual: 360.0
-	Ação Executada: TEST
-	Contador de eventos: 3
- 	Contador de testes: 32
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 2 1 ] 
-	Nodo 1 >> [ 0 2 1 ] 
-	Nodo 2 >> [ -1 -1 -1 ] 
-
----------------------------
-
-O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 360.0
-
-	Estado atual do Nodo 1 >> [ 0 2 1 ] 
-
-	Tempo atual: 360.0
-	Ação Executada: TEST
-	Contador de eventos: 3
- 	Contador de testes: 33
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 2 1 ] 
-	Nodo 1 >> [ 0 2 1 ] 
-	Nodo 2 >> [ -1 -1 -1 ] 
-
----------------------------
-
-O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 360.0
-
-	Estado atual do Nodo 0 >> [ 0 2 1 ] 
-
-	Tempo atual: 360.0
-	Ação Executada: TEST
-	Contador de eventos: 3
- 	Contador de testes: 34
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ 0 2 1 ] 
-	Nodo 1 >> [ 0 2 1 ] 
-	Nodo 2 >> [ -1 -1 -1 ] 
-
----------------------------
-
-O nodo 0 FALHOU no tempo 390.0
-
-	Tempo atual: 390.0
-	Ação Executada: FAULT
-	Contador de eventos: 4
- 	Contador de testes: 34
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 0 2 1 ] 
-	Nodo 2 >> [ -1 -1 -1 ] 
-
----------------------------
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 390.0
-Tempo atual >> 390.0
-Quando o primeiro nodo detectou >>  -1.0
-Primeiro nodo que detectou >> -1
-Número do evento >> 4
-Evento >> Falha
-Nodo em que aconteceu o evento >> 0
-Foi detectado? >> Não
-Nodos que detectaram >> [ 0  0  0 ]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-O nodo 1 TESTOU o nodo 2 como FALHO no tempo 390.0
-
-	Estado atual do Nodo 1 >> [ 0 2 1 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 2 1 ] 
 
 	Tempo atual: 390.0
 	Ação Executada: TEST
-	Contador de eventos: 4
- 	Contador de testes: 35
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 0 2 1 ] 
-	Nodo 2 >> [ -1 -1 -1 ] 
-
----------------------------
-
-O nodo 1 TESTOU o nodo 0 como FALHO no tempo 390.0
-
-	Estado atual do Nodo 1 >> [ 1 2 1 ] 
-
-	Tempo atual: 390.0
-	Ação Executada: TEST
-	Contador de eventos: 4
+	Contador de eventos: 3
  	Contador de testes: 36
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 0 >> [ 0 2 1 ] 
+	Nodo 1 >> [ 0 2 1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 1 como SEM FALHA no tempo 390.0
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 390.0
 
-	Estado atual do Nodo 1 >> [ 1 2 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 2 1 ] 
 
 	Tempo atual: 390.0
 	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 37
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 2 1 ] 
+	Nodo 1 >> [ 0 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 FALHOU no tempo 420.0
+
+	Tempo atual: 420.0
+	Ação Executada: FAULT
 	Contador de eventos: 4
  	Contador de testes: 37
 
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 1 ] 
-	Nodo 2 >> [ -1 -1 -1 ] 
-
----------------------------
-
-O nodo 2 RECUPEROU no tempo 420.0 
-
-	Tempo atual: 420.0
-	Ação Executada: REPAIR
-	Contador de eventos: 5
- 	Contador de testes: 37
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 1 >> [ 0 2 1 ] 
 	Nodo 2 >> [ -1 -1 -1 ] 
 
 ---------------------------
@@ -832,21 +807,256 @@ Tempo em que o evento ocorreu >> 420.0
 Tempo atual >> 420.0
 Quando o primeiro nodo detectou >>  -1.0
 Primeiro nodo que detectou >> -1
+Número do evento >> 4
+Evento >> Falha
+Nodo em que aconteceu o evento >> 0
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 1 TESTOU o nodo 2 como FALHO no tempo 420.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 2 1 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 38
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 0 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como FALHO no tempo 420.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 39
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 1 como SEM FALHA no tempo 420.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 40
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como FALHO no tempo 450.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 41
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como FALHO no tempo 450.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 42
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 1 como SEM FALHA no tempo 450.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 43
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como FALHO no tempo 480.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 480.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 44
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como FALHO no tempo 480.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 480.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 45
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 1 como SEM FALHA no tempo 480.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 480.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 46
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como FALHO no tempo 510.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 47
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como FALHO no tempo 510.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 48
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 1 como SEM FALHA no tempo 510.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 49
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 RECUPEROU no tempo 540.0 
+
+	Tempo atual: 540.0
+	Ação Executada: REPAIR
+	Contador de eventos: 5
+ 	Contador de testes: 49
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 1 ] 
+	Nodo 2 >> [ -1 -1 -1 ] 
+
+---------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 540.0
+Tempo atual >> 540.0
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
 Número do evento >> 5
 Evento >> Recuperação
 Nodo em que aconteceu o evento >> 2
 Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
 Nodos que detectaram >> [ 0  0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 420.0
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 540.0
 
-	Estado atual do Nodo 1 >> [ 1 2 2 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 2 ] 
 
-	Tempo atual: 420.0
+	Tempo atual: 540.0
 	Ação Executada: TEST
 	Contador de eventos: 5
- 	Contador de testes: 38
+ 	Contador de testes: 50
 
  
 	Vetores STATE: 
@@ -856,14 +1066,14 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 420.0
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 0 como FALHO no tempo 450.0
+O nodo 2 TESTOU o nodo 0 como FALHO no tempo 570.0
 
-	Estado atual do Nodo 2 >> [ 0 -1 -1 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 -1 -1 ] 
 
-	Tempo atual: 450.0
+	Tempo atual: 570.0
 	Ação Executada: TEST
 	Contador de eventos: 5
- 	Contador de testes: 39
+ 	Contador de testes: 51
 
  
 	Vetores STATE: 
@@ -873,199 +1083,148 @@ O nodo 2 TESTOU o nodo 0 como FALHO no tempo 450.0
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 1 como SEM FALHA no tempo 450.0
+O nodo 2 TESTOU o nodo 1 como SEM FALHA no tempo 570.0
 
-	Estado atual do Nodo 2 >> [ 1 2 2 ] 
-
-	Tempo atual: 450.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 40
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 450.0
-
-	Estado atual do Nodo 1 >> [ 1 2 2 ] 
-
-	Tempo atual: 450.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 41
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 2 TESTOU o nodo 0 como FALHO no tempo 480.0
-
-	Estado atual do Nodo 2 >> [ 1 2 2 ] 
-
-	Tempo atual: 480.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 42
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 2 TESTOU o nodo 1 como SEM FALHA no tempo 480.0
-
-	Estado atual do Nodo 2 >> [ 1 2 2 ] 
-
-	Tempo atual: 480.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 43
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 480.0
-
-	Estado atual do Nodo 1 >> [ 1 2 2 ] 
-
-	Tempo atual: 480.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 44
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 2 TESTOU o nodo 0 como FALHO no tempo 510.0
-
-	Estado atual do Nodo 2 >> [ 1 2 2 ] 
-
-	Tempo atual: 510.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 45
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 2 TESTOU o nodo 1 como SEM FALHA no tempo 510.0
-
-	Estado atual do Nodo 2 >> [ 1 2 2 ] 
-
-	Tempo atual: 510.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 46
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 510.0
-
-	Estado atual do Nodo 1 >> [ 1 2 2 ] 
-
-	Tempo atual: 510.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 47
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 2 TESTOU o nodo 0 como FALHO no tempo 540.0
-
-	Estado atual do Nodo 2 >> [ 1 2 2 ] 
-
-	Tempo atual: 540.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 48
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 2 TESTOU o nodo 1 como SEM FALHA no tempo 540.0
-
-	Estado atual do Nodo 2 >> [ 1 2 2 ] 
-
-	Tempo atual: 540.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 49
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 540.0
-
-	Estado atual do Nodo 1 >> [ 1 2 2 ] 
-
-	Tempo atual: 540.0
-	Ação Executada: TEST
-	Contador de eventos: 5
- 	Contador de testes: 50
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 -1 -1 ] 
-	Nodo 1 >> [ 1 2 2 ] 
-	Nodo 2 >> [ 1 2 2 ] 
-
----------------------------
-
-O nodo 0 RECUPEROU no tempo 570.0 
+	Estado atual do vetor STATE do Nodo 2 >> [ 1 2 2 ] 
 
 	Tempo atual: 570.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 52
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 2 ] 
+	Nodo 2 >> [ 1 2 2 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 570.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 2 ] 
+
+	Tempo atual: 570.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 53
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 2 ] 
+	Nodo 2 >> [ 1 2 2 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como FALHO no tempo 600.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 1 2 2 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 54
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 2 ] 
+	Nodo 2 >> [ 1 2 2 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 1 como SEM FALHA no tempo 600.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 1 2 2 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 55
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 2 ] 
+	Nodo 2 >> [ 1 2 2 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 600.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 2 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 56
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 2 ] 
+	Nodo 2 >> [ 1 2 2 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como FALHO no tempo 630.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 1 2 2 ] 
+
+	Tempo atual: 630.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 57
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 2 ] 
+	Nodo 2 >> [ 1 2 2 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 1 como SEM FALHA no tempo 630.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 1 2 2 ] 
+
+	Tempo atual: 630.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 58
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 2 ] 
+	Nodo 2 >> [ 1 2 2 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 630.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 2 ] 
+
+	Tempo atual: 630.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 59
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 -1 -1 ] 
+	Nodo 1 >> [ 1 2 2 ] 
+	Nodo 2 >> [ 1 2 2 ] 
+
+---------------------------
+
+O nodo 0 RECUPEROU no tempo 660.0 
+
+	Tempo atual: 660.0
 	Ação Executada: REPAIR
 	Contador de eventos: 6
- 	Contador de testes: 50
+ 	Contador de testes: 59
 
  
 	Vetores STATE: 
@@ -1078,25 +1237,26 @@ O nodo 0 RECUPEROU no tempo 570.0
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 570.0
-Tempo atual >> 570.0
+Tempo em que o evento ocorreu >> 660.0
+Tempo atual >> 660.0
 Quando o primeiro nodo detectou >>  -1.0
 Primeiro nodo que detectou >> -1
 Número do evento >> 6
 Evento >> Recuperação
 Nodo em que aconteceu o evento >> 0
 Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
 Nodos que detectaram >> [ 0  0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 570.0
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 660.0
 
-	Estado atual do Nodo 2 >> [ 2 2 2 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 2 2 2 ] 
 
-	Tempo atual: 570.0
+	Tempo atual: 660.0
 	Ação Executada: TEST
 	Contador de eventos: 6
- 	Contador de testes: 51
+ 	Contador de testes: 60
 
  
 	Vetores STATE: 
@@ -1106,14 +1266,14 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 570.0
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 570.0
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 660.0
 
-	Estado atual do Nodo 1 >> [ 2 2 2 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 2 2 2 ] 
 
-	Tempo atual: 570.0
+	Tempo atual: 660.0
 	Ação Executada: TEST
 	Contador de eventos: 6
- 	Contador de testes: 52
+ 	Contador de testes: 61
 
  
 	Vetores STATE: 
@@ -1123,14 +1283,14 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 570.0
 
 ---------------------------
 
-O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 600.0
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 690.0
 
-	Estado atual do Nodo 0 >> [ 2 2 2 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 2 2 2 ] 
 
-	Tempo atual: 600.0
+	Tempo atual: 690.0
 	Ação Executada: TEST
 	Contador de eventos: 6
- 	Contador de testes: 53
+ 	Contador de testes: 62
 
  
 	Vetores STATE: 
@@ -1141,18 +1301,70 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 600.0
 ---------------------------
 
 
-	A latência para detectar o evento 6 (que começou no tempo 570.0) é de 2 rodada(s) de teste(s)  [Tempo atual: 600.0] 
+	A latência para detectar o evento 6 (que começou no tempo 660.0) é de 2 rodada(s) de teste(s)  [Tempo atual: 690.0] 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 570.0
-Tempo atual >> 600.0
-Quando o primeiro nodo detectou >> 570.0
+Tempo em que o evento ocorreu >> 660.0
+Tempo atual >> 690.0
+Quando o primeiro nodo detectou >> 660.0
 Primeiro nodo que detectou >> 2
 Número do evento >> 6
 Evento >> Recuperação
 Nodo em que aconteceu o evento >> 0
 Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 3
 Nodos que detectaram >> [ 1  1  1 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 690.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 2 2 2 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 63
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 2 2 2 ] 
+	Nodo 1 >> [ 2 2 2 ] 
+	Nodo 2 >> [ 2 2 2 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 690.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 2 2 2 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 64
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 2 2 2 ] 
+	Nodo 1 >> [ 2 2 2 ] 
+	Nodo 2 >> [ 2 2 2 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 720.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 2 2 2 ] 
+
+	Tempo atual: 720.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 65
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 2 2 2 ] 
+	Nodo 1 >> [ 2 2 2 ] 
+	Nodo 2 >> [ 2 2 2 ] 
+
+---------------------------
 

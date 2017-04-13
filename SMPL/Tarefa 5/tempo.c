@@ -110,7 +110,7 @@ void printEvent(events e) {
     printf("Evento >> %s\n", e.event==FAULT?"Falha":"Recuperação");
     printf("Nodo em que aconteceu o evento >> %d\n", e.nodeNumber);
     printf("Foi detectado? >> %s\n", e.detected==1?"Sim":"Não");
-    printf("Número de testes executados até a detecção do evento>> %d\n", testCounter - evnts.numberOfTestsWhenOccured);
+    printf("Número de testes executados até a detecção do evento >> %d\n", testCounter - evnts.numberOfTestsWhenOccured);
     printf("Nodos que detectaram >> [");
     for(i = 0; i < N; i++) {
         printf(" %d ",e.found[i]);

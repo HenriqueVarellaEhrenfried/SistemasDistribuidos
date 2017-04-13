@@ -29,7 +29,7 @@ Tempo de simulação = 180.0
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
 
-	Estado atual do Nodo 0 >> [ -1 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 ] 
 
 	Tempo atual:  30.0
 	Ação Executada: TEST
@@ -45,7 +45,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
 
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 
-	Estado atual do Nodo 1 >> [ 0 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 ] 
 
 	Tempo atual:  30.0
 	Ação Executada: TEST
@@ -61,7 +61,7 @@ O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
 
-	Estado atual do Nodo 0 >> [ 0 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 ] 
 
 	Tempo atual:  60.0
 	Ação Executada: TEST
@@ -77,7 +77,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
 
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
 
-	Estado atual do Nodo 1 >> [ 0 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 ] 
 
 	Tempo atual:  60.0
 	Ação Executada: TEST
@@ -118,12 +118,13 @@ Número do evento >> 1
 Evento >> Falha
 Nodo em que aconteceu o evento >> 1
 Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
 Nodos que detectaram >> [ 0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 0 TESTOU o nodo 1 como FALHO no tempo  90.0
 
-	Estado atual do Nodo 0 >> [ 0 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 ] 
 
 	Tempo atual:  90.0
 	Ação Executada: TEST
@@ -139,7 +140,7 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo  90.0
 
 O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
 
-	Estado atual do Nodo 0 >> [ 0 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 ] 
 
 	Tempo atual:  90.0
 	Ação Executada: TEST
@@ -166,12 +167,13 @@ Número do evento >> 1
 Evento >> Falha
 Nodo em que aconteceu o evento >> 1
 Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 2
 Nodos que detectaram >> [ 1  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 0 TESTOU o nodo 1 como FALHO no tempo 120.0
 
-	Estado atual do Nodo 0 >> [ 0 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 ] 
 
 	Tempo atual: 120.0
 	Ação Executada: TEST
@@ -187,7 +189,7 @@ O nodo 0 TESTOU o nodo 1 como FALHO no tempo 120.0
 
 O nodo 0 TESTOU o nodo 0 como SEM FALHA no tempo 120.0
 
-	Estado atual do Nodo 0 >> [ 0 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 1 ] 
 
 	Tempo atual: 120.0
 	Ação Executada: TEST
@@ -226,12 +228,13 @@ Número do evento >> 2
 Evento >> Recuperação
 Nodo em que aconteceu o evento >> 1
 Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
 Nodos que detectaram >> [ 0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
 
-	Estado atual do Nodo 0 >> [ 0 2 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 2 ] 
 
 	Tempo atual: 150.0
 	Ação Executada: TEST
@@ -247,7 +250,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
 
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
 
-	Estado atual do Nodo 1 >> [ 0 2 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 2 ] 
 
 	Tempo atual: 180.0
 	Ação Executada: TEST
@@ -274,6 +277,7 @@ Número do evento >> 2
 Evento >> Recuperação
 Nodo em que aconteceu o evento >> 1
 Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 2
 Nodos que detectaram >> [ 1  1 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
