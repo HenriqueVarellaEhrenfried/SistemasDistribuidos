@@ -1,0 +1,11 @@
+O nodo 0 TESTOU no tempo  30.0
+O nodo 1 TESTOU no tempo  30.0
+O nodo 2 TESTOU no tempo  30.0
+O nodo 1 FALHOU no tempo  31.0
+O nodo 0 TESTOU no tempo  60.0
+O nodo 2 TESTOU no tempo  60.0
+O nodo 1 RECUPEROU no tempo  61.0 
+O nodo 0 TESTOU no tempo  90.0
+O nodo 2 TESTOU no tempo  90.0
+O nodo 1 TESTOU no tempo  91.0
+O nodo 0 TESTOU no tempo 120.0

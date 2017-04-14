@@ -1,3 +1,12 @@
+/*
++------------------------------------------------------------------+
+|Programa de Pós-graduação da Universidade Federal do Paraná - UFPR|
+| Primeiro trabalho prático da disciplina de Sistemas Distribuídos |
+|              Estudante: Henrique Varella Ehrenfried              |
+|                  Professor: Elias P. Duarte Jr.                  |
+|                              2017-1                              |
++------------------------------------------------------------------+
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "smpl.h"
@@ -95,7 +104,7 @@ int main(int argc, char * argv[])
      {
       st = testarNodo(token, offset++);
      }
-     while (st!=0 || offset==token-1);
+     while (st!=0 && (((token+offset)%N)!= token));
 
      schedule(TEST, 30.0, token);
    break;

@@ -1,3 +1,12 @@
+/*
++------------------------------------------------------------------+
+|Programa de Pós-graduação da Universidade Federal do Paraná - UFPR|
+| Primeiro trabalho prático da disciplina de Sistemas Distribuídos |
+|              Estudante: Henrique Varella Ehrenfried              |
+|                  Professor: Elias P. Duarte Jr.                  |
+|                              2017-1                              |
++------------------------------------------------------------------+
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "smpl.h"
@@ -69,13 +78,6 @@ int main(int argc, char * argv[])
      if (status(nodo[token].id) != 0) break;
      int offset = 1, st;
      testarNodo(token, offset);
-     // Testa todos os nodos até encontrar um sem falha.
-     // do
-     // {
-     //  st = testarNodo(token, offset++);
-     // }
-     // while (st!=0 || offset==1);
-
      schedule(TEST, 30.0, token);
    break;
 
