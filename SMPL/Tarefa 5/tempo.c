@@ -195,10 +195,22 @@ void printState(char * place) {
 }
 //Função para atualizar o vetor STATE de um nodo
 void updateState(int token2, int st) {
-    int i = 0;
-    for(i = 0; i < N; i++) {
-        if (nodo[token].state[i] < nodo[token2].state[i] && st == 0)
+    int i = 0, newInfoIndex = 0, totalInfo;
+    int newInfo[N];
+    for(i = 0, newInfoIndex = 0; i < N; i++) {
+        if (nodo[token].state[i] < nodo[token2].state[i] && st == 0){
             nodo[token].state[i] = nodo[token2].state[i];
+            newInfo[newInfoIndex] = i;
+            newInfoIndex++; 
+        }
+    }
+    if (newInfoIndex !=0){
+        printf("O nodo %d recebeu informação sobre o(s) nodo(s): [", token);
+        totalInfo = newInfoIndex;
+        for(newInfoIndex = 0; newInfoIndex < totalInfo; newInfoIndex++){
+            printf(" %d",newInfo[newInfoIndex]);
+        }
+        printf(" ]\n\n");
     }
 }
 //Função que testa um nodo a partir do nodo atual

@@ -102,6 +102,8 @@ O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
 ---------------------------
 
 O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
 
 	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 -1 -1 ] 
 
@@ -120,6 +122,8 @@ O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 ---------------------------
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
 
 	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 -1 ] 
 
@@ -138,6 +142,8 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
 ---------------------------
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
 
 	Estado atual do vetor STATE do Nodo 1 >> [ -1 -1 0 0 ] 
 
@@ -156,6 +162,8 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
 ---------------------------
 
 O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  60.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 0 1 ]
+
 
 	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 ] 
 
@@ -174,6 +182,8 @@ O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  60.0
 ---------------------------
 
 O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
 
 	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 ] 
 
@@ -192,6 +202,8 @@ O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
 ---------------------------
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
 
 	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 ] 
 
@@ -210,6 +222,8 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
 ---------------------------
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  90.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 0 1 ]
+
 
 	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 0 ] 
 
@@ -228,6 +242,8 @@ O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  90.0
 ---------------------------
 
 O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  90.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
 
 	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 0 ] 
 
@@ -246,6 +262,8 @@ O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  90.0
 ---------------------------
 
 O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
 
 	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 0 ] 
 
@@ -264,6 +282,8 @@ O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
 ---------------------------
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
 
 	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 0 ] 
 
@@ -495,6 +515,8 @@ O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 180.0
 ---------------------------
 
 O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
 
 	Estado atual do vetor STATE do Nodo 3 >> [ 0 1 0 0 ] 
 
@@ -549,6 +571,8 @@ O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 210.0
 ---------------------------
 
 O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 210.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
 
 	Estado atual do vetor STATE do Nodo 2 >> [ 0 1 0 0 ] 
 
@@ -831,6 +855,8 @@ O nodo 0 TESTOU o nodo 3 como SEM FALHA no tempo 300.0
 ---------------------------
 
 O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo 300.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
 
 	Estado atual do vetor STATE do Nodo 3 >> [ 0 1 1 0 ] 
 
@@ -1131,6 +1157,8 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 420.0
 ---------------------------
 
 O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo 420.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
 
 	Estado atual do vetor STATE do Nodo 3 >> [ 0 2 1 0 ] 
 
@@ -1167,6 +1195,8 @@ O nodo 1 TESTOU o nodo 2 como FALHO no tempo 450.0
 ---------------------------
 
 O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 450.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 0 1 2 ]
+
 
 	Estado atual do vetor STATE do Nodo 1 >> [ 0 2 1 0 ] 
 
@@ -1503,6 +1533,8 @@ O nodo 1 TESTOU o nodo 2 como FALHO no tempo 570.0
 ---------------------------
 
 O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 570.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
 
 	Estado atual do vetor STATE do Nodo 1 >> [ 1 2 1 0 ] 
 
@@ -1785,6 +1817,8 @@ O nodo 3 TESTOU o nodo 0 como FALHO no tempo 660.0
 ---------------------------
 
 O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 660.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
 
 	Estado atual do vetor STATE do Nodo 3 >> [ 1 2 2 0 ] 
 
@@ -1803,6 +1837,8 @@ O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 660.0
 ---------------------------
 
 O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 690.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 0 1 2 ]
+
 
 	Estado atual do vetor STATE do Nodo 2 >> [ 1 2 2 0 ] 
 
@@ -2121,6 +2157,8 @@ O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo 780.0
 ---------------------------
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 810.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 0 1 2 3 ]
+
 
 	Estado atual do vetor STATE do Nodo 0 >> [ 1 2 2 0 ] 
 
@@ -2139,6 +2177,8 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 810.0
 ---------------------------
 
 O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 810.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
 
 	Estado atual do vetor STATE do Nodo 2 >> [ 2 2 2 0 ] 
 
@@ -2157,6 +2197,8 @@ O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 810.0
 ---------------------------
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 810.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
 
 	Estado atual do vetor STATE do Nodo 1 >> [ 2 2 2 0 ] 
 
@@ -2193,6 +2235,8 @@ O nodo 3 TESTOU o nodo 0 como SEM FALHA no tempo 810.0
 ---------------------------
 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 840.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
 
 	Estado atual do vetor STATE do Nodo 0 >> [ 2 2 2 0 ] 
 
