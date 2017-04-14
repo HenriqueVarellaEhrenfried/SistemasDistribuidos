@@ -1,3 +1,12 @@
+/*
++------------------------------------------------------------------+
+|Programa de Pós-graduação da Universidade Federal do Paraná - UFPR|
+| Primeiro trabalho prático da disciplina de Sistemas Distribuídos |
+|              Estudante: Henrique Varella Ehrenfried              |
+|                  Professor: Elias P. Duarte Jr.                  |
+|                              2017-1                              |
++------------------------------------------------------------------+
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include "smpl.h"
