@@ -120,17 +120,27 @@ typedef struct events {
     int numberOfTestsWhenOccured;
 } events;
 
+//Cis
+typedef struct tcis{
+    int cluster_id;
+    int* cis;
+} tcis;
+
 events evnts;
 tnodo* nodo;
 
+
 //Variáveis do SMPL
-static int N, token, event, r, i;
+static int N, half_N, token, event, r, i;
 static char fa_name[5];
 
 int eventCounter; //Variável que contém quantidade de eventos que ocorreram no sistema
 int  testCounter; //Variável com a quantidade de testes executados no sistema
 char ** tokens; //Vetor com as strings tokenizadas
 int numNotFailed = 0, auxFail = 0, numFailed = 0; //Variáveis para evento
+static int N_CLUSTERS; //Variável que contém o número de clusters necessários para o programa 
+
+
 
 //Função para inicializar a variável de tipo events
 void newEvent(double time, int eventNumber, int event, int nodeNumber) {
@@ -344,6 +354,56 @@ char* readinput() {
     } while (templen==CHUNK-1 && tempbuf[CHUNK-2]!='\n');
     return input;
 }
+// void calculateCISJ(nodo){
+//     //Offset = i * cols + j
+//     //Variáveis de interessse:
+//     //half_N: Número de colunas
+//     //N: Número de nodos
+//     //N_CLUSTERS: Número de clusters e número de linhas
+//     int linhas, colunas, k, arraySize, offset, inner_offset;
+//     node_set* nodes;
+//     arraySize = half_N*(int)N_CLUSTERS;
+//     for(linhas = 0; linhas < N_CLUSTERS; linhas++){
+//         offset = i*half_N;
+//         for(colunas = 0, inner_offset = 0; colunas < half_N; colunas++){
+//             inner_offset = offset + colunas;
+//             nodes = cis(colunas, linhas);
+//             if
+//             nodo->cis[inner_offset] = nodes->nodes[colunas];
+//         }
+//     }
+    
+// }
+
+void createTableCis(tcis table_cis[N][N_CLUSTERS]){
+    int i,j,k,num_nodes;
+    node_set* nodes;
+    for(i=0;i<N;i++){
+        for(j=0;j<N_CLUSTERS;j++){
+            num_nodes = pow(2,j);
+            table_cis[i][j].cluster_id = j+1; 
+            table_cis[i][j].cis = (int*)malloc(sizeof(int)*num_nodes);
+            nodes = cis(i, j+1);
+            for(k = 0; k < num_nodes; k++){
+                table_cis[i][j].cis[k] = nodes->nodes[k];
+            }
+        }
+    }
+}
+void printTableCis(tcis table_cis[N][N_CLUSTERS]){
+    int i,j,k;
+    for(i = 0; i < N; i++){
+        for(j = 0; j < N_CLUSTERS; j++){
+            printf("CIS do nodo %d no cluster %d: \n[ ",i,j+1);
+            int num_nodes_to_print = pow(2,table_cis[i][j].cluster_id-1);
+            for(k = 0; k < num_nodes_to_print; k++){
+                printf("%d ",table_cis[i][j].cis[k]);
+            }
+            printf("]\n\n");
+        }
+    }
+}
+
 // Programa Principal
 int main(int argc, char * argv[]){
 
@@ -355,27 +415,35 @@ int main(int argc, char * argv[]){
     int j, lastEventCounter = 0; //Variáveis auxiliares
 
     //Verifica número de argumentos
+
     if(argc > 1) {
         puts("\n\nUso correto: tempo < arquivo.conf\n");
         exit(1);
     }
 
-    //Lê da entrada os parâmetro para a simulação (Tempo, número de nodos e eventos)
+    // Lê da entrada os parâmetro para a simulação (Tempo, número de nodos e eventos)
     split(readinput(), " \n");
 
     //Extrai tempo de simulção e N da entrada
     double simulationTime = strtod(tokens[0], NULL);
     N = atoi(tokens[1]);
 
+    half_N = (N/2);
+    N_CLUSTERS = (int)ceil(log2(N));
+    //Define tabela Cis
+    tcis table_cis[N][N_CLUSTERS];
+    int k;
+    createTableCis(table_cis);
+    printTableCis(table_cis);
+
     //Define tempo de warm up
-    int warmUpTime = N*(int)TEST_INTERVAL;
-
-
+    int warmUpTime = N_CLUSTERS*(int)TEST_INTERVAL;
+    
     //Inicializa simulção inicializando as variáveis necessárias
     smpl(0, "Trabalho pratico 1 - Sistemas Distribuidos");
     reset();
     stream(1);
-    nodo = (tnodo*)malloc(sizeof(tnodo)*N);
+    nodo = (tnodo*)malloc(sizeof(tnodo)*N);    
     newEvent(EVENT_TIME_UNKNOWN,EVENT_NUMBER_UNKNOWN,EVENT_UNKNOWN,EVENT_NODE_UNKNOWN);
 
     for(i = 0; i < N; i++) {
@@ -387,9 +455,9 @@ int main(int argc, char * argv[]){
             nodo[i].state[j] = -1;
         }
     }
+
     eventCounter = 0;
 
-    // Agenda os eventos de teste para todos os nodos
     for(i = 0; i < N; i++)
         schedule(TEST, TEST_INTERVAL, i);
 
