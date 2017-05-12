@@ -290,6 +290,9 @@ void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
     for(i=0,clusterNodes=0, newInfoIndex = 0; i < numClusterNodes; i++){
         int index1 = table_cis[token][currentCluster-1].cis[i];
         int index2 = table_cis[token2][currentCluster-1].cis[i];
+        // puts("index:\n-------");
+        // printvec(pow(2,currentCluster-1),table_cis[token][currentCluster-1].cis);
+        // puts("-------");
         if(nodo[token].state[index1] < nodo[token].state[index2] && st == 0){
             nodo[token].state[index1] = nodo[token].state[index2];
             newInfo[newInfoIndex] = i;
@@ -523,7 +526,6 @@ int main(int argc, char * argv[]){
             // Testa todos os nodos até encontrar um sem falha.
             do{
                 token2 = table_cis[token][currentCluster-1].cis[numTestes];
-                printvec((pow(2,currentCluster-1)),table_cis[token][currentCluster-1].cis);
                 st = testarNodo(token, table_cis[token][currentCluster-1].cis[numTestes], table_cis);
                 numTestes++;
                 printState("TEST");
