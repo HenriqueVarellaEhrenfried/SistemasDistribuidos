@@ -1,94 +1,319 @@
++------------------------------------------------------------------+
+|Programa de Pós-graduação da Universidade Federal do Paraná - UFPR|
+|  Segundo trabalho prático da disciplina de Sistemas Distribuídos |
+|              Estudante: Henrique Varella Ehrenfried              |
+|                  Professor: Elias P. Duarte Jr.                  |
+|                              2017-1                              |
++------------------------------------------------------------------+
+CIS do nodo 0 no cluster 1: 
+[ 1 ]
+
+CIS do nodo 0 no cluster 2: 
+[ 2 3 ]
+
+CIS do nodo 1 no cluster 1: 
+[ 0 ]
+
+CIS do nodo 1 no cluster 2: 
+[ 3 2 ]
+
+CIS do nodo 2 no cluster 1: 
+[ 3 ]
+
+CIS do nodo 2 no cluster 2: 
+[ 0 1 ]
+
+CIS do nodo 3 no cluster 1: 
+[ 2 ]
+
+CIS do nodo 3 no cluster 2: 
+[ 1 0 ]
+
+
+Agendando evento:
+	Evento: Falha
+	Tempo: 180.0
+	Nodo > 3
+
+Agendando evento:
+	Evento: Recuperação
+	Tempo: 300.0
+	Nodo > 3
+
+
+Número de eventos agendados: 2
+
+
+N = 4
+Tempo para Warm Up = 60.0
+Tempo de simulação = 400.0
+
+
+************************** COMECOU O WARMUP **************************
+
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
-Nodo 0 >> [ -1 0 -1 ] 
+token: 0 | token2: 1
+ 
+ 
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
+token: 1 | token2: 3
+ 
+ 
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
+token: 2 | token2: 3
+ 
+ 
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
+token: 3 | token2: 1
+ 
+ 
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
+token: 0 | token2: 1
+ 
+ 
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo  60.0
+token: 1 | token2: 3
+ 
+ 
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  60.0
+token: 2 | token2: 3
+ 
+ 
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
+token: 3 | token2: 1
+ 
+ 
+************************** TERMINOU O WARMUP**************************
 
-	TEMPO:  30.0
-	Event Counter: 1 | Nodo 0 >> [ -1 0 -1 ] 
-	Event Counter: 1 | Nodo 1 >> [ -1 -1 -1 ] 
-	Event Counter: 1 | Nodo 2 >> [ -1 -1 -1 ] 
----------------------------
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
-Nodo 1 >> [ -1 -1 0 ] 
-
-	TEMPO:  30.0
-	Event Counter: 2 | Nodo 0 >> [ -1 0 -1 ] 
-	Event Counter: 2 | Nodo 1 >> [ -1 -1 0 ] 
-	Event Counter: 2 | Nodo 2 >> [ -1 -1 -1 ] 
----------------------------
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
-Nodo 2 >> [ 0 0 -1 ] 
-
-	TEMPO:  30.0
-	Event Counter: 3 | Nodo 0 >> [ -1 0 -1 ] 
-	Event Counter: 3 | Nodo 1 >> [ -1 -1 0 ] 
-	Event Counter: 3 | Nodo 2 >> [ 0 0 -1 ] 
----------------------------
-O nodo 1 FALHOU no tempo  31.0
-
-	TEMPO:  31.0
-	Event Counter: 4 | Nodo 0 >> [ -1 0 -1 ] 
-	Event Counter: 4 | Nodo 1 >> [ -1 -1 0 ] 
-	Event Counter: 4 | Nodo 2 >> [ 0 0 -1 ] 
----------------------------
-O nodo 0 TESTOU o nodo 1 como FALHO no tempo  60.0
-Nodo 0 >> [ -1 1 -1 ] 
-O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
-Nodo 0 >> [ 0 1 0 ] 
-
-	TEMPO:  60.0
-	Event Counter: 5 | Nodo 0 >> [ 0 1 0 ] 
-	Event Counter: 5 | Nodo 1 >> [ -1 -1 0 ] 
-	Event Counter: 5 | Nodo 2 >> [ 0 0 -1 ] 
----------------------------
-
-	TEMPO:  60.0
-	Event Counter: 5 | Nodo 0 >> [ 0 1 0 ] 
-	Event Counter: 5 | Nodo 1 >> [ -1 -1 0 ] 
-	Event Counter: 5 | Nodo 2 >> [ 0 0 -1 ] 
----------------------------
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
-Nodo 2 >> [ 0 1 0 ] 
-
-	TEMPO:  60.0
-	Event Counter: 6 | Nodo 0 >> [ 0 1 0 ] 
-	Event Counter: 6 | Nodo 1 >> [ -1 -1 0 ] 
-	Event Counter: 6 | Nodo 2 >> [ 0 1 0 ] 
----------------------------
-O nodo 1 RECUPEROU no tempo  61.0 
-
-	TEMPO:  61.0
-	Event Counter: 7 | Nodo 0 >> [ 0 1 0 ] 
-	Event Counter: 7 | Nodo 1 >> [ -1 -1 0 ] 
-	Event Counter: 7 | Nodo 2 >> [ 0 1 0 ] 
----------------------------
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
-Nodo 0 >> [ 0 2 0 ] 
-
-	TEMPO:  90.0
-	Event Counter: 8 | Nodo 0 >> [ 0 2 0 ] 
-	Event Counter: 8 | Nodo 1 >> [ -1 -1 0 ] 
-	Event Counter: 8 | Nodo 2 >> [ 0 1 0 ] 
----------------------------
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
-Nodo 2 >> [ 0 2 0 ] 
-
-	TEMPO:  90.0
-	Event Counter: 9 | Nodo 0 >> [ 0 2 0 ] 
-	Event Counter: 9 | Nodo 1 >> [ -1 -1 0 ] 
-	Event Counter: 9 | Nodo 2 >> [ 0 2 0 ] 
----------------------------
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo  91.0
-Nodo 1 >> [ 0 2 0 ] 
-
-	TEMPO:  91.0
-	Event Counter: 10 | Nodo 0 >> [ 0 2 0 ] 
-	Event Counter: 10 | Nodo 1 >> [ 0 2 0 ] 
-	Event Counter: 10 | Nodo 2 >> [ 0 2 0 ] 
----------------------------
+token: 0 | token2: 1
+ 
+ 
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo  90.0
+token: 1 | token2: 3
+ 
+ 
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  90.0
+token: 2 | token2: 3
+ 
+ 
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
+token: 3 | token2: 1
+ 
+ 
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
-Nodo 0 >> [ 0 2 0 ] 
+token: 0 | token2: 1
+ 
+ 
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 120.0
+token: 1 | token2: 3
+ 
+ 
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 120.0
+token: 2 | token2: 3
+ 
+ 
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
+token: 3 | token2: 1
+ 
+ 
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
+token: 0 | token2: 1
+ 
+ 
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 150.0
+token: 1 | token2: 3
+ 
+ 
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 150.0
+token: 2 | token2: 3
+ 
+ 
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
+token: 3 | token2: 1
+ 
+ 
+O nodo 3 FALHOU no tempo 180.0
 
-	TEMPO: 120.0
-	Event Counter: 11 | Nodo 0 >> [ 0 2 0 ] 
-	Event Counter: 11 | Nodo 1 >> [ 0 2 0 ] 
-	Event Counter: 11 | Nodo 2 >> [ 0 2 0 ] 
+	Tempo atual: 180.0
+	Ação Executada: FAULT
+	Contador de eventos: 1
+ 	Contador de testes: 20
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 -1 ] 
+	Nodo 1 >> [ -1 -1 -1 0 ] 
+	Nodo 2 >> [ -1 -1 -1 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
 ---------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 180.0
+Tempo atual >> 180.0
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
+Número do evento >> 1
+Evento >> Falha
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+token: 0 | token2: 2
+ 
+ 
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
+token: 1 | token2: 0
+ 
+ 
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+token: 2 | token2: 0
+ 
+ 
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 210.0
+token: 0 | token2: 2
+ 
+ 
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
+token: 1 | token2: 0
+ 
+ 
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
+token: 2 | token2: 0
+ 
+ 
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 240.0
+token: 0 | token2: 1
+ 
+ 
+O nodo 1 TESTOU o nodo 3 como FALHO no tempo 240.0
+token: 1 | token2: 3
+ 
+ 
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 240.0
+token: 1 | token2: 2
+ 
+ 
+O nodo 2 TESTOU o nodo 3 como FALHO no tempo 240.0
+token: 2 | token2: 3
+ 
+ 
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 270.0
+token: 0 | token2: 2
+ 
+ 
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 270.0
+token: 1 | token2: 0
+ 
+ 
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 270.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+token: 2 | token2: 0
+ 
+ 
+O nodo 3 RECUPEROU no tempo 300.0 
+
+	Tempo atual: 300.0
+	Ação Executada: REPAIR
+	Contador de eventos: 2
+ 	Contador de testes: 33
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 ] 
+	Nodo 2 >> [ 0 1 -1 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 300.0
+Tempo atual >> 300.0
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
+Número do evento >> 2
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 300.0
+token: 0 | token2: 2
+ 
+ 
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 300.0
+token: 1 | token2: 0
+ 
+ 
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 300.0
+token: 2 | token2: 0
+ 
+ 
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 330.0
+token: 3 | token2: 2
+ 
+ 
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 330.0
+token: 0 | token2: 2
+ 
+ 
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
+token: 1 | token2: 0
+ 
+ 
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
+token: 2 | token2: 0
+ 
+ 
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 360.0
+token: 3 | token2: 2
+ 
+ 
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 360.0
+token: 0 | token2: 2
+ 
+ 
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 360.0
+token: 1 | token2: 0
+ 
+ 
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 360.0
+token: 2 | token2: 0
+ 
+ 
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 390.0
+token: 3 | token2: 2
+ 
+ 
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 390.0
+token: 0 | token2: 2
+ 
+ 
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 390.0
+token: 1 | token2: 0
+ 
+ 
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 390.0
+token: 2 | token2: 0
+ 
+ 
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 420.0
+token: 3 | token2: 2
+ 
+ 

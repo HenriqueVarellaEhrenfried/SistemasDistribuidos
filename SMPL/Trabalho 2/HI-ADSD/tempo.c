@@ -139,7 +139,7 @@ int  testCounter; //Variável com a quantidade de testes executados no sistema
 char ** tokens; //Vetor com as strings tokenizadas
 int numNotFailed = 0, auxFail = 0, numFailed = 0; //Variáveis para evento
 static int N_CLUSTERS; //Variável que contém o número de clusters necessários para o programa 
-
+int roundTest = 1; //Variável com o número da rodada de teste para facilitar a escolha do cluster que será testado
 
 
 //Função para inicializar a variável de tipo events
@@ -265,12 +265,33 @@ void printState(char * place) {
     puts("\n---------------------------\n");
 }
 //Função para atualizar o vetor STATE de um nodo
-void updateState(int token2, int st) {
-    int i = 0, newInfoIndex = 0, totalInfo;
+void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
+    int currentCluster = roundTest%N_CLUSTERS == 0 ? N_CLUSTERS : roundTest%N_CLUSTERS;
+    int numClusterNodes = pow(2, currentCluster-1);
+    int i, newInfoIndex, totalInfo, clusterNodes;
     int newInfo[N];
-    for(i = 0, newInfoIndex = 0; i < N; i++) {
-        if (nodo[token].state[i] < nodo[token2].state[i] && st == 0){
-            nodo[token].state[i] = nodo[token2].state[i];
+    // for(i = 0, newInfoIndex = 0; i < N; i++) {
+    //     if (nodo[token].state[i] < nodo[token2].state[i] && st == 0){
+    //         nodo[token].state[i] = nodo[token2].state[i];
+    //         newInfo[newInfoIndex] = i;
+    //         newInfoIndex++; 
+    //     }
+    // }
+    // if (newInfoIndex !=0){
+    //     printf("O nodo %d recebeu informação sobre o(s) nodo(s): [", token);
+    //     totalInfo = newInfoIndex;
+    //     for(newInfoIndex = 0; newInfoIndex < totalInfo; newInfoIndex++){
+    //         printf(" %d",newInfo[newInfoIndex]);
+    //     }
+    //     printf(" ]\n\n");
+    // }
+
+
+    for(i=0,clusterNodes=0, newInfoIndex = 0; i < numClusterNodes; i++){
+        int index1 = table_cis[token][currentCluster-1].cis[i];
+        int index2 = table_cis[token2][currentCluster-1].cis[i];
+        if(nodo[token].state[index1] < nodo[token].state[index2] && st == 0){
+            nodo[token].state[index1] = nodo[token].state[index2];
             newInfo[newInfoIndex] = i;
             newInfoIndex++; 
         }
@@ -283,22 +304,40 @@ void updateState(int token2, int st) {
         }
         printf(" ]\n\n");
     }
+    
 }
 //Função que testa um nodo a partir do nodo atual
-int testarNodo(int token, int offset) {
+// int testarNodo(int token, int offset) {
+//     testCounter++;
+//     int token2 = (token+offset)%N;
+//     int st = status(nodo[token2].id);
+//     char *c = (st==0?"SEM FALHA":"FALHO");
+//     if ((nodo[token].state[token2]%2) ^ (st)) {
+//         nodo[token].state[token2]++;
+//     }
+//     printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
+//     updateState(token2, st);
+//     printf("\n\tEstado atual do vetor STATE do ");
+//     printArray(token);
+//     return st;
+// }
+
+
+int testarNodo(int token, int token2, tcis table_cis[N][N_CLUSTERS]) {
     testCounter++;
-    int token2 = (token+offset)%N;
+    
     int st = status(nodo[token2].id);
     char *c = (st==0?"SEM FALHA":"FALHO");
     if ((nodo[token].state[token2]%2) ^ (st)) {
         nodo[token].state[token2]++;
     }
     printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
-    updateState(token2, st);
-    printf("\n\tEstado atual do vetor STATE do ");
-    printArray(token);
+    updateState(token2, st, table_cis);
+    // printf("\n\tEstado atual do vetor STATE do ");
+    // printArray(token);
     return st;
 }
+
 //Função que conta número de caracteres '\n' e ' ' para definir quantos indices deve ser considerados
 //na função split
 int words(const char sentence[ ]) {
@@ -354,27 +393,7 @@ char* readinput() {
     } while (templen==CHUNK-1 && tempbuf[CHUNK-2]!='\n');
     return input;
 }
-// void calculateCISJ(nodo){
-//     //Offset = i * cols + j
-//     //Variáveis de interessse:
-//     //half_N: Número de colunas
-//     //N: Número de nodos
-//     //N_CLUSTERS: Número de clusters e número de linhas
-//     int linhas, colunas, k, arraySize, offset, inner_offset;
-//     node_set* nodes;
-//     arraySize = half_N*(int)N_CLUSTERS;
-//     for(linhas = 0; linhas < N_CLUSTERS; linhas++){
-//         offset = i*half_N;
-//         for(colunas = 0, inner_offset = 0; colunas < half_N; colunas++){
-//             inner_offset = offset + colunas;
-//             nodes = cis(colunas, linhas);
-//             if
-//             nodo->cis[inner_offset] = nodes->nodes[colunas];
-//         }
-//     }
-    
-// }
-
+//Função para criação da tabela Cis 
 void createTableCis(tcis table_cis[N][N_CLUSTERS]){
     int i,j,k,num_nodes;
     node_set* nodes;
@@ -406,7 +425,6 @@ void printTableCis(tcis table_cis[N][N_CLUSTERS]){
 
 // Programa Principal
 int main(int argc, char * argv[]){
-
     //Imprime header
     printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n",HEADER_BAR, HEADER_PROGRAM,HEADER_PROJECT,HEADER_STUDENT,HEADER_PROFESSOR,HEADER_SEMESTER,HEADER_BAR);
 
@@ -438,7 +456,6 @@ int main(int argc, char * argv[]){
 
     //Define tempo de warm up
     int warmUpTime = N_CLUSTERS*(int)TEST_INTERVAL;
-    
     //Inicializa simulção inicializando as variáveis necessárias
     smpl(0, "Trabalho pratico 1 - Sistemas Distribuidos");
     reset();
@@ -475,7 +492,7 @@ int main(int argc, char * argv[]){
     printf("\n\nNúmero de eventos agendados: %d\n",countEventsScheduled);
     printf("\n\nN = %d\nTempo para Warm Up = %d.0\nTempo de simulação = %5.1lf\n\n\n",N , warmUpTime, simulationTime);
 
-    int printedEndOfWarmUp = 0;
+    int printedEndOfWarmUp = 0, token2;
     // Checagem de eventos
     //Faz a simulação acontecer
     printf("************************** COMECOU O WARMUP **************************\n\n");
@@ -488,13 +505,18 @@ int main(int argc, char * argv[]){
         switch(event) {
         case TEST:
             if (status(nodo[token].id) != 0) break;
-            int offset = 1, st;
+            int offset = 1, st, numTestes = 0, currentCluster;
+            currentCluster = roundTest%N_CLUSTERS == 0 ? N_CLUSTERS : roundTest%N_CLUSTERS;
             // Testa todos os nodos até encontrar um sem falha.
             do{
-                st = testarNodo(token, offset++);
-                printState("TEST");
-            }while ((st!=0) && (((token+offset)%N)!= token));
-
+                token2 = table_cis[token][currentCluster-1].cis[numTestes];
+                st = testarNodo(token, table_cis[token][currentCluster-1].cis[numTestes], table_cis);
+                numTestes++;
+                printf("token: %d | token2: %d\n",token,token2);
+                puts(" ");
+                puts(" ");
+                // printState("TEST");
+            }while ((st!=0) && numTestes < (pow(2,currentCluster-1)));
             schedule(TEST, TEST_INTERVAL, token);
             break;
 
@@ -524,7 +546,7 @@ int main(int argc, char * argv[]){
             schedule(TEST, TEST_INTERVAL, token);
             break;
         }
-
+        roundTest++;
         lat = getLatency(time(),evnts); //Verifica a latência do evento
         if(lat != LATENCY_UNKNOWN){ // Se não for indefinida, quer dizer que o evento foi identificado
             evnts.detected = 1; //Atualiza o evento
