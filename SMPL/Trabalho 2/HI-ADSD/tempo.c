@@ -139,7 +139,7 @@ int  testCounter; //Variável com a quantidade de testes executados no sistema
 char ** tokens; //Vetor com as strings tokenizadas
 int numNotFailed = 0, auxFail = 0, numFailed = 0; //Variáveis para evento
 static int N_CLUSTERS; //Variável que contém o número de clusters necessários para o programa 
-int roundTest = 1; //Variável com o número da rodada de teste para facilitar a escolha do cluster que será testado
+int roundTest = 0; //Variável com o número da rodada de teste para facilitar a escolha do cluster que será testado
 
 
 //Função para inicializar a variável de tipo events
@@ -333,8 +333,8 @@ int testarNodo(int token, int token2, tcis table_cis[N][N_CLUSTERS]) {
     }
     printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
     updateState(token2, st, table_cis);
-    // printf("\n\tEstado atual do vetor STATE do ");
-    // printArray(token);
+    printf("\n\tEstado atual do vetor STATE do ");
+    printArray(token);
     return st;
 }
 
@@ -422,7 +422,14 @@ void printTableCis(tcis table_cis[N][N_CLUSTERS]){
         }
     }
 }
-
+printvec(int size, int*array){
+    int i;
+    printf("[ ");
+    for(i = 0; i < size; i++){
+        printf("%d ",array[i]);
+    }
+    printf("]\n");
+}
 // Programa Principal
 int main(int argc, char * argv[]){
     //Imprime header
@@ -496,8 +503,14 @@ int main(int argc, char * argv[]){
     // Checagem de eventos
     //Faz a simulação acontecer
     printf("************************** COMECOU O WARMUP **************************\n\n");
+    float timeNow = time();
     while(time() < simulationTime) {
         cause(&event, &token);
+        if (timeNow != time()){
+            roundTest++;
+            printf("ROUND TEST: %d\n",roundTest);
+            timeNow = time();
+        }
         if((time()>(double)warmUpTime) && !printedEndOfWarmUp) {
             printf("************************** TERMINOU O WARMUP**************************\n\n");
             printedEndOfWarmUp++;
@@ -510,12 +523,10 @@ int main(int argc, char * argv[]){
             // Testa todos os nodos até encontrar um sem falha.
             do{
                 token2 = table_cis[token][currentCluster-1].cis[numTestes];
+                printvec((pow(2,currentCluster-1)),table_cis[token][currentCluster-1].cis);
                 st = testarNodo(token, table_cis[token][currentCluster-1].cis[numTestes], table_cis);
                 numTestes++;
-                printf("token: %d | token2: %d\n",token,token2);
-                puts(" ");
-                puts(" ");
-                // printState("TEST");
+                printState("TEST");
             }while ((st!=0) && numTestes < (pow(2,currentCluster-1)));
             schedule(TEST, TEST_INTERVAL, token);
             break;
@@ -546,7 +557,7 @@ int main(int argc, char * argv[]){
             schedule(TEST, TEST_INTERVAL, token);
             break;
         }
-        roundTest++;
+        
         lat = getLatency(time(),evnts); //Verifica a latência do evento
         if(lat != LATENCY_UNKNOWN){ // Se não for indefinida, quer dizer que o evento foi identificado
             evnts.detected = 1; //Atualiza o evento
