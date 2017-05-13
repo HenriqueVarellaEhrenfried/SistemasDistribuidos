@@ -11,11 +11,17 @@ CIS do nodo 0 no cluster 1:
 CIS do nodo 0 no cluster 2: 
 [ 2 3 ]
 
+CIS do nodo 0 no cluster 3: 
+[ 4 5 6 7 ]
+
 CIS do nodo 1 no cluster 1: 
 [ 0 ]
 
 CIS do nodo 1 no cluster 2: 
 [ 3 2 ]
+
+CIS do nodo 1 no cluster 3: 
+[ 5 4 7 6 ]
 
 CIS do nodo 2 no cluster 1: 
 [ 3 ]
@@ -23,11 +29,53 @@ CIS do nodo 2 no cluster 1:
 CIS do nodo 2 no cluster 2: 
 [ 0 1 ]
 
+CIS do nodo 2 no cluster 3: 
+[ 6 7 4 5 ]
+
 CIS do nodo 3 no cluster 1: 
 [ 2 ]
 
 CIS do nodo 3 no cluster 2: 
 [ 1 0 ]
+
+CIS do nodo 3 no cluster 3: 
+[ 7 6 5 4 ]
+
+CIS do nodo 4 no cluster 1: 
+[ 5 ]
+
+CIS do nodo 4 no cluster 2: 
+[ 6 7 ]
+
+CIS do nodo 4 no cluster 3: 
+[ 0 1 2 3 ]
+
+CIS do nodo 5 no cluster 1: 
+[ 4 ]
+
+CIS do nodo 5 no cluster 2: 
+[ 7 6 ]
+
+CIS do nodo 5 no cluster 3: 
+[ 1 0 3 2 ]
+
+CIS do nodo 6 no cluster 1: 
+[ 7 ]
+
+CIS do nodo 6 no cluster 2: 
+[ 4 5 ]
+
+CIS do nodo 6 no cluster 3: 
+[ 2 3 0 1 ]
+
+CIS do nodo 7 no cluster 1: 
+[ 6 ]
+
+CIS do nodo 7 no cluster 2: 
+[ 5 4 ]
+
+CIS do nodo 7 no cluster 3: 
+[ 3 2 1 0 ]
 
 
 Agendando evento:
@@ -36,17 +84,37 @@ Agendando evento:
 	Nodo > 3
 
 Agendando evento:
+	Evento: Falha
+	Tempo: 360.0
+	Nodo > 4
+
+Agendando evento:
+	Evento: Falha
+	Tempo: 510.0
+	Nodo > 7
+
+Agendando evento:
 	Evento: Recuperação
-	Tempo: 300.0
+	Tempo: 660.0
 	Nodo > 3
 
+Agendando evento:
+	Evento: Recuperação
+	Tempo: 810.0
+	Nodo > 4
 
-Número de eventos agendados: 2
+Agendando evento:
+	Evento: Recuperação
+	Tempo: 960.0
+	Nodo > 7
 
 
-N = 4
-Tempo para Warm Up = 60.0
-Tempo de simulação = 400.0
+Número de eventos agendados: 6
+
+
+N = 8
+Tempo para Warm Up = 90.0
+Tempo de simulação = 1200.0
 
 
 ************************** COMECOU O WARMUP **************************
@@ -54,7 +122,7 @@ Tempo de simulação = 400.0
 ROUND TEST: 1
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 -1 -1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 -1 -1 -1 -1 -1 -1 ] 
 
 	Tempo atual:  30.0
 	Ação Executada: TEST
@@ -63,16 +131,20 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 -1 -1 ] 
-	Nodo 1 >> [ -1 -1 -1 -1 ] 
-	Nodo 2 >> [ -1 -1 -1 -1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
 
 ---------------------------
 
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 -1 -1 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 -1 -1 -1 -1 -1 -1 ] 
 
 	Tempo atual:  30.0
 	Ação Executada: TEST
@@ -81,16 +153,20 @@ O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 -1 -1 ] 
-	Nodo 1 >> [ 0 -1 -1 -1 ] 
-	Nodo 2 >> [ -1 -1 -1 -1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
 
 ---------------------------
 
 O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
 
-	Estado atual do vetor STATE do Nodo 2 >> [ -1 -1 -1 0 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
 
 	Tempo atual:  30.0
 	Ação Executada: TEST
@@ -99,16 +175,20 @@ O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 -1 -1 ] 
-	Nodo 1 >> [ 0 -1 -1 -1 ] 
-	Nodo 2 >> [ -1 -1 -1 0 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
 
 ---------------------------
 
 O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
 
-	Estado atual do vetor STATE do Nodo 3 >> [ -1 -1 0 -1 ] 
+	Estado atual do vetor STATE do Nodo 3 >> [ -1 -1 0 -1 -1 -1 -1 -1 ] 
 
 	Tempo atual:  30.0
 	Ação Executada: TEST
@@ -117,10 +197,102 @@ O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 -1 -1 ] 
-	Nodo 1 >> [ 0 -1 -1 -1 ] 
-	Nodo 2 >> [ -1 -1 -1 0 ] 
-	Nodo 3 >> [ -1 -1 0 -1 ] 
+	Nodo 0 >> [ -1 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo  30.0
+
+	Estado atual do vetor STATE do Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+
+	Tempo atual:  30.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 5
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo  30.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ -1 -1 -1 -1 0 -1 -1 -1 ] 
+
+	Tempo atual:  30.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 6
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo  30.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+
+	Tempo atual:  30.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 7
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo  30.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 -1 ] 
+
+	Tempo atual:  30.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 8
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 -1 ] 
 
 ---------------------------
 
@@ -129,19 +301,23 @@ O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
 O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
 
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
 
 	Tempo atual:  60.0
 	Ação Executada: TEST
 	Contador de eventos: 0
- 	Contador de testes: 5
+ 	Contador de testes: 9
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 -1 -1 ] 
-	Nodo 2 >> [ -1 -1 -1 0 ] 
-	Nodo 3 >> [ -1 -1 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 -1 ] 
 
 ---------------------------
 
@@ -149,19 +325,23 @@ O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo  60.0
 O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
 
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 -1 -1 -1 -1 ] 
 
 	Tempo atual:  60.0
 	Ação Executada: TEST
 	Contador de eventos: 0
- 	Contador de testes: 6
+ 	Contador de testes: 10
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ -1 -1 -1 0 ] 
-	Nodo 3 >> [ -1 -1 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 -1 ] 
 
 ---------------------------
 
@@ -169,19 +349,23 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
 O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
 
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 -1 -1 -1 -1 ] 
 
 	Tempo atual:  60.0
 	Ação Executada: TEST
 	Contador de eventos: 0
- 	Contador de testes: 7
+ 	Contador de testes: 11
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ -1 -1 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 -1 ] 
 
 ---------------------------
 
@@ -189,248 +373,684 @@ O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
 O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
 
 
-	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 ] 
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 -1 -1 -1 -1 ] 
 
 	Tempo atual:  60.0
-	Ação Executada: TEST
-	Contador de eventos: 0
- 	Contador de testes: 8
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
-
----------------------------
-
-ROUND TEST: 3
-************************** TERMINOU O WARMUP**************************
-
-O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
-
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 ] 
-
-	Tempo atual:  90.0
-	Ação Executada: TEST
-	Contador de eventos: 0
- 	Contador de testes: 9
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
-
----------------------------
-
-O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
-
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 ] 
-
-	Tempo atual:  90.0
-	Ação Executada: TEST
-	Contador de eventos: 0
- 	Contador de testes: 10
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
-
----------------------------
-
-O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  90.0
-
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 ] 
-
-	Tempo atual:  90.0
-	Ação Executada: TEST
-	Contador de eventos: 0
- 	Contador de testes: 11
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
-
----------------------------
-
-O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo  90.0
-
-	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 ] 
-
-	Tempo atual:  90.0
 	Ação Executada: TEST
 	Contador de eventos: 0
  	Contador de testes: 12
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 -1 ] 
 
 ---------------------------
 
-ROUND TEST: 4
-O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 120.0
-O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo  60.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 7 ]
 
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
 
-	Tempo atual: 120.0
+	Tempo atual:  60.0
 	Ação Executada: TEST
 	Contador de eventos: 0
  	Contador de testes: 13
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 -1 ] 
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 120.0
-O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo  60.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 6 ]
 
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 ] 
+	Estado atual do vetor STATE do Nodo 5 >> [ -1 -1 -1 -1 0 -1 0 0 ] 
 
-	Tempo atual: 120.0
+	Tempo atual:  60.0
 	Ação Executada: TEST
 	Contador de eventos: 0
  	Contador de testes: 14
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 -1 ] 
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 120.0
-O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo  60.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 5 ]
 
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 ] 
+	Estado atual do vetor STATE do Nodo 6 >> [ -1 -1 -1 -1 0 0 -1 0 ] 
 
-	Tempo atual: 120.0
+	Tempo atual:  60.0
 	Ação Executada: TEST
 	Contador de eventos: 0
  	Contador de testes: 15
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 -1 ] 
 
 ---------------------------
 
-O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
-O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo  60.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 4 ]
 
 
-	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 ] 
+	Estado atual do vetor STATE do Nodo 7 >> [ -1 -1 -1 -1 0 0 0 -1 ] 
 
-	Tempo atual: 120.0
+	Tempo atual:  60.0
 	Ação Executada: TEST
 	Contador de eventos: 0
  	Contador de testes: 16
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 -1 ] 
 
 ---------------------------
 
-ROUND TEST: 5
-O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
+ROUND TEST: 3
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo  90.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 5 6 7 ]
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 ] 
 
-	Tempo atual: 150.0
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+
+	Tempo atual:  90.0
 	Ação Executada: TEST
 	Contador de eventos: 0
  	Contador de testes: 17
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 150.0
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo  90.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 ] 
 
-	Tempo atual: 150.0
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+
+	Tempo atual:  90.0
 	Ação Executada: TEST
 	Contador de eventos: 0
  	Contador de testes: 18
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 150.0
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo  90.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 ] 
 
-	Tempo atual: 150.0
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+
+	Tempo atual:  90.0
 	Ação Executada: TEST
 	Contador de eventos: 0
  	Contador de testes: 19
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 150.0
+O nodo 3 TESTOU o nodo 7 como SEM FALHA no tempo  90.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 6 5 4 ]
 
-	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 ] 
 
-	Tempo atual: 150.0
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+
+	Tempo atual:  90.0
 	Ação Executada: TEST
 	Contador de eventos: 0
  	Contador de testes: 20
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 1 2 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 21
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 -1 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 22
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo  90.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 23
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 3 como SEM FALHA no tempo  90.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 2 1 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 24
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 4
+************************** TERMINOU O WARMUP**************************
+
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 25
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 26
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 27
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 28
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 29
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 30
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 31
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 32
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 5
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 150.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 33
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 150.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 34
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 150.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 35
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 36
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 150.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 37
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 150.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 38
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 150.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 39
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo 150.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 40
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 -1 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
 
 ---------------------------
 
@@ -440,14 +1060,18 @@ O nodo 3 FALHOU no tempo 180.0
 	Tempo atual: 180.0
 	Ação Executada: FAULT
 	Contador de eventos: 1
- 	Contador de testes: 20
+ 	Contador de testes: 40
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
 
 ---------------------------
 
@@ -463,137 +1087,351 @@ Evento >> Falha
 Nodo em que aconteceu o evento >> 3
 Foi detectado? >> Não
 Número de testes executados até a detecção do evento >> 0
-Nodos que detectaram >> [ 0  0  0  0 ]
+Nodos que detectaram >> [ 0  0  0  0  0  0  0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
-O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 180.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 5 6 7 ]
 
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
 
 	Tempo atual: 180.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 21
+ 	Contador de testes: 41
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 3 como FALHO no tempo 180.0
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 180.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 ] 
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
 
 	Tempo atual: 180.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 22
+ 	Contador de testes: 42
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 180.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 ] 
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
 
 	Tempo atual: 180.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 23
+ 	Contador de testes: 43
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
-O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 1 2 3 ]
 
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 0 ] 
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
 
 	Tempo atual: 180.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 24
+ 	Contador de testes: 44
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 180.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 45
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 46
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 3 como FALHO no tempo 180.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 47
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 1 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 48
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 ROUND TEST: 7
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 210.0
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
 
 	Tempo atual: 210.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 25
+ 	Contador de testes: 49
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
 
 	Tempo atual: 210.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 26
+ 	Contador de testes: 50
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 0 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 0 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 O nodo 2 TESTOU o nodo 3 como FALHO no tempo 210.0
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
 
 	Tempo atual: 210.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 27
+ 	Contador de testes: 51
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 210.0
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 52
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 210.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 53
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 210.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 54
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 210.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 55
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
@@ -602,72 +1440,67 @@ O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 240.0
 O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
 
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
 
 	Tempo atual: 240.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 28
+ 	Contador de testes: 56
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-
-	A latência para detectar o evento 1 (que começou no tempo 180.0) é de 3 rodada(s) de teste(s)  [Tempo atual: 240.0] 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 180.0
-Tempo atual >> 240.0
-Quando o primeiro nodo detectou >> 180.0
-Primeiro nodo que detectou >> 1
-Número do evento >> 1
-Evento >> Falha
-Nodo em que aconteceu o evento >> 3
-Foi detectado? >> Sim
-Número de testes executados até a detecção do evento >> 8
-Nodos que detectaram >> [ 1  1  1  0 ]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 O nodo 1 TESTOU o nodo 3 como FALHO no tempo 240.0
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
 
 	Tempo atual: 240.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 29
+ 	Contador de testes: 57
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 240.0
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
 
 	Tempo atual: 240.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 30
+ 	Contador de testes: 58
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
@@ -675,431 +1508,5690 @@ O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 240.0
 O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
 
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
 
 	Tempo atual: 240.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 31
+ 	Contador de testes: 59
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 240.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 60
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 240.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 61
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 240.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 62
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo 240.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 63
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 ROUND TEST: 9
-O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 270.0
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 270.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 5 6 7 ]
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 ] 
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
 
 	Tempo atual: 270.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 32
+ 	Contador de testes: 64
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 270.0
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 270.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 ] 
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
 
 	Tempo atual: 270.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 33
+ 	Contador de testes: 65
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 3 como FALHO no tempo 270.0
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 270.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 ] 
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
 
 	Tempo atual: 270.0
 	Ação Executada: TEST
 	Contador de eventos: 1
- 	Contador de testes: 34
+ 	Contador de testes: 66
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 0 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo 270.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 1 2 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 67
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 270.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 68
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 270.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 69
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+
+	A latência para detectar o evento 1 (que começou no tempo 180.0) é de 4 rodada(s) de teste(s)  [Tempo atual: 270.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 180.0
+Tempo atual >> 270.0
+Quando o primeiro nodo detectou >> 180.0
+Primeiro nodo que detectou >> 7
+Número do evento >> 1
+Evento >> Falha
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 29
+Nodos que detectaram >> [ 1  1  1  0  1  1  1  1 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 7 TESTOU o nodo 3 como FALHO no tempo 270.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 70
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 2 como SEM FALHA no tempo 270.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 1 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 71
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 ROUND TEST: 10
-O nodo 3 RECUPEROU no tempo 300.0 
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 300.0
 
-	Tempo atual: 300.0
-	Ação Executada: REPAIR
-	Contador de eventos: 2
- 	Contador de testes: 34
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
-
----------------------------
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 300.0
-Tempo atual >> 300.0
-Quando o primeiro nodo detectou >>  -1.0
-Primeiro nodo que detectou >> -1
-Número do evento >> 2
-Evento >> Recuperação
-Nodo em que aconteceu o evento >> 3
-Foi detectado? >> Não
-Número de testes executados até a detecção do evento >> 0
-Nodos que detectaram >> [ 0  0  0  0 ]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 300.0
-O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
-
-
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
 
 	Tempo atual: 300.0
 	Ação Executada: TEST
-	Contador de eventos: 2
- 	Contador de testes: 35
+	Contador de eventos: 1
+ 	Contador de testes: 72
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 1 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 300.0
-O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 300.0
 
-
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
 
 	Tempo atual: 300.0
 	Ação Executada: TEST
-	Contador de eventos: 2
- 	Contador de testes: 36
+	Contador de eventos: 1
+ 	Contador de testes: 73
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 300.0
-O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+O nodo 2 TESTOU o nodo 3 como FALHO no tempo 300.0
 
-
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
 
 	Tempo atual: 300.0
 	Ação Executada: TEST
-	Contador de eventos: 2
- 	Contador de testes: 37
+	Contador de eventos: 1
+ 	Contador de testes: 74
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 -1 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 75
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 76
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 77
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 78
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 ROUND TEST: 11
-O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 330.0
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 330.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
 
-	Estado atual do vetor STATE do Nodo 3 >> [ -1 -1 0 -1 ] 
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
 
 	Tempo atual: 330.0
 	Ação Executada: TEST
-	Contador de eventos: 2
- 	Contador de testes: 38
+	Contador de eventos: 1
+ 	Contador de testes: 79
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 330.0
+O nodo 1 TESTOU o nodo 3 como FALHO no tempo 330.0
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
 
 	Tempo atual: 330.0
 	Ação Executada: TEST
-	Contador de eventos: 2
- 	Contador de testes: 39
+	Contador de eventos: 1
+ 	Contador de testes: 80
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 330.0
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
 
 	Tempo atual: 330.0
 	Ação Executada: TEST
-	Contador de eventos: 2
- 	Contador de testes: 40
+	Contador de eventos: 1
+ 	Contador de testes: 81
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 1 ] 
-	Nodo 3 >> [ -1 -1 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 330.0
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 ] 
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
 
 	Tempo atual: 330.0
 	Ação Executada: TEST
-	Contador de eventos: 2
- 	Contador de testes: 41
+	Contador de eventos: 1
+ 	Contador de testes: 82
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ -1 -1 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 330.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 83
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 330.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 84
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 330.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 85
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo 330.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 86
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ 0 0 0 1 -1 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 ROUND TEST: 12
-O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 360.0
-O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
-
-
-	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 ] 
+O nodo 4 FALHOU no tempo 360.0
 
 	Tempo atual: 360.0
-	Ação Executada: TEST
+	Ação Executada: FAULT
 	Contador de eventos: 2
- 	Contador de testes: 42
+ 	Contador de testes: 86
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 0 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 360.0
-O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
-
-
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 ] 
-
-	Tempo atual: 360.0
-	Ação Executada: TEST
-	Contador de eventos: 2
- 	Contador de testes: 43
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 2 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
-
----------------------------
-
-
-	A latência para detectar o evento 2 (que começou no tempo 300.0) é de 3 rodada(s) de teste(s)  [Tempo atual: 360.0] 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 300.0
+Tempo em que o evento ocorreu >> 360.0
 Tempo atual >> 360.0
-Quando o primeiro nodo detectou >> 300.0
-Primeiro nodo que detectou >> 1
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
 Número do evento >> 2
-Evento >> Recuperação
-Nodo em que aconteceu o evento >> 3
-Foi detectado? >> Sim
-Número de testes executados até a detecção do evento >> 9
-Nodos que detectaram >> [ 1  1  1  0 ]
+Evento >> Falha
+Nodo em que aconteceu o evento >> 4
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0  0  0  0  0  0 ]
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 360.0
-O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+O nodo 0 TESTOU o nodo 4 como FALHO no tempo 360.0
 
-
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
 
 	Tempo atual: 360.0
 	Ação Executada: TEST
 	Contador de eventos: 2
- 	Contador de testes: 44
+ 	Contador de testes: 87
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 2 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 360.0
-O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+O nodo 0 TESTOU o nodo 5 como SEM FALHA no tempo 360.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 6 7 ]
 
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
 
 	Tempo atual: 360.0
 	Ação Executada: TEST
 	Contador de eventos: 2
- 	Contador de testes: 45
+ 	Contador de testes: 88
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 2 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 360.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 89
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 360.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 90
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 360.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 91
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 360.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 92
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 3 como FALHO no tempo 360.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 93
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 2 como SEM FALHA no tempo 360.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 1 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 94
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 ROUND TEST: 13
-O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 390.0
-
-	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 ] 
-
-	Tempo atual: 390.0
-	Ação Executada: TEST
-	Contador de eventos: 2
- 	Contador de testes: 46
-
- 
-	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 2 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
-
----------------------------
-
 O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 390.0
 
-	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
 
 	Tempo atual: 390.0
 	Ação Executada: TEST
 	Contador de eventos: 2
- 	Contador de testes: 47
+ 	Contador de testes: 95
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 2 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 390.0
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
 
 	Tempo atual: 390.0
 	Ação Executada: TEST
 	Contador de eventos: 2
- 	Contador de testes: 48
+ 	Contador de testes: 96
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 2 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
-O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 390.0
+O nodo 2 TESTOU o nodo 3 como FALHO no tempo 390.0
 
-	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 ] 
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
 
 	Tempo atual: 390.0
 	Ação Executada: TEST
 	Contador de eventos: 2
- 	Contador de testes: 49
+ 	Contador de testes: 97
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 2 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 0 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como FALHO no tempo 390.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+
+	Tempo atual: 390.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 98
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 390.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+
+	Tempo atual: 390.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 99
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 390.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+	Tempo atual: 390.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 100
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
 
 ---------------------------
 
 ROUND TEST: 14
-O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 420.0
-O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 420.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
 
 
-	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 ] 
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
 
 	Tempo atual: 420.0
 	Ação Executada: TEST
 	Contador de eventos: 2
- 	Contador de testes: 50
+ 	Contador de testes: 101
 
  
 	Vetores STATE: 
-	Nodo 0 >> [ -1 0 0 2 ] 
-	Nodo 1 >> [ 0 -1 0 2 ] 
-	Nodo 2 >> [ 0 0 -1 2 ] 
-	Nodo 3 >> [ 0 0 0 -1 ] 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como FALHO no tempo 420.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 102
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 420.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 103
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 420.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 104
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 420.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 105
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 0 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como FALHO no tempo 420.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 106
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 5 como SEM FALHA no tempo 420.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 107
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 0 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo 420.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 108
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 15
+O nodo 0 TESTOU o nodo 4 como FALHO no tempo 450.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 109
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 5 como SEM FALHA no tempo 450.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 6 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 110
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 450.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 111
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 450.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 112
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+
+	A latência para detectar o evento 2 (que começou no tempo 360.0) é de 4 rodada(s) de teste(s)  [Tempo atual: 450.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 360.0
+Tempo atual >> 450.0
+Quando o primeiro nodo detectou >> 360.0
+Primeiro nodo que detectou >> 0
+Número do evento >> 2
+Evento >> Falha
+Nodo em que aconteceu o evento >> 4
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 26
+Nodos que detectaram >> [ 1  1  1  0  0  1  1  1 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 450.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 113
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 450.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 114
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 3 como FALHO no tempo 450.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 115
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 2 como SEM FALHA no tempo 450.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 1 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 116
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 16
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 480.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+
+	Tempo atual: 480.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 117
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 480.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+
+	Tempo atual: 480.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 118
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 3 como FALHO no tempo 480.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+
+	Tempo atual: 480.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 119
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como FALHO no tempo 480.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+
+	Tempo atual: 480.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 120
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 480.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+
+	Tempo atual: 480.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 121
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 480.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+	Tempo atual: 480.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 122
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ 0 0 0 1 1 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 17
+O nodo 7 FALHOU no tempo 510.0
+
+	Tempo atual: 510.0
+	Ação Executada: FAULT
+	Contador de eventos: 3
+ 	Contador de testes: 122
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 510.0
+Tempo atual >> 510.0
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
+Número do evento >> 3
+Evento >> Falha
+Nodo em que aconteceu o evento >> 7
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0  0  0  0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 510.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 123
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como FALHO no tempo 510.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 124
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 510.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 125
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 510.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 126
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 0 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como FALHO no tempo 510.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 127
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 6 como SEM FALHA no tempo 510.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 128
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como FALHO no tempo 510.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 129
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 5 como SEM FALHA no tempo 510.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+
+	Tempo atual: 510.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 130
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 18
+O nodo 0 TESTOU o nodo 4 como FALHO no tempo 540.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+
+	Tempo atual: 540.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 131
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 5 como SEM FALHA no tempo 540.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 6 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+
+	Tempo atual: 540.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 132
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 0 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 540.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+
+	Tempo atual: 540.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 133
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 540.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+
+	Tempo atual: 540.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 134
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 540.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 540.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 135
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 540.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+
+	Tempo atual: 540.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 136
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 19
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 570.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+
+	Tempo atual: 570.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 137
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 570.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+
+	Tempo atual: 570.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 138
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 3 como FALHO no tempo 570.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+
+	Tempo atual: 570.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 139
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como FALHO no tempo 570.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 570.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 140
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como FALHO no tempo 570.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+
+	Tempo atual: 570.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 141
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 20
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 600.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 142
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como FALHO no tempo 600.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 143
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 600.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 144
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 600.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 145
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como FALHO no tempo 600.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 146
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 6 como SEM FALHA no tempo 600.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 147
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como FALHO no tempo 600.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 148
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 5 como SEM FALHA no tempo 600.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+
+	Tempo atual: 600.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 149
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 21
+O nodo 0 TESTOU o nodo 4 como FALHO no tempo 630.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+
+	Tempo atual: 630.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 150
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 5 como SEM FALHA no tempo 630.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 6 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+
+	Tempo atual: 630.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 151
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 630.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+
+	Tempo atual: 630.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 152
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 630.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 1 1 0 0 1 ] 
+
+	Tempo atual: 630.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 153
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+	A latência para detectar o evento 3 (que começou no tempo 510.0) é de 5 rodada(s) de teste(s)  [Tempo atual: 630.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 510.0
+Tempo atual >> 630.0
+Quando o primeiro nodo detectou >> 510.0
+Primeiro nodo que detectou >> 5
+Número do evento >> 3
+Evento >> Falha
+Nodo em que aconteceu o evento >> 7
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 31
+Nodos que detectaram >> [ 1  1  1  0  0  1  1  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 630.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 630.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 154
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 630.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+
+	Tempo atual: 630.0
+	Ação Executada: TEST
+	Contador de eventos: 3
+ 	Contador de testes: 155
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 22
+O nodo 3 RECUPEROU no tempo 660.0 
+
+	Tempo atual: 660.0
+	Ação Executada: REPAIR
+	Contador de eventos: 4
+ 	Contador de testes: 155
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 660.0
+Tempo atual >> 660.0
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
+Número do evento >> 4
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0  0  0  0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 660.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+
+	Tempo atual: 660.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 156
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 660.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+
+	Tempo atual: 660.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 157
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 1 1 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 660.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+
+	Tempo atual: 660.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 158
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como FALHO no tempo 660.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 660.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 159
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como FALHO no tempo 660.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+
+	Tempo atual: 660.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 160
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 23
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 690.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 161
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 1 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 690.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 162
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 1 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 690.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 163
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 690.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 164
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como FALHO no tempo 690.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 165
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 6 como SEM FALHA no tempo 690.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 166
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como FALHO no tempo 690.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 167
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 5 como SEM FALHA no tempo 690.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+
+	Tempo atual: 690.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 168
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 24
+O nodo 3 TESTOU o nodo 7 como FALHO no tempo 720.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 0 ] 
+
+	Tempo atual: 720.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 169
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 -1 -1 -1 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 6 como SEM FALHA no tempo 720.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 5 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 -1 -1 1 0 0 0 ] 
+
+	Tempo atual: 720.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 170
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 4 como FALHO no tempo 720.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+
+	Tempo atual: 720.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 171
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 5 como SEM FALHA no tempo 720.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 6 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+
+	Tempo atual: 720.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 172
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 720.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+
+	Tempo atual: 720.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 173
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 720.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+
+	Tempo atual: 720.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 174
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 1 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 720.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+
+	Tempo atual: 720.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 175
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 1 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 720.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+
+	Tempo atual: 720.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 176
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 -1 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+	A latência para detectar o evento 4 (que começou no tempo 660.0) é de 3 rodada(s) de teste(s)  [Tempo atual: 720.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 660.0
+Tempo atual >> 720.0
+Quando o primeiro nodo detectou >> 660.0
+Primeiro nodo que detectou >> 2
+Número do evento >> 4
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 21
+Nodos que detectaram >> [ 1  1  1  0  0  1  1  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ROUND TEST: 25
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 750.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+
+	Tempo atual: 750.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 177
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 750.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+
+	Tempo atual: 750.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 178
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 750.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+
+	Tempo atual: 750.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 179
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 750.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+
+	Tempo atual: 750.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 180
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como FALHO no tempo 750.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+
+	Tempo atual: 750.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 181
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como FALHO no tempo 750.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+
+	Tempo atual: 750.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 182
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 26
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 780.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+
+	Tempo atual: 780.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 183
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 780.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+
+	Tempo atual: 780.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 184
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 780.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+
+	Tempo atual: 780.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 185
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 780.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+
+	Tempo atual: 780.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 186
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como FALHO no tempo 780.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+
+	Tempo atual: 780.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 187
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 6 como SEM FALHA no tempo 780.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+
+	Tempo atual: 780.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 188
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como FALHO no tempo 780.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+
+	Tempo atual: 780.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 189
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 5 como SEM FALHA no tempo 780.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+
+	Tempo atual: 780.0
+	Ação Executada: TEST
+	Contador de eventos: 4
+ 	Contador de testes: 190
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 27
+O nodo 4 RECUPEROU no tempo 810.0 
+
+	Tempo atual: 810.0
+	Ação Executada: REPAIR
+	Contador de eventos: 5
+ 	Contador de testes: 190
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 810.0
+Tempo atual >> 810.0
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
+Número do evento >> 5
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 4
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0  0  0  0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 3 TESTOU o nodo 7 como FALHO no tempo 810.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+
+	Tempo atual: 810.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 191
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 6 como SEM FALHA no tempo 810.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 5 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+
+	Tempo atual: 810.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 192
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 1 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 810.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 5 6 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+
+	Tempo atual: 810.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 193
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 810.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+
+	Tempo atual: 810.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 194
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 810.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+
+	Tempo atual: 810.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 195
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 810.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+
+	Tempo atual: 810.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 196
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 810.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+
+	Tempo atual: 810.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 197
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 28
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 840.0
+
+	Estado atual do vetor STATE do Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+
+	Tempo atual: 840.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 198
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 840.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+
+	Tempo atual: 840.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 199
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 840.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+
+	Tempo atual: 840.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 200
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 840.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+
+	Tempo atual: 840.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 201
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 840.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+
+	Tempo atual: 840.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 202
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 1 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 840.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+
+	Tempo atual: 840.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 203
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como FALHO no tempo 840.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+
+	Tempo atual: 840.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 204
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 29
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 870.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 1 ] 
+
+	Tempo atual: 870.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 205
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 870.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+
+	Tempo atual: 870.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 206
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 870.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+
+	Tempo atual: 870.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 207
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 870.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+
+	Tempo atual: 870.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 208
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 870.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+
+	Tempo atual: 870.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 209
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como FALHO no tempo 870.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+
+	Tempo atual: 870.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 210
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 6 como SEM FALHA no tempo 870.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+
+	Tempo atual: 870.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 211
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 1 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 870.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+
+	Tempo atual: 870.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 212
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 30
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo 900.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 1 2 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+
+	Tempo atual: 900.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 213
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 7 como FALHO no tempo 900.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+
+	Tempo atual: 900.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 214
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 1 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 6 como SEM FALHA no tempo 900.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 5 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+
+	Tempo atual: 900.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 215
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 900.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 5 6 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+
+	Tempo atual: 900.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 216
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 1 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 900.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+
+	Tempo atual: 900.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 217
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 1 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 900.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+
+	Tempo atual: 900.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 218
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+	A latência para detectar o evento 5 (que começou no tempo 810.0) é de 4 rodada(s) de teste(s)  [Tempo atual: 900.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 810.0
+Tempo atual >> 900.0
+Quando o primeiro nodo detectou >> 810.0
+Primeiro nodo que detectou >> 0
+Número do evento >> 5
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 4
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 28
+Nodos que detectaram >> [ 1  1  1  1  0  1  1  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 900.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+
+	Tempo atual: 900.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 219
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 900.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+
+	Tempo atual: 900.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 220
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 31
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 930.0
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+
+	Tempo atual: 930.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 221
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 930.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+
+	Tempo atual: 930.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 222
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 930.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+
+	Tempo atual: 930.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 223
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 930.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+
+	Tempo atual: 930.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 224
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 930.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+
+	Tempo atual: 930.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 225
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 930.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+
+	Tempo atual: 930.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 226
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como FALHO no tempo 930.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+
+	Tempo atual: 930.0
+	Ação Executada: TEST
+	Contador de eventos: 5
+ 	Contador de testes: 227
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 32
+O nodo 7 RECUPEROU no tempo 960.0 
+
+	Tempo atual: 960.0
+	Ação Executada: REPAIR
+	Contador de eventos: 6
+ 	Contador de testes: 227
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 960.0
+Tempo atual >> 960.0
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
+Número do evento >> 6
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 7
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0  0  0  0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 960.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+
+	Tempo atual: 960.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 228
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 960.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+
+	Tempo atual: 960.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 229
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 960.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+
+	Tempo atual: 960.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 230
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 960.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+
+	Tempo atual: 960.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 231
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 960.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+
+	Tempo atual: 960.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 232
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 1 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 960.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+
+	Tempo atual: 960.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 233
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 960.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+
+	Tempo atual: 960.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 234
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 33
+O nodo 7 TESTOU o nodo 3 como SEM FALHA no tempo 990.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 2 1 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+
+	Tempo atual: 990.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 235
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo 990.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 1 2 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+
+	Tempo atual: 990.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 236
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 1 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 7 como SEM FALHA no tempo 990.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 6 5 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+
+	Tempo atual: 990.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 237
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 990.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 5 6 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+
+	Tempo atual: 990.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 238
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 1 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 990.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+
+	Tempo atual: 990.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 239
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 990.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+
+	Tempo atual: 990.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 240
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 990.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+
+	Tempo atual: 990.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 241
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 990.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+
+	Tempo atual: 990.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 242
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 34
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 1020.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 -1 -1 0 -1 ] 
+
+	Tempo atual: 1020.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 243
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 1020.0
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+
+	Tempo atual: 1020.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 244
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 0 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 1020.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+
+	Tempo atual: 1020.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 245
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 0 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 1020.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+
+	Tempo atual: 1020.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 246
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 1020.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1020.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 247
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 1020.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+
+	Tempo atual: 1020.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 248
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 1020.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+
+	Tempo atual: 1020.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 249
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 1 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 1020.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+
+	Tempo atual: 1020.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 250
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 -1 -1 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 35
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo 1050.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+	Tempo atual: 1050.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 251
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 1 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 1050.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+
+	Tempo atual: 1050.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 252
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 1050.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+
+	Tempo atual: 1050.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 253
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 1050.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+
+	Tempo atual: 1050.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 254
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 1050.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1050.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 255
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 1050.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+
+	Tempo atual: 1050.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 256
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 1050.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+
+	Tempo atual: 1050.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 257
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 1050.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+
+	Tempo atual: 1050.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 258
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 36
+O nodo 7 TESTOU o nodo 3 como SEM FALHA no tempo 1080.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 2 1 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+	Tempo atual: 1080.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 259
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo 1080.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 1 2 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+
+	Tempo atual: 1080.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 260
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 7 como SEM FALHA no tempo 1080.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 6 5 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+
+	Tempo atual: 1080.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 261
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 1 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 1080.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 5 6 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1080.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 262
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 1080.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1080.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 263
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 1080.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+
+	Tempo atual: 1080.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 264
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+
+	A latência para detectar o evento 6 (que começou no tempo 960.0) é de 5 rodada(s) de teste(s)  [Tempo atual: 1080.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 960.0
+Tempo atual >> 1080.0
+Quando o primeiro nodo detectou >> 960.0
+Primeiro nodo que detectou >> 5
+Número do evento >> 6
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 7
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 37
+Nodos que detectaram >> [ 1  1  1  1  1  1  1  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 1080.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+
+	Tempo atual: 1080.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 265
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 1080.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+
+	Tempo atual: 1080.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 266
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 37
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 1110.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+	Tempo atual: 1110.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 267
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 1110.0
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+
+	Tempo atual: 1110.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 268
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 1110.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+
+	Tempo atual: 1110.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 269
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 1110.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1110.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 270
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 1110.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1110.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 271
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 1110.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+
+	Tempo atual: 1110.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 272
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 1110.0
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+
+	Tempo atual: 1110.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 273
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 1110.0
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+
+	Tempo atual: 1110.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 274
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 38
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo 1140.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+	Tempo atual: 1140.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 275
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 1140.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+
+	Tempo atual: 1140.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 276
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 1140.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+
+	Tempo atual: 1140.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 277
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 1140.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1140.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 278
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 1140.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1140.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 279
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 1140.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+
+	Tempo atual: 1140.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 280
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 1140.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+
+	Tempo atual: 1140.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 281
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 1140.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+
+	Tempo atual: 1140.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 282
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 39
+O nodo 7 TESTOU o nodo 3 como SEM FALHA no tempo 1170.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 2 1 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+	Tempo atual: 1170.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 283
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo 1170.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 1 2 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+
+	Tempo atual: 1170.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 284
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 3 TESTOU o nodo 7 como SEM FALHA no tempo 1170.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 6 5 4 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+
+	Tempo atual: 1170.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 285
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 1170.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 5 6 7 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1170.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 286
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 1170.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 7 6 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+
+	Tempo atual: 1170.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 287
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 1170.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 7 4 5 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+
+	Tempo atual: 1170.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 288
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 1170.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 3 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+
+	Tempo atual: 1170.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 289
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 1170.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 3 0 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+
+	Tempo atual: 1170.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 290
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+---------------------------
+
+ROUND TEST: 40
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 1200.0
+
+	Estado atual do vetor STATE do Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
+
+	Tempo atual: 1200.0
+	Ação Executada: TEST
+	Contador de eventos: 6
+ 	Contador de testes: 291
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 2 2 0 0 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 2 0 0 2 ] 
+	Nodo 2 >> [ 0 0 -1 2 2 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 -1 2 0 0 2 ] 
+	Nodo 4 >> [ 0 0 0 2 -1 0 0 2 ] 
+	Nodo 5 >> [ 0 0 0 2 2 -1 0 2 ] 
+	Nodo 6 >> [ 0 0 0 2 2 0 -1 2 ] 
+	Nodo 7 >> [ 0 0 0 0 2 0 0 -1 ] 
 
 ---------------------------
 
