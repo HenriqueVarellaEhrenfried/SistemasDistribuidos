@@ -286,19 +286,39 @@ void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
     //     printf(" ]\n\n");
     // }
 
+    int infos[numClusterNodes];
 
-    for(i=0,clusterNodes=0, newInfoIndex = 0; i < numClusterNodes; i++){
-        int index1 = table_cis[token][currentCluster-1].cis[i];
-        int index2 = table_cis[token2][currentCluster-1].cis[i];
-        // puts("index:\n-------");
-        // printvec(pow(2,currentCluster-1),table_cis[token][currentCluster-1].cis);
-        // puts("-------");
-        if(nodo[token].state[index1] < nodo[token].state[index2] && st == 0){
-            nodo[token].state[index1] = nodo[token].state[index2];
-            newInfo[newInfoIndex] = i;
-            newInfoIndex++; 
+    if(st == 0){
+        for(i = 0, clusterNodes=0, newInfoIndex = 0; i < numClusterNodes; i++){
+            if(token2 != table_cis[token][currentCluster-1].cis[i]){
+                int index1 = table_cis[token][currentCluster-1].cis[i];
+                nodo[token].state[index1] = nodo[token2].state[index1];
+                newInfo[newInfoIndex] = index1;
+                newInfoIndex++; 
+            }
         }
     }
+
+
+    // for(i=0,clusterNodes=0, newInfoIndex = 0; i < numClusterNodes; i++){
+
+
+
+
+    //     int index1 = table_cis[token][currentCluster-1].cis[i];
+    //     int index2 = table_cis[token2][currentCluster-1].cis[i];
+    //     // puts("index:\n-------");
+    //     // printvec(pow(2,currentCluster-1),table_cis[token][currentCluster-1].cis);
+    //     // puts("-------");
+    //     printf("----\n");
+    //     printf("i: %d  |  numClusterNodes: %d  |  currentCluster: %d \n",i, numClusterNodes, currentCluster);
+    //     printf("index1: %d  |  index2: %d\n",index1, index2);
+    //     if(nodo[token].state[index1] < nodo[token].state[index2] && st == 0){
+    //         nodo[token].state[index1] = nodo[token].state[index2];
+    //         newInfo[newInfoIndex] = i;
+    //         newInfoIndex++; 
+    //     }
+    // }
     if (newInfoIndex !=0){
         printf("O nodo %d recebeu informação sobre o(s) nodo(s): [", token);
         totalInfo = newInfoIndex;
