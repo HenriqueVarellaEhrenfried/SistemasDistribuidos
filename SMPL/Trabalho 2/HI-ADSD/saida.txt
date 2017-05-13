@@ -505,10 +505,8 @@ O nodo 1 TESTOU o nodo 3 como FALHO no tempo 180.0
 ---------------------------
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
-O nodo 1 recebeu informação sobre o(s) nodo(s): [ 3 ]
 
-
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 ] 
 
 	Tempo atual: 180.0
 	Ação Executada: TEST
@@ -518,7 +516,7 @@ O nodo 1 recebeu informação sobre o(s) nodo(s): [ 3 ]
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 ] 
 	Nodo 2 >> [ 0 0 -1 0 ] 
 	Nodo 3 >> [ -1 -1 -1 -1 ] 
 
@@ -538,7 +536,7 @@ O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 ] 
 	Nodo 2 >> [ 0 0 -1 0 ] 
 	Nodo 3 >> [ -1 -1 -1 -1 ] 
 
@@ -557,7 +555,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 210.0
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 ] 
 	Nodo 2 >> [ 0 0 -1 0 ] 
 	Nodo 3 >> [ -1 -1 -1 -1 ] 
 
@@ -565,7 +563,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 210.0
 
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 0 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 ] 
 
 	Tempo atual: 210.0
 	Ação Executada: TEST
@@ -575,7 +573,7 @@ O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 ] 
 	Nodo 2 >> [ 0 0 -1 0 ] 
 	Nodo 3 >> [ -1 -1 -1 -1 ] 
 
@@ -593,7 +591,7 @@ O nodo 2 TESTOU o nodo 3 como FALHO no tempo 210.0
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 0 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 ] 
 	Nodo 2 >> [ 0 0 -1 1 ] 
 	Nodo 3 >> [ -1 -1 -1 -1 ] 
 
@@ -614,11 +612,28 @@ O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 0 0 ] 
+	Nodo 1 >> [ 0 -1 0 1 ] 
 	Nodo 2 >> [ 0 0 -1 1 ] 
 	Nodo 3 >> [ -1 -1 -1 -1 ] 
 
 ---------------------------
+
+
+	A latência para detectar o evento 1 (que começou no tempo 180.0) é de 3 rodada(s) de teste(s)  [Tempo atual: 240.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 180.0
+Tempo atual >> 240.0
+Quando o primeiro nodo detectou >> 180.0
+Primeiro nodo que detectou >> 1
+Número do evento >> 1
+Evento >> Falha
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 8
+Nodos que detectaram >> [ 1  1  1  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 1 TESTOU o nodo 3 como FALHO no tempo 240.0
 
@@ -639,8 +654,6 @@ O nodo 1 TESTOU o nodo 3 como FALHO no tempo 240.0
 ---------------------------
 
 O nodo 1 TESTOU o nodo 2 como SEM FALHA no tempo 240.0
-O nodo 1 recebeu informação sobre o(s) nodo(s): [ 3 ]
-
 
 	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 1 ] 
 
@@ -657,23 +670,6 @@ O nodo 1 recebeu informação sobre o(s) nodo(s): [ 3 ]
 	Nodo 3 >> [ -1 -1 -1 -1 ] 
 
 ---------------------------
-
-
-	A latência para detectar o evento 1 (que começou no tempo 180.0) é de 2 rodada(s) de teste(s)  [Tempo atual: 240.0] 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-			 STATUS DO EVENTO
-Tempo em que o evento ocorreu >> 180.0
-Tempo atual >> 240.0
-Quando o primeiro nodo detectou >> 210.0
-Primeiro nodo que detectou >> 2
-Número do evento >> 1
-Evento >> Falha
-Nodo em que aconteceu o evento >> 3
-Foi detectado? >> Sim
-Número de testes executados até a detecção do evento >> 10
-Nodos que detectaram >> [ 1  1  1  0 ]
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 240.0
 O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
@@ -806,7 +802,7 @@ O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 300.0
 O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
 
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 -1 2 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 ] 
 
 	Tempo atual: 300.0
 	Ação Executada: TEST
@@ -816,7 +812,7 @@ O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 -1 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 ] 
 	Nodo 2 >> [ 0 0 -1 1 ] 
 	Nodo 3 >> [ -1 -1 -1 -1 ] 
 
@@ -836,7 +832,7 @@ O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 ]
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 -1 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 ] 
 	Nodo 2 >> [ 0 0 -1 1 ] 
 	Nodo 3 >> [ -1 -1 -1 -1 ] 
 
@@ -855,7 +851,7 @@ O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 330.0
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 -1 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 ] 
 	Nodo 2 >> [ 0 0 -1 1 ] 
 	Nodo 3 >> [ -1 -1 0 -1 ] 
 
@@ -873,7 +869,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 330.0
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 -1 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 ] 
 	Nodo 2 >> [ 0 0 -1 1 ] 
 	Nodo 3 >> [ -1 -1 0 -1 ] 
 
@@ -881,7 +877,7 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 330.0
 
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
 
-	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 -1 2 ] 
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 -1 0 2 ] 
 
 	Tempo atual: 330.0
 	Ação Executada: TEST
@@ -891,7 +887,7 @@ O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 -1 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 ] 
 	Nodo 2 >> [ 0 0 -1 1 ] 
 	Nodo 3 >> [ -1 -1 0 -1 ] 
 
@@ -909,7 +905,7 @@ O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 330.0
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 -1 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 ] 
 	Nodo 2 >> [ 0 0 -1 2 ] 
 	Nodo 3 >> [ -1 -1 0 -1 ] 
 
@@ -930,7 +926,7 @@ O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 1 ] 
-	Nodo 1 >> [ 0 -1 -1 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 ] 
 	Nodo 2 >> [ 0 0 -1 2 ] 
 	Nodo 3 >> [ 0 0 0 -1 ] 
 
@@ -950,11 +946,28 @@ O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
  
 	Vetores STATE: 
 	Nodo 0 >> [ -1 0 0 2 ] 
-	Nodo 1 >> [ 0 -1 -1 2 ] 
+	Nodo 1 >> [ 0 -1 0 2 ] 
 	Nodo 2 >> [ 0 0 -1 2 ] 
 	Nodo 3 >> [ 0 0 0 -1 ] 
 
 ---------------------------
+
+
+	A latência para detectar o evento 2 (que começou no tempo 300.0) é de 3 rodada(s) de teste(s)  [Tempo atual: 360.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 300.0
+Tempo atual >> 360.0
+Quando o primeiro nodo detectou >> 300.0
+Primeiro nodo que detectou >> 1
+Número do evento >> 2
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 9
+Nodos que detectaram >> [ 1  1  1  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 360.0
 O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]

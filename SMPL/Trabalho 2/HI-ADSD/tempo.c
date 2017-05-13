@@ -29,6 +29,8 @@
 #define EVENT_NODE_UNKNOWN 0
 #define EVENT_FIRST_NODE_DETECT -1
 #define EVENT_FIRST_NODE_TIME_DETECTED -1
+#define TRUE 1
+#define FALSE !TRUE
 
 //Constates para criar Header na saída
 #define HEADER_BAR       "+------------------------------------------------------------------+"
@@ -140,7 +142,7 @@ char ** tokens; //Vetor com as strings tokenizadas
 int numNotFailed = 0, auxFail = 0, numFailed = 0; //Variáveis para evento
 static int N_CLUSTERS; //Variável que contém o número de clusters necessários para o programa 
 int roundTest = 0; //Variável com o número da rodada de teste para facilitar a escolha do cluster que será testado
-
+int * tested; //Variável com os nodos testados
 
 //Função para inicializar a variável de tipo events
 void newEvent(double time, int eventNumber, int event, int nodeNumber) {
@@ -226,7 +228,7 @@ int getLatency(double time, events e) {
         if(numNotFailed==1 && numFailed == 0){
             numNotFailed = 0;
         }
-        if(( ((sum >= N-numFailed) && (e.event==FAULT))  || ((sum >= (N-numNotFailed)) && (e.event==REPAIR)) )) {
+        if(( ((sum >= N-numFailed) && (e.event==FAULT))  || ((sum >= (N-numNotFailed-1)) && (e.event==REPAIR)) )) {
             if(sum == 1){
                 evnts.timeFirstDetect=e.timeFirstDetect=time;
                 evnts.nodeDetected=e.nodeDetected=token;
@@ -264,6 +266,33 @@ void printState(char * place) {
     }
     puts("\n---------------------------\n");
 }
+
+int isInTested(int qNode){
+    int i;
+    for(i = 0; i < N; i++){
+        if(qNode == tested[i]){
+            return TRUE;
+        } 
+    }
+    return FALSE;
+}
+
+void cleanTested(){
+    int i;
+    for(i = 0; i < N; i++){
+        tested[i]=-1;
+    }
+}
+
+void addInTested(int n){
+    int i;
+    for(i = 0; i < N; i++){
+        if(i == n){
+            tested[i] = n;
+            break;
+        }
+    }
+}
 //Função para atualizar o vetor STATE de um nodo
 void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
     int currentCluster = roundTest%N_CLUSTERS == 0 ? N_CLUSTERS : roundTest%N_CLUSTERS;
@@ -292,9 +321,12 @@ void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
         for(i = 0, clusterNodes=0, newInfoIndex = 0; i < numClusterNodes; i++){
             if(token2 != table_cis[token][currentCluster-1].cis[i]){
                 int index1 = table_cis[token][currentCluster-1].cis[i];
-                nodo[token].state[index1] = nodo[token2].state[index1];
-                newInfo[newInfoIndex] = index1;
-                newInfoIndex++; 
+                if(!isInTested(index1)){
+                    if(nodo[token].state[index1] < nodo[token2].state[index1])
+                        nodo[token].state[index1] = nodo[token2].state[index1];
+                    newInfo[newInfoIndex] = index1;
+                    newInfoIndex++;
+                }                 
             }
         }
     }
@@ -351,6 +383,7 @@ int testarNodo(int token, int token2, tcis table_cis[N][N_CLUSTERS]) {
     
     int st = status(nodo[token2].id);
     char *c = (st==0?"SEM FALHA":"FALHO");
+    addInTested(token2);
     if ((nodo[token].state[token2]%2) ^ (st)) {
         nodo[token].state[token2]++;
     }
@@ -491,6 +524,7 @@ int main(int argc, char * argv[]){
     reset();
     stream(1);
     nodo = (tnodo*)malloc(sizeof(tnodo)*N);    
+    tested = (int*)malloc(sizeof(int)*N);    
     newEvent(EVENT_TIME_UNKNOWN,EVENT_NUMBER_UNKNOWN,EVENT_UNKNOWN,EVENT_NODE_UNKNOWN);
 
     for(i = 0; i < N; i++) {
@@ -527,6 +561,7 @@ int main(int argc, char * argv[]){
     //Faz a simulação acontecer
     printf("************************** COMECOU O WARMUP **************************\n\n");
     float timeNow = time();
+    cleanTested();
     while(time() < simulationTime) {
         cause(&event, &token);
         if (timeNow != time()){
@@ -551,6 +586,7 @@ int main(int argc, char * argv[]){
                 printState("TEST");
             }while ((st!=0) && numTestes < (pow(2,currentCluster-1)));
             schedule(TEST, TEST_INTERVAL, token);
+            cleanTested();
             break;
 
         case FAULT:
