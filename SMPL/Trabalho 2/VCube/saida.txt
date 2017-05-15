@@ -1,0 +1,1463 @@
++------------------------------------------------------------------+
+|Programa de Pós-graduação da Universidade Federal do Paraná - UFPR|
+|  Segundo trabalho prático da disciplina de Sistemas Distribuídos |
+|              Estudante: Henrique Varella Ehrenfried              |
+|                  Professor: Elias P. Duarte Jr.                  |
+|                              2017-1                              |
++------------------------------------------------------------------+
+CIS do nodo 0 no cluster 1: 
+[ 1 ]
+
+CIS do nodo 0 no cluster 2: 
+[ 2 3 ]
+
+CIS do nodo 1 no cluster 1: 
+[ 0 ]
+
+CIS do nodo 1 no cluster 2: 
+[ 3 2 ]
+
+CIS do nodo 2 no cluster 1: 
+[ 3 ]
+
+CIS do nodo 2 no cluster 2: 
+[ 0 1 ]
+
+CIS do nodo 3 no cluster 1: 
+[ 2 ]
+
+CIS do nodo 3 no cluster 2: 
+[ 1 0 ]
+
+
+Agendando evento:
+	Evento: Falha
+	Tempo: 180.0
+	Nodo > 3
+
+Agendando evento:
+	Evento: Recuperação
+	Tempo: 300.0
+	Nodo > 3
+
+
+Número de eventos agendados: 2
+
+
+N = 4
+Tempo para Warm Up = 90.0
+Tempo de simulação = 400.0
+
+
+************************** COMECOU O WARMUP **************************
+
+ROUND TEST: 1
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 -1 -1 ] 
+
+	Tempo atual:  30.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 1
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 -1 ] 
+	Nodo 1 >> [ -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 1 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 -1 -1 ] 
+
+	Tempo atual:  30.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 2
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 -1 ] 
+	Nodo 1 >> [ 0 0 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ -1 -1 -1 0 ] 
+
+	Tempo atual:  30.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 3
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 -1 ] 
+	Nodo 1 >> [ 0 0 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 3  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ -1 -1 0 0 ] 
+
+	Tempo atual:  30.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 4
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 -1 -1 ] 
+	Nodo 1 >> [ 0 0 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 ] 
+	Nodo 3 >> [ -1 -1 0 0 ] 
+
+---------------------------
+
+ROUND TEST: 2
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 1  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ -1 0 0 0 ] 
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 5
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 ] 
+	Nodo 1 >> [ 0 0 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 ] 
+	Nodo 3 >> [ -1 -1 0 0 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 1  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo  60.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 0 ] 
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 6
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ -1 -1 -1 0 ] 
+	Nodo 3 >> [ -1 -1 0 0 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 0  |  J: 1  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 2 ]
+
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 0 ] 
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 7
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 0 0 ] 
+
+---------------------------
+
+TOKEN: 3  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 0 ] 
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 8
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+ROUND TEST: 3
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 0 ] 
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 9
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 0 ] 
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 10
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  90.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 0 ] 
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 11
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+TOKEN: 3  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo  90.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 0 ] 
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 12
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+ROUND TEST: 4
+************************** TERMINOU O WARMUP**************************
+
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 1  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 13
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 1  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 14
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 0  |  J: 1  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 15
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+TOKEN: 3  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 16
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+ROUND TEST: 5
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 17
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 150.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 18
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 150.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 19
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+TOKEN: 3  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 150.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 20
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 ] 
+
+---------------------------
+
+ROUND TEST: 6
+O nodo 3 FALHOU no tempo 180.0
+
+	Tempo atual: 180.0
+	Ação Executada: FAULT
+	Contador de eventos: 1
+ 	Contador de testes: 20
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 180.0
+Tempo atual >> 180.0
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
+Número do evento >> 1
+Evento >> Falha
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 1
+TOKEN: 0  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 1  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 21
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 1
+TOKEN: 1  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 1  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 1 TESTOU o nodo 3 como FALHO no tempo 180.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 22
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 0  |  J: 1  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 1
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 1
+TOKEN: 2  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 0
+[ 0 1 ]
+[ 0 1 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 0 ] 
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 23
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 7
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 0
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 210.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 24
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 0
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 25
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 0 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 0
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 2 TESTOU o nodo 3 como FALHO no tempo 210.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 26
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+	A latência para detectar o evento 1 (que começou no tempo 180.0) é de 2 rodada(s) de teste(s)  [Tempo atual: 210.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 180.0
+Tempo atual >> 210.0
+Quando o primeiro nodo detectou >> 180.0
+Primeiro nodo que detectou >> 1
+Número do evento >> 1
+Evento >> Falha
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 6
+Nodos que detectaram >> [ 1  1  1  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ROUND TEST: 8
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 1
+TOKEN: 0  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 1  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 240.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 27
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 1
+TOKEN: 1  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 1  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 1 TESTOU o nodo 3 como FALHO no tempo 240.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 28
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 0  |  J: 1  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 1
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 1
+TOKEN: 2  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 0
+[ 0 1 ]
+[ 0 1 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 240.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 29
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 9
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 0
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 270.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 30
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 0
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 270.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 31
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 1  |  CLUSTER: 0
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 2 TESTOU o nodo 3 como FALHO no tempo 270.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 32
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 10
+O nodo 3 RECUPEROU no tempo 300.0 
+
+	Tempo atual: 300.0
+	Ação Executada: REPAIR
+	Contador de eventos: 2
+ 	Contador de testes: 32
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 300.0
+Tempo atual >> 300.0
+Quando o primeiro nodo detectou >>  -1.0
+Primeiro nodo que detectou >> -1
+Número do evento >> 2
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Não
+Número de testes executados até a detecção do evento >> 0
+Nodos que detectaram >> [ 0  0  0  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 1  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 33
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 1  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 34
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 0  |  J: 1  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 300.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 35
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+ROUND TEST: 11
+TOKEN: 3  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 330.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 1 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 1 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 36
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 1 ] 
+
+---------------------------
+
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 330.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 37
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 1 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 38
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ 0 0 0 1 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 330.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 39
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 1 ] 
+
+---------------------------
+
+
+	A latência para detectar o evento 2 (que começou no tempo 300.0) é de 2 rodada(s) de teste(s)  [Tempo atual: 330.0] 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+			 STATUS DO EVENTO
+Tempo em que o evento ocorreu >> 300.0
+Tempo atual >> 330.0
+Quando o primeiro nodo detectou >> 300.0
+Primeiro nodo que detectou >> 1
+Número do evento >> 2
+Evento >> Recuperação
+Nodo em que aconteceu o evento >> 3
+Foi detectado? >> Sim
+Número de testes executados até a detecção do evento >> 7
+Nodos que detectaram >> [ 1  1  1  0 ]
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ROUND TEST: 12
+TOKEN: 3  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 360.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 3 ]
+
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 40
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 2 ] 
+
+---------------------------
+
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 2  |  J: 1  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 360.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 41
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 2 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 1  |  I: 3  |  J: 1  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 360.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 42
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 2 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 0  |  J: 1  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 360.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 43
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 2 ] 
+
+---------------------------
+
+ROUND TEST: 13
+TOKEN: 3  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 3  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 2
+[ 2 ]
+[ 2 ]
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 390.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 390.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 44
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 2 ] 
+
+---------------------------
+
+TOKEN: 0  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 0  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 390.0
+
+	Estado atual do vetor STATE do Nodo 0 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 390.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 45
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 2 ] 
+
+---------------------------
+
+TOKEN: 1  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 1  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 0
+[ 0 ]
+[ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 390.0
+
+	Estado atual do vetor STATE do Nodo 1 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 390.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 46
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 2 ] 
+
+---------------------------
+
+TOKEN: 2  |  I: 0  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 1  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 2  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 0
+TOKEN: 2  |  I: 3  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 0
+Nao eh NULL
+toTest[0]: 3
+[ 3 ]
+[ 3 ]
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 390.0
+
+	Estado atual do vetor STATE do Nodo 2 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 390.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 47
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 2 ] 
+
+---------------------------
+
+ROUND TEST: 14
+TOKEN: 3  |  I: 0  |  J: 0  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 1  |  J: 0  |  CIS: 3  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 1  |  J: 1  |  CIS: 2  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 2  |  J: 0  |  CIS: 0  |  STATUS: 0  |  CLUSTER: 1
+TOKEN: 3  |  I: 3  |  J: 0  |  CIS: 1  |  STATUS: 0  |  CLUSTER: 1
+Nao eh NULL
+toTest[0]: 1
+[ 1 ]
+[ 1 ]
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 420.0
+
+	Estado atual do vetor STATE do Nodo 3 >> [ 0 0 0 2 ] 
+
+	Tempo atual: 420.0
+	Ação Executada: TEST
+	Contador de eventos: 2
+ 	Contador de testes: 48
+
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 2 ] 
+	Nodo 1 >> [ 0 0 0 2 ] 
+	Nodo 2 >> [ 0 0 0 2 ] 
+	Nodo 3 >> [ 0 0 0 2 ] 
+
+---------------------------
+
