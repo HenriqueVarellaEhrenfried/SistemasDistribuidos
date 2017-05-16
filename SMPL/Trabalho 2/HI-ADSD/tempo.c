@@ -466,17 +466,59 @@ void createTableCis(tcis table_cis[N][N_CLUSTERS]){
     }
 }
 void printTableCis(tcis table_cis[N][N_CLUSTERS]){
-    int i,j,k;
+    int i,j,k,x;
+    puts("Tabela Cis");
     for(i = 0; i < N; i++){
-        for(j = 0; j < N_CLUSTERS; j++){
-            printf("CIS do nodo %d no cluster %d: \n[ ",i,j+1);
-            int num_nodes_to_print = pow(2,table_cis[i][j].cluster_id-1);
-            for(k = 0; k < num_nodes_to_print; k++){
-                printf("%d ",table_cis[i][j].cis[k]);
-            }
-            printf("]\n\n");
-        }
+        printf("+---------");
     }
+    printf("+---------+\n");
+    printf("|    S    ");
+    for(i = 0; i < N; i++){
+        printf("|    %d    ",i);
+    }
+    printf("|\n");
+    for(i = 0; i < N; i++){
+        printf("+---------");
+    }
+    printf("+---------+\n");
+    int spaces;
+    for(j = 0; j < N_CLUSTERS; j++){
+        for(i = 0; i < N; i++){
+            if(i==0){
+                printf("|    %d    ",j+1);
+            }
+            int num_nodes_to_print = pow(2,table_cis[i][j].cluster_id-1);
+            
+            switch(num_nodes_to_print){
+                case 1:
+                    spaces = 4;
+                    break;
+                case 2: 
+                    spaces = 3;
+                    break;
+                case 4:
+                    spaces = 1;
+                    break;
+            }
+            printf("|");
+            for(x = 0; x < spaces; x++)
+                    printf(" ");
+            for(k = 0; k < num_nodes_to_print; k++){
+                if(k+1 == num_nodes_to_print)
+                    printf("%d",table_cis[i][j].cis[k]);
+                else 
+                    printf("%d ",table_cis[i][j].cis[k]);
+            }
+            for(x = 0; x < spaces; x++)
+                    printf(" ");
+        }
+            
+            printf("|\n");
+    }
+    for(i = 0; i < N; i++){
+        printf("+---------");
+    }
+    printf("+---------+\n");
 }
 void printvec(int size, int*array){
     int i;
