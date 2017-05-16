@@ -448,7 +448,7 @@ int * calculateTests(int currentCluster, tcis table_cis[N][N_CLUSTERS]){
 
     for(i = 0, k = 0; i < N; i++){
         for(j = 0; j < numNodes; j++){
-            printf("TOKEN: %d  |  I: %d  |  J: %d  |  CIS: %d  |  STATUS: %d  |  CLUSTER: %d\n", token, i, j, table_cis[i][currentCluster-1].cis[j], status(nodo[table_cis[i][currentCluster-1].cis[j]].id), currentCluster-1);
+            // printf("TOKEN: %d  |  I: %d  |  J: %d  |  CIS: %d  |  STATUS: %d  |  CLUSTER: %d\n", token, i, j, table_cis[i][currentCluster-1].cis[j], status(nodo[table_cis[i][currentCluster-1].cis[j]].id), currentCluster-1);
            if(status(nodo[table_cis[i][currentCluster-1].cis[j]].id) == 0){ 
                 if(table_cis[i][currentCluster-1].cis[j]==token){
                     toTest[k] = i;
@@ -460,9 +460,8 @@ int * calculateTests(int currentCluster, tcis table_cis[N][N_CLUSTERS]){
            }
         }
     }
-    toTest == NULL ? puts("Eh NULL"): puts("Nao eh NULL");
-    printf("toTest[0]: %d\n", toTest[0]);
-    printvec(k,toTest);
+    printf("\tO nodo: %d deve testar o(s) nodo(s): ", token);
+    printvec(k, toTest);
     return toTest;
 }
 int numNodosTest(int testes_token[N-1]){
@@ -481,6 +480,23 @@ printvec(int size, int*array){
         printf("%d ",array[i]);
     }
     printf("]\n");
+}
+int numberOfDigits(int n){
+    if (n == 0)
+        return 0;
+    return floor( log10( abs( n ) ) ) + 1;
+}
+void printRoundTest(){
+    int auxPrint;
+    printf("\t\t\t+");
+    for(auxPrint = 0; auxPrint < numberOfDigits(roundTest)-1; auxPrint++)
+        printf("-");
+    puts("------------------------+");
+    printf("\t\t\t|Rodada de teste atual: %d|\n",roundTest);
+    printf("\t\t\t+");
+    for(auxPrint = 0; auxPrint < numberOfDigits(roundTest)-1; auxPrint++)
+        printf("-");
+    puts("------------------------+");
 }
 // Programa Principal
 int main(int argc, char * argv[]){
@@ -514,10 +530,15 @@ int main(int argc, char * argv[]){
     createTableCis(table_cis);
     printTableCis(table_cis);
 
-    //Define tempo de warm up
+    //Define tempo de warm up neste caso foi definido que é Log2(N)+1 para garantir que todos os elementos
+    //dos vetores STATE de todos os nodos sejam zero. Entretanto o valor correto é Log2(N). Na simulção para
+    //garantir a corretude do algoritmo foi preciso adicionar 1 para que o vetor STATE do nodo zero na posição
+    //zero seja zero no final do warmup, caso fosse utilizado o valor correto de Log2(N) o resultado da primeira 
+    //posição do vetor STATE do nodo zero ficava como -1.
     int warmUpTime = (N_CLUSTERS+1)*(int)(TEST_INTERVAL);
+    
     //Inicializa simulção inicializando as variáveis necessárias
-    smpl(0, "Trabalho pratico 1 - Sistemas Distribuidos");
+    smpl(0, "Trabalho pratico 2 - Sistemas Distribuidos");
     reset();
     stream(1);
     nodo = (tnodo*)malloc(sizeof(tnodo)*N);    
@@ -569,7 +590,7 @@ int main(int argc, char * argv[]){
         cause(&event, &token);
         if (timeNow != time()){
             roundTest++;
-            printf("ROUND TEST: %d\n",roundTest);
+            printRoundTest();
             timeNow = time();
         }
         if((time()>(double)warmUpTime) && !printedEndOfWarmUp) {
@@ -584,7 +605,6 @@ int main(int argc, char * argv[]){
 
             testes_token = calculateTests(currentCluster, table_cis);
             nodos_a_testar = numNodosTest(testes_token);
-            printvec(nodos_a_testar,testes_token);
             int testando = 0;
             // Testa todos os nodos até encontrar um sem falha.
             do{
@@ -593,7 +613,7 @@ int main(int argc, char * argv[]){
                 numTestes++;
                 testando++;
                 printState("TEST");
-            }while (testando < nodos_a_testar-1);
+            }while (testando < nodos_a_testar);
             schedule(TEST, TEST_INTERVAL, token);
             cleanTested();
             break;
@@ -644,3 +664,10 @@ int main(int argc, char * argv[]){
     }
     return 0;
 }
+
+//TODO:
+/*
+    * Arrumar bug com a contagem da latência, o evento 1 do test4 está bugando
+    * Arrumar bug com a identificação de uma recuperação: Possível solução é copiar do AdaptiveDSD
+    
+*/

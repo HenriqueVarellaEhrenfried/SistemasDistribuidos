@@ -478,13 +478,30 @@ void printTableCis(tcis table_cis[N][N_CLUSTERS]){
         }
     }
 }
-printvec(int size, int*array){
+void printvec(int size, int*array){
     int i;
     printf("[ ");
     for(i = 0; i < size; i++){
         printf("%d ",array[i]);
     }
     printf("]\n");
+}
+int numberOfDigits(int n){
+    if (n == 0)
+        return 0;
+    return floor( log10( abs( n ) ) ) + 1;
+}
+void printRoundTest(){
+    int auxPrint;
+    printf("\t\t\t+");
+    for(auxPrint = 0; auxPrint < numberOfDigits(roundTest)-1; auxPrint++)
+        printf("-");
+    puts("------------------------+");
+    printf("\t\t\t|Rodada de teste atual: %d|\n",roundTest);
+    printf("\t\t\t+");
+    for(auxPrint = 0; auxPrint < numberOfDigits(roundTest)-1; auxPrint++)
+        printf("-");
+    puts("------------------------+");
 }
 // Programa Principal
 int main(int argc, char * argv[]){
@@ -566,7 +583,7 @@ int main(int argc, char * argv[]){
         cause(&event, &token);
         if (timeNow != time()){
             roundTest++;
-            printf("ROUND TEST: %d\n",roundTest);
+            printRoundTest();
             timeNow = time();
         }
         if((time()>(double)warmUpTime) && !printedEndOfWarmUp) {
