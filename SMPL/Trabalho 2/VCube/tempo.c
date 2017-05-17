@@ -103,8 +103,7 @@ node_set* cis(int i, int s){
 
 
 // Nodo
-typedef struct tnodo
-{
+typedef struct tnodo{
     int id;
     int * state;
     double * timestamp;
@@ -208,7 +207,7 @@ int getLatency(double time, events e) {
                 e.found[i] = 1;
             }
         }
-        if((time > N*TEST_INTERVAL)){
+        if((time > N_CLUSTERS*TEST_INTERVAL)){
             for(i = 0, numFailed = 0; i < N; i++){
                 for(j = 0, auxFail = 0; j < N; j++){
                     auxFail+=nodo[i].state[j];
@@ -229,7 +228,7 @@ int getLatency(double time, events e) {
         if(numNotFailed==1 && numFailed == 0){
             numNotFailed = 0;
         }
-        if(( ((sum >= N-numFailed) && (e.event==FAULT))  || ((sum >= (N-numNotFailed-1)) && (e.event==REPAIR)) )) {
+        if(( ((sum >= N-numFailed) && (e.event==FAULT))  || ((sum >= (N-numNotFailed)) && (e.event==REPAIR)) )) {
             if(sum == 1){
                 evnts.timeFirstDetect=e.timeFirstDetect=time;
                 evnts.nodeDetected=e.nodeDetected=token;
@@ -259,7 +258,7 @@ void printState(char * place) {
     //Começa aqui o print com tabs
     printf("\n\tTempo atual: %5.1f\n\tAção Executada: %s\n", time(), place);
     printf("\tContador de eventos: %d\n ", eventCounter);
-    printf("\tContador de testes: %d\n\n ", testCounter);
+    printf("\tContador de testes: %d\n ", testCounter);
     printf("\n\tVetores STATE: \n");
     for(i = 0; i < N; i++) {
         printf("\t");
@@ -310,6 +309,8 @@ void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
         printf("O nodo %d recebeu informação sobre o(s) nodo(s): [", token);
         totalInfo = newInfoIndex;
         for(newInfoIndex = 0; newInfoIndex < totalInfo; newInfoIndex++){
+            // if(evnts.found[newInfo[newInfoIndex]]==0 && !evnts.detected)
+            //     evnts.found[token] = 1;
             printf(" %d",newInfo[newInfoIndex]);
         }
         printf(" ]\n\n");
@@ -317,22 +318,6 @@ void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
     
 }
 //Função que testa um nodo a partir do nodo atual
-// int testarNodo(int token, int offset) {
-//     testCounter++;
-//     int token2 = (token+offset)%N;
-//     int st = status(nodo[token2].id);
-//     char *c = (st==0?"SEM FALHA":"FALHO");
-//     if ((nodo[token].state[token2]%2) ^ (st)) {
-//         nodo[token].state[token2]++;
-//     }
-//     printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
-//     updateState(token2, st);
-//     printf("\n\tEstado atual do vetor STATE do ");
-//     printArray(token);
-//     return st;
-// }
-
-
 int testarNodo(int token, int token2, tcis table_cis[N][N_CLUSTERS]) {
     testCounter++;
     
@@ -344,8 +329,6 @@ int testarNodo(int token, int token2, tcis table_cis[N][N_CLUSTERS]) {
     }
     printf("O nodo %d TESTOU o nodo %d como %s no tempo %5.1f\n", token, token2, c, time());
     updateState(token2, st, table_cis);
-    printf("\n\tEstado atual do vetor STATE do ");
-    printArray(token);
     return st;
 }
 
@@ -420,19 +403,62 @@ void createTableCis(tcis table_cis[N][N_CLUSTERS]){
         }
     }
 }
-//Função que imprime os valores do Cis
+//Função que imprime a tabela Cis : NOTA - Esta função está otimizada para no máximo 3 clusters,
+//mesmo funcionando para menos clusters
 void printTableCis(tcis table_cis[N][N_CLUSTERS]){
-    int i,j,k;
+    int i,j,k,x;
+    puts("Tabela Cis");
     for(i = 0; i < N; i++){
-        for(j = 0; j < N_CLUSTERS; j++){
-            printf("CIS do nodo %d no cluster %d: \n[ ",i,j+1);
-            int num_nodes_to_print = pow(2,table_cis[i][j].cluster_id-1);
-            for(k = 0; k < num_nodes_to_print; k++){
-                printf("%d ",table_cis[i][j].cis[k]);
-            }
-            printf("]\n\n");
-        }
+        printf("+---------");
     }
+    printf("+---------+\n");
+    printf("|    S    ");
+    for(i = 0; i < N; i++){
+        printf("|    %d    ",i);
+    }
+    printf("|\n");
+    for(i = 0; i < N; i++){
+        printf("+---------");
+    }
+    printf("+---------+\n");
+    int spaces;
+    for(j = 0; j < N_CLUSTERS; j++){
+        for(i = 0; i < N; i++){
+            if(i==0){
+                printf("|    %d    ",j+1);
+            }
+            int num_nodes_to_print = pow(2,table_cis[i][j].cluster_id-1);
+            
+            switch(num_nodes_to_print){
+                case 1:
+                    spaces = 4;
+                    break;
+                case 2: 
+                    spaces = 3;
+                    break;
+                case 4:
+                    spaces = 1;
+                    break;
+            }
+            printf("|");
+            for(x = 0; x < spaces; x++)
+                    printf(" ");
+            for(k = 0; k < num_nodes_to_print; k++){
+                if(k+1 == num_nodes_to_print)
+                    printf("%d",table_cis[i][j].cis[k]);
+                else 
+                    printf("%d ",table_cis[i][j].cis[k]);
+            }
+            for(x = 0; x < spaces; x++)
+                    printf(" ");
+        }
+            
+            printf("|\n");
+    }
+    for(i = 0; i < N; i++){
+        printf("+---------");
+    }
+    printf("+---------+\n");
 }
 //Função que calcula os nodos que o o nodo token vai testar
 int * calculateTests(int currentCluster, tcis table_cis[N][N_CLUSTERS]){
@@ -522,8 +548,8 @@ int main(int argc, char * argv[]){
     double simulationTime = strtod(tokens[0], NULL);
     N = atoi(tokens[1]);
 
-    half_N = (N/2);
-    N_CLUSTERS = (int)ceil(log2(N));
+    half_N = (N/2); // Define a metade dos nodos
+    N_CLUSTERS = (int)ceil(log2(N)); // Define a quantidade de clusters necessários
     //Define tabela Cis
     tcis table_cis[N][N_CLUSTERS];
     int k;
@@ -577,26 +603,28 @@ int main(int argc, char * argv[]){
 
     int printedEndOfWarmUp = 0, token2;
 
-    // for(i = 0; i < N; i++){
-    //     printf("NODO: %d  |  STATUS: %d\n", i, status(nodo[i].id));
-    // }
-
     // Checagem de eventos
     //Faz a simulação acontecer
     printf("************************** COMECOU O WARMUP **************************\n\n");
     float timeNow = time();
+    int shouldPrintRoundTest = FALSE;
     cleanTested();
     while(time() < simulationTime) {
         cause(&event, &token);
         if (timeNow != time()){
             roundTest++;
-            printRoundTest();
+            shouldPrintRoundTest = TRUE;
             timeNow = time();
+        }
+        else{
+            shouldPrintRoundTest = FALSE;
         }
         if((time()>(double)warmUpTime) && !printedEndOfWarmUp) {
             printf("************************** TERMINOU O WARMUP**************************\n\n");
             printedEndOfWarmUp++;
         }
+        if(shouldPrintRoundTest)
+            printRoundTest();
         switch(event) {
         case TEST:
             if (status(nodo[token].id) != 0) break;
@@ -664,10 +692,3 @@ int main(int argc, char * argv[]){
     }
     return 0;
 }
-
-//TODO:
-/*
-    * Arrumar bug com a contagem da latência, o evento 1 do test4 está bugando
-    * Arrumar bug com a identificação de uma recuperação: Possível solução é copiar do AdaptiveDSD
-    
-*/
