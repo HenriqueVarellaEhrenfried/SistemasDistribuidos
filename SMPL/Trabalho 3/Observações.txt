@@ -1,0 +1,8 @@
+No programa CISJ 
+
+i = nó
+s = numero do cluster
+j = numero do nodo testado varia de (1..tamanho do cluster)
+
+Então se rodar [./cisj 0 3] vc vai obter todos os nós do cluster 3 que o nó 0 testa
+Então se rodar [./cisj 0 3 1] vc vai obter o nó 1 do cluster 3 que o nó 0 testa

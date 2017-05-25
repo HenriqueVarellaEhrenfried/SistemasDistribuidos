@@ -1,0 +1,17 @@
+O trabalho deve ser feito individualmente (alunos pós-graduação) ou em dupla (alunos graduação).
+
+FASE 3
+
+Especificação: Implemente o algoritmo de broadcast especificado em aula sobre o VCube. Neste algoritmo o nodo fonte envia a mensagem para os primeiros nodos sem-falha de cada cluster. Junto com a mensagem o nodo envia o índice do cluster (s). Com base no índice recebido, cada nodo sabe se deve reencaminhar a mensagem e para quais clusters. Um nodo programa a mensagem para os clusters de índice: s-1, s-2, ..., 1. Ou seja, quando s=0 não é necessário reencaminhar a mensagem.
+
+Simule o broadcast para sistemas com diferentes configurações de falhas estáticas, isto é, o broadcast só ocorre após todos dos eventos terem sido diagnosticados. Faça o log de forma a mostrar claramente o funcionamento do broadcast.
+
+Atenção: Data para disponibilizar o trabalho: 12 de junho de 2017 (segunda-feira) O prazo para fazer o trabalho é de quase 3 semanas, este prazo não será prorrogado! 
+Os alunos devem informar por e-mail a URL do trabalho, usando o subject "TP* SISDIS 2017-1"
+
+Deve ser feita uma página Web, que contém:
+
+Relatório HTML explicando como o trabalho foi feito (use desenhos, palavras, o que você quiser): o objetivo é detalhar as suas decisões para implementar seu trabalho.
+Código fonte dos programas, comentados. ATENÇÃO: acrescente a todo programa a terminação ".txt" para que possa ser diretamente aberto em um browser. Exemplos: cliente.py.txt ou servidor.c.txt
+Log dos testes executados: mostre explicitamente diversos casos testados, lembre-se é a partir desta listagem de testes que o professor vai medir até que ponto o trabalho está funcionando. 
+Veja este programa exemplo para ilustrar a criação de um bom log.
