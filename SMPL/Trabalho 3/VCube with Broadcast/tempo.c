@@ -525,8 +525,48 @@ void printRoundTest(){
         printf("-");
     puts("------------------------+");
 }
-void sendMessengeBroadcast(){
+
+int getNodeToSendMessage(int currentCluster, tcis table_cis[N][N_CLUSTERS], int nodeSender){
+    int i, j, node2Send;
+    int test_complete = FALSE;
+    int numNodes = pow(2,currentCluster-1);
     
+    for(i = 0, k = 0; i < N; i++){
+        for(j = 0; j < numNodes; j++){
+           if(status(nodo[table_cis[i][currentCluster-1].cis[j]].id && !test_complete) == 0){ 
+                if(table_cis[i][currentCluster-1].cis[j]==nodeSender){
+                    test_complete = TRUE;
+                    node2Send = table_cis[i][currentCluster-1].cis[j];
+                }
+                else{
+                    break;
+                }
+           }
+        }
+        if(test_complete){
+            break;
+        }
+    }
+    return node2Send;
+}
+//
+void sendMessengeBroadcast(int currentCluster, tcis table_cis[N][N_CLUSTERS], int msg){
+    int node2Send;
+    
+    node2Send = getNodeToSendMessage(currentCluster, table_cis, token);
+
+    sendToNode(node2Send, currentCluster,table_cis);
+}
+
+int sendToNode(int nd, int currentCluster, tcis table_cis[N][N_CLUSTERS]){
+    int node2Send, cCluster;
+
+    cCluster = currentCluster-1;
+    if (cCluster >= 1){
+        node2Send = getNodeToSendMessage(cCluster, table_cis, nd);
+        sendToNode(node2Send, cCluster,table_cis);
+    }
+    return 1;
 }
 // Programa Principal
 int main(int argc, char * argv[]){
