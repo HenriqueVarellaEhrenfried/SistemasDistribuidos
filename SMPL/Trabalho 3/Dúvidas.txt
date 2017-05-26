@@ -1,0 +1,2 @@
+1) O broadcast demora quantas "Rodadas de teste" ?
+2) Devo parar de testar quando começar mandar mensagens através do broadcast?

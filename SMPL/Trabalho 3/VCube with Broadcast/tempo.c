@@ -144,6 +144,7 @@ int numNotFailed = 0, auxFail = 0, numFailed = 0; //Variáveis para evento
 static int N_CLUSTERS; //Variável que contém o número de clusters necessários para o programa 
 int roundTest = 0; //Variável com o número da rodada de teste para facilitar a escolha do cluster que será testado
 int * tested; //Variável com os nodos testados
+int * send2; //Variável com os nodos os quais a mensagem já foi enviada
 
 //Função para inicializar a variável de tipo events
 void newEvent(double time, int eventNumber, int event, int nodeNumber) {
@@ -294,6 +295,35 @@ void addInTested(int n){
         }
     }
 }
+
+
+int wasSend(int qNode){
+    int i;
+    for(i = 0; i < N; i++){
+        if(qNode == send2[i]){
+            return TRUE;
+        } 
+    }
+    return FALSE;
+}
+
+void cleanSend2(){
+    int i;
+    for(i = 0; i < N; i++){
+        send2[i]=-1;
+    }
+}
+
+void addInSend2(int n){
+    int i;
+    for(i = 0; i < N; i++){
+        if(i == n){
+            send2[i] = n;
+            break;
+        }
+    }
+}
+
 
 //Função para atualizar o vetor STATE de um nodo
 void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
@@ -531,40 +561,40 @@ int getNodeToSendMessage(int currentCluster, tcis table_cis[N][N_CLUSTERS], int 
     int test_complete = FALSE;
     int numNodes = pow(2,currentCluster-1);
     
-    for(i = 0, k = 0; i < N; i++){
-        for(j = 0; j < numNodes; j++){
-           if(status(nodo[table_cis[i][currentCluster-1].cis[j]].id && !test_complete) == 0){ 
-                if(table_cis[i][currentCluster-1].cis[j]==nodeSender){
-                    test_complete = TRUE;
-                    node2Send = table_cis[i][currentCluster-1].cis[j];
-                }
-                else{
-                    break;
-                }
-           }
+    for(j = 0; j < numNodes; j++){
+        if(status(nodo[table_cis[nodeSender][currentCluster-1].cis[j]].id && !test_complete) == 0){ 
+            test_complete = TRUE;
+            if(!wasSend(table_cis[nodeSender][currentCluster-1].cis[j])){
+                addInSend2(table_cis[nodeSender][currentCluster-1].cis[j]);
+                node2Send = table_cis[nodeSender][currentCluster-1].cis[j];
+                printf("currentCluster >> %d  |  NodeSender >> %d  |  Node2Send >> %d\n\n", currentCluster, nodeSender, node2Send);
+            }
         }
         if(test_complete){
             break;
         }
     }
+    
     return node2Send;
 }
 //
-void sendMessengeBroadcast(int currentCluster, tcis table_cis[N][N_CLUSTERS], int msg){
-    int node2Send;
+void sendMessengeBroadcast(tcis table_cis[N][N_CLUSTERS], int msg){
+    int node2Send, i;
     
-    node2Send = getNodeToSendMessage(currentCluster, table_cis, token);
-
-    sendToNode(node2Send, currentCluster,table_cis);
+    for(i = 0; i < N_CLUSTERS; i++){
+        node2Send = getNodeToSendMessage(i + 1, table_cis, token);
+        addInSend2(node2Send);
+        sendToNode(node2Send, i + 1,table_cis);
+    }
+    cleanSend2();
 }
 
 int sendToNode(int nd, int currentCluster, tcis table_cis[N][N_CLUSTERS]){
-    int node2Send, cCluster;
-
+    int node2Send, cCluster, i;
     cCluster = currentCluster-1;
-    if (cCluster >= 1){
-        node2Send = getNodeToSendMessage(cCluster, table_cis, nd);
-        sendToNode(node2Send, cCluster,table_cis);
+    for (i = 1; i < currentCluster; i++){
+        node2Send = getNodeToSendMessage(i, table_cis, nd);
+        sendToNode(node2Send, cCluster,table_cis);        
     }
     return 1;
 }
@@ -612,7 +642,9 @@ int main(int argc, char * argv[]){
     reset();
     stream(1);
     nodo = (tnodo*)malloc(sizeof(tnodo)*N);    
-    tested = (int*)malloc(sizeof(int)*N);    
+    tested = (int*)malloc(sizeof(int)*N); 
+    send2 = (int*)malloc(sizeof(int)*N); 
+    cleanSend2();
     newEvent(EVENT_TIME_UNKNOWN,EVENT_NUMBER_UNKNOWN,EVENT_UNKNOWN,EVENT_NODE_UNKNOWN);
 
     for(i = 0; i < N; i++) {
@@ -635,9 +667,9 @@ int main(int argc, char * argv[]){
     int eventOcc;
     int countEventsScheduled = 0;
     for(i=2; tokens[i]!=NULL; i+=3) {
-        eventOcc = tokens[i][0] == 'F' ? FAULT : REPAIR;
+        eventOcc = tokens[i][0] == 'F' ? FAULT : (eventOcc = tokens[i][0] == 'R' ? REPAIR : BROADCAST);
         //Imprime dados sobre o evento que será agendado
-        printf("\nAgendando evento:\n\tEvento: %s\n\tTempo: %5.1lf\n\tNodo > %d\n",eventOcc==FAULT?"Falha":"Recuperação", strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
+        printf("\nAgendando evento:\n\tEvento: %s\n\tTempo: %5.1lf\n\tNodo > %d\n",eventOcc==FAULT ? "Falha" : (eventOcc==REPAIR ? "Recuperação" : "Broadcast"), strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
         schedule(eventOcc,strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
         countEventsScheduled++;
     }
@@ -717,6 +749,7 @@ int main(int argc, char * argv[]){
             break;
         
          case BROADCAST:
+            sendMessengeBroadcast(table_cis,0);
             break;
         }
         
