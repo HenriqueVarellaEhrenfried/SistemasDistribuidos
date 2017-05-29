@@ -33,6 +33,8 @@
 #define MESSAGE_UNKNOWN -1
 #define MESSAGE_TIME_UNKNOWN -1.0
 #define MESSAGE_COUNTER_INIT 0
+#define ALL_NODES_FROM_CLUSTER_WITH_ERROR -1
+#define INITIAL_NODE_AND_CLUSTER -1
 #define TRUE 1
 #define FALSE !TRUE
 
@@ -142,6 +144,7 @@ typedef struct tmsg{
     int newMessage; //Assume os valroes: TRUE or FALSE
     int received; //Assume os valroes: TRUE or FALSE
     int messageNumber; //Contador de mensagem
+    int cluster; // Cluster atual em que a mensagem está
 } tmsg;
 
 events evnts;
@@ -160,29 +163,12 @@ static int N_CLUSTERS; //Variável que contém o número de clusters necessário
 int roundTest = 0; //Variável com o número da rodada de teste para facilitar a escolha do cluster que será testado
 int * tested; //Variável com os nodos testados
 int * send2; //Variável com os nodos os quais a mensagem já foi enviada
+int messageCluster; //Variável que define o cluster para a mensagem braodcast
+// int defaultNodeBroadcast = INITIAL_NODE_AND_CLUSTER; //Variável que determinar o nodo inicial do broadcast
+// int defaultClusterBroadcast = INITIAL_NODE_AND_CLUSTER; // Variável com o cluster atual do nodo inicial do broadcast
+int defaultNodeBroadcast = 0; //Variável que determinar o nodo inicial do broadcast
+int defaultClusterBroadcast = 1; // Variável com o cluster atual do nodo inicial do broadcast
 
-//Função para incializar a variável mensagem, que comtém uma mensagem
-void initMessage(double time){
-    mensagem.sender = MESSAGE_UNKNOWN;
-    mensagem.destination = MESSAGE_UNKNOWN;
-    mensagem.timeSent = MESSAGE_TIME_UNKNOWN;
-    mensagem.timeReceived = MESSAGE_TIME_UNKNOWN;
-    mensagem.message = MESSAGE_UNKNOWN;
-    mensagem.newMessage = FALSE;
-    mensagem.received = TRUE;
-    mensagem.messageNumber = MESSAGE_COUNTER_INIT;
-}
-//Função para imprimir a variável mensagem
-void printMessage(){
-    printf("\tNodo que enviou a mensagem >> %d\n",mensagem.sender);
-    printf("\tNodo destino da mensagem >> %d\n",mensagem.destination);
-    printf("\tA mensagem foi enviada no tempo >> %5.1lf\n",mensagem.timeSent);
-    printf("\tA mensagem foi recebida no tempo >> %5.1lf\n",mensagem.timeReceived);
-    printf("\tO conteúdo da mensagem  é >> %d\n",mensagem.message);
-    printf("\tA mensagem é nova? >> %s\n",mensagem.newMessage == TRUE ? "Sim" : "Não");
-    printf("\tA mensagem foir recebida? >> %s\n",mensagem.received == TRUE ? "Sim" : "Não");
-    printf("\tO contado de mensagens está em >> %d\n",mensagem.messageNumber);
-}
 //Função para inicializar a variável de tipo events
 void newEvent(double time, int eventNumber, int event, int nodeNumber) {
     evnts.found = (int*)malloc(N*sizeof(int));
@@ -360,7 +346,21 @@ void addInSend2(int n){
         }
     }
 }
-
+int allNotFailedReceivedMsg(){
+    int i, received, totalNotFailed;
+    for(i = 0, received = 0, totalNotFailed = 0; i < N; i++ ){
+        if (status(nodo[i].id)){
+            totalNotFailed++;
+           if(wasSend(i)){
+               received++;
+           }
+        }
+    }
+    if(totalNotFailed == received)
+        return TRUE;
+    else
+        return FALSE;
+}
 
 //Função para atualizar o vetor STATE de um nodo
 void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
@@ -593,48 +593,137 @@ void printRoundTest(){
     puts("------------------------+");
 }
 
-int getNodeToSendMessage(int currentCluster, tcis table_cis[N][N_CLUSTERS], int nodeSender){
-    int i, j, node2Send;
-    int test_complete = FALSE;
-    int numNodes = pow(2,currentCluster-1);
-    
-    for(j = 0; j < numNodes; j++){
-        if(status(nodo[table_cis[nodeSender][currentCluster-1].cis[j]].id && !test_complete) == 0){ 
-            test_complete = TRUE;
-            if(!wasSend(table_cis[nodeSender][currentCluster-1].cis[j])){
-                addInSend2(table_cis[nodeSender][currentCluster-1].cis[j]);
-                node2Send = table_cis[nodeSender][currentCluster-1].cis[j];
-                printf("currentCluster >> %d  |  NodeSender >> %d  |  Node2Send >> %d\n\n", currentCluster, nodeSender, node2Send);
+//Função para incializar a variável mensagem, que comtém uma mensagem
+void initMessage(double time){
+    mensagem.sender = MESSAGE_UNKNOWN;
+    mensagem.destination = MESSAGE_UNKNOWN;
+    mensagem.timeSent = MESSAGE_TIME_UNKNOWN;
+    mensagem.timeReceived = MESSAGE_TIME_UNKNOWN;
+    mensagem.message = MESSAGE_UNKNOWN;
+    mensagem.newMessage = FALSE;
+    mensagem.received = FALSE;
+    mensagem.cluster = MESSAGE_UNKNOWN;
+    mensagem.messageNumber = MESSAGE_COUNTER_INIT;
+}
+//Função para imprimir a variável mensagem
+void printMessage(){
+    printf("\tNodo que enviou a mensagem >> %d\n",mensagem.sender);
+    printf("\tNodo destino da mensagem >> %d\n",mensagem.destination);
+    printf("\tA mensagem foi enviada no tempo >> %5.1lf\n",mensagem.timeSent);
+    printf("\tA mensagem foi recebida no tempo >> %5.1lf\n",mensagem.timeReceived);
+    printf("\tO conteúdo da mensagem  é >> %d\n",mensagem.message);
+    printf("\tA mensagem é nova? >> %s\n",mensagem.newMessage == TRUE ? "Sim" : "Não");
+    printf("\tA mensagem foi recebida? >> %s\n",mensagem.received == TRUE ? "Sim" : "Não");
+    printf("\tO cluster atual é >> %d\n",mensagem.cluster);
+    printf("\tO contador de mensagens está em >> %d\n",mensagem.messageNumber);
+    puts("/////////////////////////////////////////////////////\n");
+}
+//Função para criar nova mensagem
+void newMessage(int sender, int cluster, int destination, double actualTime, int message){
+    mensagem.sender = sender;
+    mensagem.cluster = cluster;
+    mensagem.destination = destination;
+    mensagem.timeSent = actualTime;
+    mensagem.message = message; 
+    mensagem.newMessage = TRUE;
+    mensagem.received = FALSE;
+    mensagem.messageNumber++;
+    mensagem.timeReceived = MESSAGE_TIME_UNKNOWN;
+}
+//Função que simula a recebimento de uma mensagem
+void receiveMessage(){
+    if(mensagem.newMessage && !mensagem.received){
+        mensagem.timeReceived = time();
+        mensagem.received = TRUE;
+        mensagem.newMessage = FALSE;
+        addInSend2(mensagem.destination);
+        puts("\n/////////////////////////////////////////////////////");
+        printf("\t\t\tMENSAGEM RECEBIDA PELO NODO %d\n",mensagem.destination);
+        printMessage();
+    }
+}
+void sendMessage(int sender, int cluster, int destination, double timeNow, int message){
+    newMessage(sender, cluster, destination, timeNow, message);
+    puts("\n/////////////////////////////////////////////////////");
+    printf("\t\t\tMENSAGEM ENVIADA PELO NODO %d\n",sender);
+    printMessage();
+}
+//Função para gerenciar o envio e recebimento de mensagem
+void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, int message){
+    int destination;
+    printf("DEFAULT CLUSTER >> %d\n\n", defaultClusterBroadcast);
+    if (defaultClusterBroadcast == INITIAL_NODE_AND_CLUSTER){
+        defaultClusterBroadcast = 1;
+    }
+    printf("\nFunção do if: %d\n\n",allNotFailedReceivedMsg());
+    printf("\nTempo AGORA %5.1lf\n\n",timeNow);
+    if(allNotFailedReceivedMsg()){
+        receiveMessage();
+        messageCluster = mensagem.cluster-1;
+        if(messageCluster > 0){
+            destination = messageDestination(sender, messageCluster, table_cis);
+            if(destination != ALL_NODES_FROM_CLUSTER_WITH_ERROR){
+                sendMessage(sender, messageCluster, destination, timeNow, message);
+                printf("SCHEDULING 1: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, destination);
+                schedule(BROADCAST, 1.0, destination);
+            }
+            else{
+                printf("SCHEDULING 2: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, defaultNodeBroadcast);
+                schedule(BROADCAST, 1.0, defaultNodeBroadcast);
+                defaultClusterBroadcast++;
             }
         }
-        if(test_complete){
+        else{
+            messageCluster = defaultClusterBroadcast;
+            destination =  messageDestination(defaultNodeBroadcast, messageCluster, table_cis);
+            if(defaultClusterBroadcast <= N_CLUSTERS){  
+                if(destination != ALL_NODES_FROM_CLUSTER_WITH_ERROR){
+                    sendMessage(defaultNodeBroadcast, defaultClusterBroadcast, destination, timeNow, message);
+                    printf("SCHEDULING 3: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, destination);
+                    schedule(BROADCAST, 1.0, destination);
+                    defaultClusterBroadcast++;
+                }
+                else{
+                    defaultClusterBroadcast++;
+                    printf("SCHEDULING 4: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, defaultNodeBroadcast);
+                    schedule(BROADCAST, 1.0, defaultNodeBroadcast);
+                }
+            }
+            else{
+                // defaultNodeBroadcast = INITIAL_NODE_AND_CLUSTER;
+                // defaultClusterBroadcast = INITIAL_NODE_AND_CLUSTER;
+            }
+            
+        }
+    }
+    else{
+        cleanSend2();
+    }
+        printf("\n\nTEMPO+1: %5.1lf\n\n", timeNow+1.0);
+}
+//Função para calcular o destino da mensagem
+int messageDestination(int sender, int cluster ,tcis table_cis[N][N_CLUSTERS]){
+    int i, clusterSize, found, possibleNode2Send;
+    found = FALSE;
+    clusterSize = pow(2, cluster-1);
+    for(i = 0; i < clusterSize; i++){
+        possibleNode2Send = table_cis[sender][cluster-1].cis[i];
+        if (!status(nodo[possibleNode2Send].id)){
+            found = TRUE;
             break;
         }
     }
-    
-    return node2Send;
-}
-//
-void sendMessengeBroadcast(tcis table_cis[N][N_CLUSTERS], int msg){
-    int node2Send, i;
-    
-    for(i = 0; i < N_CLUSTERS; i++){
-        node2Send = getNodeToSendMessage(i + 1, table_cis, token);
-        addInSend2(node2Send);
-        sendToNode(node2Send, i + 1,table_cis);
+    // printf("\n\nFALSE: %d  |  TRUE: %d\n",FALSE, TRUE);
+    printf("\n\nSENDER: %d  |  CLUSTER: %d  |  FOUND: %d  |  POSSIBLE NODE: %d \n\n", sender, cluster, found, possibleNode2Send);
+    if(found){
+        return possibleNode2Send;
     }
-    cleanSend2();
+    else{
+        return ALL_NODES_FROM_CLUSTER_WITH_ERROR;
+    }
 }
 
-int sendToNode(int nd, int currentCluster, tcis table_cis[N][N_CLUSTERS]){
-    int node2Send, cCluster, i;
-    cCluster = currentCluster-1;
-    for (i = 1; i < currentCluster; i++){
-        node2Send = getNodeToSendMessage(i, table_cis, nd);
-        sendToNode(node2Send, cCluster,table_cis);        
-    }
-    return 1;
-}
+
 // Programa Principal
 int main(int argc, char * argv[]){
     //Imprime header
@@ -755,7 +844,7 @@ int main(int argc, char * argv[]){
                 testando++;
                 printState("TEST");
             }while (testando < nodos_a_testar);
-            schedule(TEST, TEST_INTERVAL, token);
+            // schedule(TEST, TEST_INTERVAL, token);
             cleanTested();
             break;
 
@@ -786,7 +875,10 @@ int main(int argc, char * argv[]){
             break;
         
          case BROADCAST:
-            sendMessengeBroadcast(table_cis,0);
+            // defaultNodeBroadcast = defaultNodeBroadcast == INITIAL_NODE_AND_CLUSTER ? token : defaultNodeBroadcast;
+            // defaultClusterBroadcast == INITIAL_NODE_AND_CLUSTER ? INITIAL_NODE_AND_CLUSTER : defaultNodeBroadcast;
+            // defaultClusterBroadcast = defaultClusterBroadcast == INITIAL_NODE_AND_CLUSTER ? INITIAL_NODE_AND_CLUSTER : defaultNodeBroadcast;
+            messageHandler(table_cis, token, time(), 95);
             break;
         }
         
