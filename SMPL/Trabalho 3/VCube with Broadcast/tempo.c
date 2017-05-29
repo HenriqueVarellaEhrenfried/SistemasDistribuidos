@@ -30,6 +30,9 @@
 #define EVENT_NODE_UNKNOWN 0
 #define EVENT_FIRST_NODE_DETECT -1
 #define EVENT_FIRST_NODE_TIME_DETECTED -1
+#define MESSAGE_UNKNOWN -1
+#define MESSAGE_TIME_UNKNOWN -1.0
+#define MESSAGE_COUNTER_INIT 0
 #define TRUE 1
 #define FALSE !TRUE
 
@@ -129,9 +132,21 @@ typedef struct tcis{
     int* cis;
 } tcis;
 
+//Mensagem
+typedef struct tmsg{
+    int sender;          //Nodo remetente
+    int destination;     //Nodo destino
+    double timeSent;     //Tempo em que a mensagem foi enviada
+    double timeReceived; //Tempo que o nodo recebeu a mensagem: -1 ou > 0
+    int message;    //Pode ser qualquer coisa: int, string, float,... Neste exemplo vai ser um inteiro
+    int newMessage; //Assume os valroes: TRUE or FALSE
+    int received; //Assume os valroes: TRUE or FALSE
+    int messageNumber; //Contador de mensagem
+} tmsg;
+
 events evnts;
 tnodo* nodo;
-
+tmsg mensagem;
 
 //Variáveis do SMPL
 static int N, half_N, token, event, r, i;
@@ -146,6 +161,28 @@ int roundTest = 0; //Variável com o número da rodada de teste para facilitar a
 int * tested; //Variável com os nodos testados
 int * send2; //Variável com os nodos os quais a mensagem já foi enviada
 
+//Função para incializar a variável mensagem, que comtém uma mensagem
+void initMessage(double time){
+    mensagem.sender = MESSAGE_UNKNOWN;
+    mensagem.destination = MESSAGE_UNKNOWN;
+    mensagem.timeSent = MESSAGE_TIME_UNKNOWN;
+    mensagem.timeReceived = MESSAGE_TIME_UNKNOWN;
+    mensagem.message = MESSAGE_UNKNOWN;
+    mensagem.newMessage = FALSE;
+    mensagem.received = TRUE;
+    mensagem.messageNumber = MESSAGE_COUNTER_INIT;
+}
+//Função para imprimir a variável mensagem
+void printMessage(){
+    printf("\tNodo que enviou a mensagem >> %d\n",mensagem.sender);
+    printf("\tNodo destino da mensagem >> %d\n",mensagem.destination);
+    printf("\tA mensagem foi enviada no tempo >> %5.1lf\n",mensagem.timeSent);
+    printf("\tA mensagem foi recebida no tempo >> %5.1lf\n",mensagem.timeReceived);
+    printf("\tO conteúdo da mensagem  é >> %d\n",mensagem.message);
+    printf("\tA mensagem é nova? >> %s\n",mensagem.newMessage == TRUE ? "Sim" : "Não");
+    printf("\tA mensagem foir recebida? >> %s\n",mensagem.received == TRUE ? "Sim" : "Não");
+    printf("\tO contado de mensagens está em >> %d\n",mensagem.messageNumber);
+}
 //Função para inicializar a variável de tipo events
 void newEvent(double time, int eventNumber, int event, int nodeNumber) {
     evnts.found = (int*)malloc(N*sizeof(int));
