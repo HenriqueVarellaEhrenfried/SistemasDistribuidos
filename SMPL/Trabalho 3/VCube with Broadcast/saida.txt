@@ -216,18 +216,6 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   Início de uma nova transmissão de mensagem por braodcast
 					Nodo transmissor é o: 0
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-DEFAULT CLUSTER >> 1
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
-
-
-Função do if: 0
-
-
-Tempo AGORA 330.0
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 1
@@ -235,16 +223,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
 			+------------------------+
 			|Rodada de teste atual: 3|
 			+------------------------+
-DEFAULT CLUSTER >> 2
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
-
-
-Função do if: 0
-
-
-Tempo AGORA 331.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 1
@@ -259,8 +237,6 @@ Tempo AGORA 331.0
 	O contador de mensagens está em >> 1
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 2
@@ -268,16 +244,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
 			+------------------------+
 			|Rodada de teste atual: 4|
 			+------------------------+
-DEFAULT CLUSTER >> 3
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
-
-
-Função do if: 0
-
-
-Tempo AGORA 332.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 2
@@ -292,8 +258,6 @@ Tempo AGORA 332.0
 	O contador de mensagens está em >> 2
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 2 PARA O NODO 3
@@ -301,16 +265,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
 			+------------------------+
 			|Rodada de teste atual: 5|
 			+------------------------+
-DEFAULT CLUSTER >> 3
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
-
-
-Função do if: 0
-
-
-Tempo AGORA 333.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 2 RECEBIDA PELO NODO 3
@@ -325,8 +279,6 @@ Tempo AGORA 333.0
 	O contador de mensagens está em >> 3
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 4
@@ -334,16 +286,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
 			+------------------------+
 			|Rodada de teste atual: 6|
 			+------------------------+
-DEFAULT CLUSTER >> 4
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
-
-
-Função do if: 0
-
-
-Tempo AGORA 334.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 4
@@ -358,8 +300,6 @@ Tempo AGORA 334.0
 	O contador de mensagens está em >> 4
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 6
@@ -367,16 +307,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
 			+------------------------+
 			|Rodada de teste atual: 7|
 			+------------------------+
-DEFAULT CLUSTER >> 4
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
-
-
-Função do if: 0
-
-
-Tempo AGORA 335.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 6
@@ -391,8 +321,6 @@ Tempo AGORA 335.0
 	O contador de mensagens está em >> 5
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 6 PARA O NODO 7
@@ -400,16 +328,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
 			+------------------------+
 			|Rodada de teste atual: 8|
 			+------------------------+
-DEFAULT CLUSTER >> 4
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
-
-
-Função do if: 0
-
-
-Tempo AGORA 336.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 6 RECEBIDA PELO NODO 7
@@ -424,8 +342,6 @@ Tempo AGORA 336.0
 	O contador de mensagens está em >> 6
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 5
@@ -433,16 +349,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
 			+------------------------+
 			|Rodada de teste atual: 9|
 			+------------------------+
-DEFAULT CLUSTER >> 4
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
-
-
-Função do if: 0
-
-
-Tempo AGORA 337.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 5
@@ -457,8 +363,6 @@ Tempo AGORA 337.0
 	O contador de mensagens está em >> 7
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 7
-
 			+-------------------------+
 			|Rodada de teste atual: 10|
 			+-------------------------+
@@ -467,18 +371,6 @@ $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
   Início de uma nova transmissão de mensagem por braodcast
 					Nodo transmissor é o: 4
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-DEFAULT CLUSTER >> 1
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
-
-
-Função do if: 0
-
-
-Tempo AGORA 360.0
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 5
@@ -486,16 +378,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
 			+-------------------------+
 			|Rodada de teste atual: 11|
 			+-------------------------+
-DEFAULT CLUSTER >> 2
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
-
-
-Função do if: 0
-
-
-Tempo AGORA 361.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 5
@@ -510,8 +392,6 @@ Tempo AGORA 361.0
 	O contador de mensagens está em >> 8
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 6
@@ -519,16 +399,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
 			+-------------------------+
 			|Rodada de teste atual: 12|
 			+-------------------------+
-DEFAULT CLUSTER >> 3
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
-
-
-Função do if: 0
-
-
-Tempo AGORA 362.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 6
@@ -543,8 +413,6 @@ Tempo AGORA 362.0
 	O contador de mensagens está em >> 9
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 6 PARA O NODO 7
@@ -552,16 +420,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
 			+-------------------------+
 			|Rodada de teste atual: 13|
 			+-------------------------+
-DEFAULT CLUSTER >> 3
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
-
-
-Função do if: 0
-
-
-Tempo AGORA 363.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 6 RECEBIDA PELO NODO 7
@@ -576,8 +434,6 @@ Tempo AGORA 363.0
 	O contador de mensagens está em >> 10
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 0
@@ -585,16 +441,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
 			+-------------------------+
 			|Rodada de teste atual: 14|
 			+-------------------------+
-DEFAULT CLUSTER >> 4
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
-
-
-Função do if: 0
-
-
-Tempo AGORA 364.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 0
@@ -609,8 +455,6 @@ Tempo AGORA 364.0
 	O contador de mensagens está em >> 11
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 2
@@ -618,16 +462,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
 			+-------------------------+
 			|Rodada de teste atual: 15|
 			+-------------------------+
-DEFAULT CLUSTER >> 4
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
-
-
-Função do if: 0
-
-
-Tempo AGORA 365.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 2
@@ -642,8 +476,6 @@ Tempo AGORA 365.0
 	O contador de mensagens está em >> 12
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 2 PARA O NODO 3
@@ -651,16 +483,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
 			+-------------------------+
 			|Rodada de teste atual: 16|
 			+-------------------------+
-DEFAULT CLUSTER >> 4
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
-
-
-Função do if: 0
-
-
-Tempo AGORA 366.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 2 RECEBIDA PELO NODO 3
@@ -675,8 +497,6 @@ Tempo AGORA 366.0
 	O contador de mensagens está em >> 13
 /////////////////////////////////////////////////////
 
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
-
 
 /////////////////////////////////////////////////////
 	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 1
@@ -684,16 +504,6 @@ TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
 			+-------------------------+
 			|Rodada de teste atual: 17|
 			+-------------------------+
-DEFAULT CLUSTER >> 4
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
-
-
-Função do if: 0
-
-
-Tempo AGORA 367.0
-
 
 /////////////////////////////////////////////////////
 		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 1
@@ -707,8 +517,6 @@ Tempo AGORA 367.0
 	O cluster atual é >> 1
 	O contador de mensagens está em >> 14
 /////////////////////////////////////////////////////
-
-TOTAL NÃO FALHO: 7  |  RECEBIDOS: 7
 
 
 **** Simulation Error at Time 367.000

@@ -367,7 +367,6 @@ int allNotFailedReceivedMsg(){
            }
         }
     }
-    printf("TOTAL NÃO FALHO: %d  |  RECEBIDOS: %d\n\n", totalNotFailed, received);
     if(totalNotFailed == received)
         return TRUE;
     else
@@ -682,12 +681,9 @@ void sendMessage(int sender, int cluster, int destination, double timeNow, int m
 //Função para gerenciar o envio e recebimento de mensagem
 void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, int message){
     int destination; 
-    printf("DEFAULT CLUSTER >> %d\n\n", defaultClusterBroadcast);
     if (defaultClusterBroadcast == INITIAL_NODE_AND_CLUSTER){
         defaultClusterBroadcast = 1;
     }
-    printf("\nFunção do if: %d\n\n",allNotFailedReceivedMsg());
-    printf("\nTempo AGORA %5.1lf\n\n",timeNow);
     receiveMessage();
     if(!allNotFailedReceivedMsg()){
         messageCluster = mensagem.cluster-1;
