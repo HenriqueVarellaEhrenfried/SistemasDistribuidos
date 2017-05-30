@@ -168,7 +168,7 @@ int messageCluster; //Variável que define o cluster para a mensagem braodcast
 // int defaultClusterBroadcast = INITIAL_NODE_AND_CLUSTER; // Variável com o cluster atual do nodo inicial do broadcast
 int defaultNodeBroadcast = 0; //Variável que determinar o nodo inicial do broadcast
 int defaultClusterBroadcast = 1; // Variável com o cluster atual do nodo inicial do broadcast
-int otherNodes2SendMessage[2*N]; // Variável que contem os nodos que precisam ser enviados a mensagem. Funciona em dupla: arr[i%2==0]==Sender arr[i%2==1]==Cluster
+int * otherNodes2SendMessage; // Variável que contem os nodos que precisam ser enviados a mensagem. Funciona em dupla: arr[i%2==0]==Sender arr[i%2==1]==Cluster
 
 
 //Função para inicializar a variável de tipo events
@@ -351,13 +351,17 @@ void addInSend2(int n){
 int allNotFailedReceivedMsg(){
     int i, received, totalNotFailed;
     for(i = 0, received = 0, totalNotFailed = 0; i < N; i++ ){
-        if (status(nodo[i].id)){
-            totalNotFailed++;
+        if(i == defaultNodeBroadcast){
+            continue;
+        }
+        if (!status(nodo[i].id)){
+           totalNotFailed++;
            if(wasSend(i)){
                received++;
            }
         }
     }
+    printf("TOTAL NÃO FALHO: %d  |  RECEBIDOS: %d\n\n", totalNotFailed, received);
     if(totalNotFailed == received)
         return TRUE;
     else
@@ -605,6 +609,14 @@ int lastIndex(int * array){
     return i;
 }
 
+void removeElements(int * array, int size){
+//Size desta função é size-1 
+    int i;
+    for (i = 2; i <= size; i++){
+        array[i-2] = array[i];
+    }
+}
+
 //Função para incializar a variável mensagem, que comtém uma mensagem
 void initMessage(double time){
     mensagem.sender = MESSAGE_UNKNOWN;
@@ -662,31 +674,29 @@ void sendMessage(int sender, int cluster, int destination, double timeNow, int m
 }
 //Função para gerenciar o envio e recebimento de mensagem
 void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, int message){
-    int destination;
+    int destination; 
     printf("DEFAULT CLUSTER >> %d\n\n", defaultClusterBroadcast);
     if (defaultClusterBroadcast == INITIAL_NODE_AND_CLUSTER){
         defaultClusterBroadcast = 1;
     }
     printf("\nFunção do if: %d\n\n",allNotFailedReceivedMsg());
     printf("\nTempo AGORA %5.1lf\n\n",timeNow);
-    if(allNotFailedReceivedMsg()){
-        receiveMessage();
+    receiveMessage();
+    if(!allNotFailedReceivedMsg()){
         messageCluster = mensagem.cluster-1;
         if(messageCluster > 0){
             destination = messageDestination(sender, messageCluster, table_cis);
             if(destination != ALL_NODES_FROM_CLUSTER_WITH_ERROR){
                 sendMessage(sender, messageCluster, destination, timeNow, message);
-                printf("SCHEDULING 1: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, destination);
                 schedule(BROADCAST, 1.0, destination);
                 messageCluster--;
                 while(messageCluster > 0){
-                    otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)] = sender;
-                    otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)] = messageCluster;
+                    otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)+1] = sender;
+                    otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)+1] = messageCluster;
                     messageCluster--;
                 }
             }
             else{
-                printf("SCHEDULING 2: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, defaultNodeBroadcast);
                 schedule(BROADCAST, 1.0, defaultNodeBroadcast);
                 defaultClusterBroadcast++;
             }
@@ -697,22 +707,24 @@ void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, i
             if(defaultClusterBroadcast <= N_CLUSTERS){  
                 if(destination != ALL_NODES_FROM_CLUSTER_WITH_ERROR){
                     sendMessage(defaultNodeBroadcast, defaultClusterBroadcast, destination, timeNow, message);
-                    printf("SCHEDULING 3: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, destination);
                     schedule(BROADCAST, 1.0, destination);
                     defaultClusterBroadcast++;
                 }
                 else{
                     defaultClusterBroadcast++;
-                    printf("SCHEDULING 4: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, defaultNodeBroadcast);
                     schedule(BROADCAST, 1.0, defaultNodeBroadcast);
                 }
             }
             else{
-                if(lastIndex(otherNodes2SendMessage)!=-1){
-                    // USA AS DUPLAS DO OTHERNODES2SENDMESSAGE
+                if(lastIndex(otherNodes2SendMessage) >= -1){
+                    messageCluster = otherNodes2SendMessage[1];
+                    destination =  messageDestination(otherNodes2SendMessage[0], messageCluster, table_cis);
+                    if(destination != ALL_NODES_FROM_CLUSTER_WITH_ERROR){
+                        sendMessage(otherNodes2SendMessage[0], messageCluster, destination, timeNow, message);
+                        schedule(BROADCAST, 1.0, destination);                        
+                    }
+                    removeElements(otherNodes2SendMessage, lastIndex(otherNodes2SendMessage)+2); 
                 }
-                // defaultNodeBroadcast = INITIAL_NODE_AND_CLUSTER;
-                // defaultClusterBroadcast = INITIAL_NODE_AND_CLUSTER;
             }
             
         }
@@ -720,7 +732,6 @@ void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, i
     else{
         cleanSend2();
     }
-        printf("\n\nTEMPO+1: %5.1lf\n\n", timeNow+1.0);
 }
 //Função para calcular o destino da mensagem
 int messageDestination(int sender, int cluster ,tcis table_cis[N][N_CLUSTERS]){
@@ -798,10 +809,11 @@ int main(int argc, char * argv[]){
     nodo = (tnodo*)malloc(sizeof(tnodo)*N);    
     tested = (int*)malloc(sizeof(int)*N); 
     send2 = (int*)malloc(sizeof(int)*N); 
+    otherNodes2SendMessage = (int*)malloc(sizeof(int)*N*2); 
     cleanSend2();
     newEvent(EVENT_TIME_UNKNOWN,EVENT_NUMBER_UNKNOWN,EVENT_UNKNOWN,EVENT_NODE_UNKNOWN);
     
-    initOtherNodesArray()
+    initOtherNodesArray();
 
     for(i = 0; i < N; i++) {
         memset(fa_name,'\0',5);

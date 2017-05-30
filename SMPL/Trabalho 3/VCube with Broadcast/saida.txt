@@ -53,6 +53,8 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
 
 ---------------------------
 
+Vetor
+[ -1 -1 ]
 	O nodo: 1 deve testar o(s) nodo(s): [ 0 ]
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 O nodo 1 recebeu informação sobre o(s) nodo(s): [ 1 ]
@@ -75,6 +77,8 @@ O nodo 1 recebeu informação sobre o(s) nodo(s): [ 1 ]
 
 ---------------------------
 
+Vetor
+[ -1 -1 ]
 	O nodo: 2 deve testar o(s) nodo(s): [ 3 ]
 O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
 
@@ -95,6 +99,8 @@ O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
 
 ---------------------------
 
+Vetor
+[ -1 -1 ]
 	O nodo: 3 deve testar o(s) nodo(s): [ 2 ]
 O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
 O nodo 3 recebeu informação sobre o(s) nodo(s): [ 3 ]
@@ -117,6 +123,8 @@ O nodo 3 recebeu informação sobre o(s) nodo(s): [ 3 ]
 
 ---------------------------
 
+Vetor
+[ -1 -1 ]
 	O nodo: 4 deve testar o(s) nodo(s): [ 5 ]
 O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo  30.0
 
@@ -137,6 +145,8 @@ O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo  30.0
 
 ---------------------------
 
+Vetor
+[ -1 -1 ]
 	O nodo: 5 deve testar o(s) nodo(s): [ 4 ]
 O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo  30.0
 O nodo 5 recebeu informação sobre o(s) nodo(s): [ 5 ]
@@ -159,6 +169,8 @@ O nodo 5 recebeu informação sobre o(s) nodo(s): [ 5 ]
 
 ---------------------------
 
+Vetor
+[ -1 -1 ]
 	O nodo: 6 deve testar o(s) nodo(s): [ 7 ]
 O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo  30.0
 
@@ -179,6 +191,8 @@ O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo  30.0
 
 ---------------------------
 
+Vetor
+[ -1 -1 ]
 	O nodo: 7 deve testar o(s) nodo(s): [ 6 ]
 O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo  30.0
 O nodo 7 recebeu informação sobre o(s) nodo(s): [ 7 ]
@@ -201,6 +215,8 @@ O nodo 7 recebeu informação sobre o(s) nodo(s): [ 7 ]
 
 ---------------------------
 
+Vetor
+[ -1 -1 ]
 ************************** TERMINOU O WARMUP**************************
 
 			+------------------------+
@@ -208,11 +224,15 @@ O nodo 7 recebeu informação sobre o(s) nodo(s): [ 7 ]
 			+------------------------+
 DEFAULT CLUSTER >> 1
 
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
 
-Função do if: 1
+
+Função do if: 0
 
 
 Tempo AGORA 330.0
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
 
 
 
@@ -232,17 +252,17 @@ SENDER: 0  |  CLUSTER: 1  |  FOUND: 1  |  POSSIBLE NODE: 1
 	O contador de mensagens está em >> 1
 /////////////////////////////////////////////////////
 
-SCHEDULING 3: Time >> 331.0  |  Node >> 1
-
-TEMPO+1: 331.0
-
+Vetor
+[ -1 -1 ]
 			+------------------------+
 			|Rodada de teste atual: 3|
 			+------------------------+
 DEFAULT CLUSTER >> 2
 
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
 
-Função do if: 1
+
+Função do if: 0
 
 
 Tempo AGORA 331.0
@@ -260,6 +280,8 @@ Tempo AGORA 331.0
 	O cluster atual é >> 1
 	O contador de mensagens está em >> 1
 /////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
 
 
 
@@ -279,17 +301,17 @@ SENDER: 0  |  CLUSTER: 2  |  FOUND: 1  |  POSSIBLE NODE: 2
 	O contador de mensagens está em >> 2
 /////////////////////////////////////////////////////
 
-SCHEDULING 3: Time >> 332.0  |  Node >> 2
-
-TEMPO+1: 332.0
-
+Vetor
+[ -1 -1 ]
 			+------------------------+
 			|Rodada de teste atual: 4|
 			+------------------------+
 DEFAULT CLUSTER >> 3
 
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
 
-Função do if: 1
+
+Função do if: 0
 
 
 Tempo AGORA 332.0
@@ -307,6 +329,8 @@ Tempo AGORA 332.0
 	O cluster atual é >> 2
 	O contador de mensagens está em >> 2
 /////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
 
 
 
@@ -326,17 +350,17 @@ SENDER: 2  |  CLUSTER: 1  |  FOUND: 1  |  POSSIBLE NODE: 3
 	O contador de mensagens está em >> 3
 /////////////////////////////////////////////////////
 
-SCHEDULING 1: Time >> 333.0  |  Node >> 3
-
-TEMPO+1: 333.0
-
+Vetor
+[ -1 -1 ]
 			+------------------------+
 			|Rodada de teste atual: 5|
 			+------------------------+
 DEFAULT CLUSTER >> 3
 
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
 
-Função do if: 1
+
+Função do if: 0
 
 
 Tempo AGORA 333.0
@@ -354,6 +378,8 @@ Tempo AGORA 333.0
 	O cluster atual é >> 1
 	O contador de mensagens está em >> 3
 /////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
 
 
 
@@ -373,17 +399,17 @@ SENDER: 0  |  CLUSTER: 3  |  FOUND: 1  |  POSSIBLE NODE: 4
 	O contador de mensagens está em >> 4
 /////////////////////////////////////////////////////
 
-SCHEDULING 3: Time >> 334.0  |  Node >> 4
-
-TEMPO+1: 334.0
-
+Vetor
+[ -1 -1 ]
 			+------------------------+
 			|Rodada de teste atual: 6|
 			+------------------------+
 DEFAULT CLUSTER >> 4
 
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
 
-Função do if: 1
+
+Função do if: 0
 
 
 Tempo AGORA 334.0
@@ -401,6 +427,8 @@ Tempo AGORA 334.0
 	O cluster atual é >> 3
 	O contador de mensagens está em >> 4
 /////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
 
 
 
@@ -420,17 +448,17 @@ SENDER: 4  |  CLUSTER: 2  |  FOUND: 1  |  POSSIBLE NODE: 6
 	O contador de mensagens está em >> 5
 /////////////////////////////////////////////////////
 
-SCHEDULING 1: Time >> 335.0  |  Node >> 6
-
-TEMPO+1: 335.0
-
+Vetor
+[ 4 1 ]
 			+------------------------+
 			|Rodada de teste atual: 7|
 			+------------------------+
 DEFAULT CLUSTER >> 4
 
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
 
-Função do if: 1
+
+Função do if: 0
 
 
 Tempo AGORA 335.0
@@ -448,6 +476,8 @@ Tempo AGORA 335.0
 	O cluster atual é >> 2
 	O contador de mensagens está em >> 5
 /////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
 
 
 
@@ -467,17 +497,17 @@ SENDER: 6  |  CLUSTER: 1  |  FOUND: 1  |  POSSIBLE NODE: 7
 	O contador de mensagens está em >> 6
 /////////////////////////////////////////////////////
 
-SCHEDULING 1: Time >> 336.0  |  Node >> 7
-
-TEMPO+1: 336.0
-
+Vetor
+[ 4 1 ]
 			+------------------------+
 			|Rodada de teste atual: 8|
 			+------------------------+
 DEFAULT CLUSTER >> 4
 
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
 
-Função do if: 1
+
+Função do if: 0
 
 
 Tempo AGORA 336.0
@@ -496,14 +526,63 @@ Tempo AGORA 336.0
 	O contador de mensagens está em >> 6
 /////////////////////////////////////////////////////
 
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
+
 
 
 SENDER: 0  |  CLUSTER: 4  |  FOUND: 1  |  POSSIBLE NODE: 0 
 
 
 
-TEMPO+1: 337.0
+SENDER: 4  |  CLUSTER: 1  |  FOUND: 1  |  POSSIBLE NODE: 5 
 
 
-**** Simulation Error at Time 336.000
+/////////////////////////////////////////////////////
+			MENSAGEM ENVIADA PELO NODO 4
+	Nodo que enviou a mensagem >> 4
+	Nodo destino da mensagem >> 5
+	A mensagem foi enviada no tempo >> 336.0
+	A mensagem foi recebida no tempo >>  -1.0
+	O conteúdo da mensagem  é >> 95
+	A mensagem é nova? >> Sim
+	A mensagem foi recebida? >> Não
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 7
+/////////////////////////////////////////////////////
+
+Vetor
+[ -1 -1 ]
+			+------------------------+
+			|Rodada de teste atual: 9|
+			+------------------------+
+DEFAULT CLUSTER >> 4
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
+
+
+Função do if: 0
+
+
+Tempo AGORA 337.0
+
+
+/////////////////////////////////////////////////////
+			MENSAGEM RECEBIDA PELO NODO 5
+	Nodo que enviou a mensagem >> 4
+	Nodo destino da mensagem >> 5
+	A mensagem foi enviada no tempo >> 336.0
+	A mensagem foi recebida no tempo >> 337.0
+	O conteúdo da mensagem  é >> 95
+	A mensagem é nova? >> Não
+	A mensagem foi recebida? >> Sim
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 7
+/////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 7
+
+Vetor
+[ -1 -1 ]
+
+**** Simulation Error at Time 337.000
      Empty Event List
