@@ -168,6 +168,8 @@ int messageCluster; //Variável que define o cluster para a mensagem braodcast
 // int defaultClusterBroadcast = INITIAL_NODE_AND_CLUSTER; // Variável com o cluster atual do nodo inicial do broadcast
 int defaultNodeBroadcast = 0; //Variável que determinar o nodo inicial do broadcast
 int defaultClusterBroadcast = 1; // Variável com o cluster atual do nodo inicial do broadcast
+int otherNodes2SendMessage[2*N]; // Variável que contem os nodos que precisam ser enviados a mensagem. Funciona em dupla: arr[i%2==0]==Sender arr[i%2==1]==Cluster
+
 
 //Função para inicializar a variável de tipo events
 void newEvent(double time, int eventNumber, int event, int nodeNumber) {
@@ -592,6 +594,16 @@ void printRoundTest(){
         printf("-");
     puts("------------------------+");
 }
+int lastIndex(int * array){
+    int i;
+    int size = 2*N;
+    for (i = 0; i < size; i++){
+        if (array[i]== -1){
+            return i-1;
+        }
+    }
+    return i;
+}
 
 //Função para incializar a variável mensagem, que comtém uma mensagem
 void initMessage(double time){
@@ -666,6 +678,12 @@ void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, i
                 sendMessage(sender, messageCluster, destination, timeNow, message);
                 printf("SCHEDULING 1: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, destination);
                 schedule(BROADCAST, 1.0, destination);
+                messageCluster--;
+                while(messageCluster > 0){
+                    otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)] = sender;
+                    otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)] = messageCluster;
+                    messageCluster--;
+                }
             }
             else{
                 printf("SCHEDULING 2: Time >> %5.1lf  |  Node >> %d", timeNow + 1.0, defaultNodeBroadcast);
@@ -690,6 +708,9 @@ void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, i
                 }
             }
             else{
+                if(lastIndex(otherNodes2SendMessage)!=-1){
+                    // USA AS DUPLAS DO OTHERNODES2SENDMESSAGE
+                }
                 // defaultNodeBroadcast = INITIAL_NODE_AND_CLUSTER;
                 // defaultClusterBroadcast = INITIAL_NODE_AND_CLUSTER;
             }
@@ -723,6 +744,13 @@ int messageDestination(int sender, int cluster ,tcis table_cis[N][N_CLUSTERS]){
     }
 }
 
+void initOtherNodesArray(){
+    int i;
+    int size = 2*N;
+    for(i = 0; i < size; i++){
+        otherNodes2SendMessage[i] = -1;
+    }
+}
 
 // Programa Principal
 int main(int argc, char * argv[]){
@@ -772,6 +800,8 @@ int main(int argc, char * argv[]){
     send2 = (int*)malloc(sizeof(int)*N); 
     cleanSend2();
     newEvent(EVENT_TIME_UNKNOWN,EVENT_NUMBER_UNKNOWN,EVENT_UNKNOWN,EVENT_NODE_UNKNOWN);
+    
+    initOtherNodesArray()
 
     for(i = 0; i < N; i++) {
         memset(fa_name,'\0',5);

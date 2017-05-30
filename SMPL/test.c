@@ -3,12 +3,15 @@
 #include <math.h>
 #include <string.h>
 
-int numberOfDigits(int n) 
-{
-    if (n == 0)
-        return 0;
-    return floor( log10( abs( n ) ) ) + 1;
+int lastIndex(int * array){
+    int i=0;
+    while (*(array + i)){
+        puts("oi");
+        printf("array[%d]: %d\n",i,*(array + i));
+        i++;
+    }
 }
 void main(){
-    printf("%d\t%d\t%d\t%d\t%d\n",numberOfDigits(1),numberOfDigits(10),numberOfDigits(100),numberOfDigits(1000),numberOfDigits(10000));
+    int a[10];
+    lastIndex(a);
 }
