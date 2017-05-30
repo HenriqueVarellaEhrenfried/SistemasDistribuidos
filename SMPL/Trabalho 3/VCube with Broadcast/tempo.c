@@ -147,6 +147,12 @@ typedef struct tmsg{
     int cluster; // Cluster atual em que a mensagem está
 } tmsg;
 
+//Eventos de Broadcast
+typedef struct tbcast{
+    double when;
+    int node;
+} tbcast;
+
 events evnts;
 tnodo* nodo;
 tmsg mensagem;
@@ -166,8 +172,8 @@ int * send2; //Variável com os nodos os quais a mensagem já foi enviada
 int messageCluster; //Variável que define o cluster para a mensagem braodcast
 // int defaultNodeBroadcast = INITIAL_NODE_AND_CLUSTER; //Variável que determinar o nodo inicial do broadcast
 // int defaultClusterBroadcast = INITIAL_NODE_AND_CLUSTER; // Variável com o cluster atual do nodo inicial do broadcast
-int defaultNodeBroadcast = 0; //Variável que determinar o nodo inicial do broadcast
-int defaultClusterBroadcast = 1; // Variável com o cluster atual do nodo inicial do broadcast
+int defaultNodeBroadcast; //Variável que determinar o nodo inicial do broadcast
+int defaultClusterBroadcast; // Variável com o cluster atual do nodo inicial do broadcast
 int * otherNodes2SendMessage; // Variável que contem os nodos que precisam ser enviados a mensagem. Funciona em dupla: arr[i%2==0]==Sender arr[i%2==1]==Cluster
 
 
@@ -610,7 +616,7 @@ int lastIndex(int * array){
 }
 
 void removeElements(int * array, int size){
-//Size desta função é size-1 
+    //Size desta função é size-1 
     int i;
     for (i = 2; i <= size; i++){
         array[i-2] = array[i];
@@ -662,15 +668,16 @@ void receiveMessage(){
         mensagem.newMessage = FALSE;
         addInSend2(mensagem.destination);
         puts("\n/////////////////////////////////////////////////////");
-        printf("\t\t\tMENSAGEM RECEBIDA PELO NODO %d\n",mensagem.destination);
+        printf("\t\tMENSAGEM DO NODO %d RECEBIDA PELO NODO %d\n",mensagem.sender, mensagem.destination);
         printMessage();
     }
 }
 void sendMessage(int sender, int cluster, int destination, double timeNow, int message){
     newMessage(sender, cluster, destination, timeNow, message);
     puts("\n/////////////////////////////////////////////////////");
-    printf("\t\t\tMENSAGEM ENVIADA PELO NODO %d\n",sender);
-    printMessage();
+    printf("\tMENSAGEM ENVIADA PELO NODO %d PARA O NODO %d",sender, destination);
+    puts("\n/////////////////////////////////////////////////////");
+    // printMessage();
 }
 //Função para gerenciar o envio e recebimento de mensagem
 void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, int message){
@@ -746,7 +753,7 @@ int messageDestination(int sender, int cluster ,tcis table_cis[N][N_CLUSTERS]){
         }
     }
     // printf("\n\nFALSE: %d  |  TRUE: %d\n",FALSE, TRUE);
-    printf("\n\nSENDER: %d  |  CLUSTER: %d  |  FOUND: %d  |  POSSIBLE NODE: %d \n\n", sender, cluster, found, possibleNode2Send);
+    // printf("\n\nSENDER: %d  |  CLUSTER: %d  |  FOUND: %d  |  POSSIBLE NODE: %d \n\n", sender, cluster, found, possibleNode2Send);
     if(found){
         return possibleNode2Send;
     }
@@ -763,6 +770,17 @@ void initOtherNodesArray(){
     }
 }
 
+int isNewBroadcastEvent(tbcast * arr,  int size, double timeNow){
+    //Return -1 if isn't and the index if there is
+    int i;
+    for(i = 0; i < size; i++){
+        if(arr[i].when == timeNow){
+            return i;
+        }
+    }
+    return -1;
+}
+
 // Programa Principal
 int main(int argc, char * argv[]){
     //Imprime header
@@ -773,8 +791,10 @@ int main(int argc, char * argv[]){
     int j, lastEventCounter = 0; //Variáveis auxiliares
     int * testes_token;
     int nodos_a_testar;
+    int countBcast = 0;
+    int indexBcast;
     //Verifica número de argumentos
-
+    
     if(argc > 1) {
         puts("\n\nUso correto: tempo < arquivo.conf\n");
         exit(1);
@@ -803,7 +823,7 @@ int main(int argc, char * argv[]){
     int warmUpTime = (N_CLUSTERS+1)*(int)(TEST_INTERVAL);
     
     //Inicializa simulção inicializando as variáveis necessárias
-    smpl(0, "Trabalho pratico 2 - Sistemas Distribuidos");
+    smpl(0, "Trabalho pratico 3 - Sistemas Distribuidos");
     reset();
     stream(1);
     nodo = (tnodo*)malloc(sizeof(tnodo)*N);    
@@ -836,14 +856,27 @@ int main(int argc, char * argv[]){
     int countEventsScheduled = 0;
     for(i=2; tokens[i]!=NULL; i+=3) {
         eventOcc = tokens[i][0] == 'F' ? FAULT : (eventOcc = tokens[i][0] == 'R' ? REPAIR : BROADCAST);
+        if(eventOcc==BROADCAST)
+            countBcast++;
         //Imprime dados sobre o evento que será agendado
         printf("\nAgendando evento:\n\tEvento: %s\n\tTempo: %5.1lf\n\tNodo > %d\n",eventOcc==FAULT ? "Falha" : (eventOcc==REPAIR ? "Recuperação" : "Broadcast"), strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
+        
         schedule(eventOcc,strtod(tokens[i+1],NULL),atoi(tokens[i+2]));
         countEventsScheduled++;
     }
     //Imprime Estatísticas sobre a simulçao (Número de eventos, tempo de warm up e tempo de simulção)
     printf("\n\nNúmero de eventos agendados: %d\n",countEventsScheduled);
     printf("\n\nN = %d\nTempo para Warm Up = %d.0\nTempo de simulação = %5.1lf\n\n\n",N , warmUpTime, simulationTime);
+    tbcast eventsBcast[countBcast];
+    int x;
+    for(i=2, x=0; tokens[i]!=NULL; i+=3) {
+        eventOcc = tokens[i][0] == 'F' ? FAULT : (eventOcc = tokens[i][0] == 'R' ? REPAIR : BROADCAST);
+        if(eventOcc==BROADCAST){
+            eventsBcast[x].when = strtod(tokens[i+1],NULL);
+            eventsBcast[x].node = atoi(tokens[i+2]);
+            x++;
+        }      
+    }
 
     int printedEndOfWarmUp = 0, token2;
 
@@ -917,9 +950,14 @@ int main(int argc, char * argv[]){
             break;
         
          case BROADCAST:
-            // defaultNodeBroadcast = defaultNodeBroadcast == INITIAL_NODE_AND_CLUSTER ? token : defaultNodeBroadcast;
-            // defaultClusterBroadcast == INITIAL_NODE_AND_CLUSTER ? INITIAL_NODE_AND_CLUSTER : defaultNodeBroadcast;
-            // defaultClusterBroadcast = defaultClusterBroadcast == INITIAL_NODE_AND_CLUSTER ? INITIAL_NODE_AND_CLUSTER : defaultNodeBroadcast;
+            indexBcast = isNewBroadcastEvent(eventsBcast, countBcast, time());
+            if(indexBcast != -1){
+                printf("\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+                printf("  Início de uma nova transmissão de mensagem por braodcast\n\t\t\t\t\tNodo transmissor é o: %d",eventsBcast[indexBcast].node);
+                printf("\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+                defaultClusterBroadcast = 1;
+                defaultNodeBroadcast = eventsBcast[indexBcast].node;
+            }
             messageHandler(table_cis, token, time(), 95);
             break;
         }

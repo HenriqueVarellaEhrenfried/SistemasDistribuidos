@@ -19,13 +19,18 @@ Agendando evento:
 	Tempo: 330.0
 	Nodo > 0
 
+Agendando evento:
+	Evento: Broadcast
+	Tempo: 360.0
+	Nodo > 4
 
-Número de eventos agendados: 1
+
+Número de eventos agendados: 2
 
 
 N = 8
 Tempo para Warm Up = 120.0
-Tempo de simulação = 360.0
+Tempo de simulação = 390.0
 
 
 ************************** COMECOU O WARMUP **************************
@@ -53,8 +58,6 @@ O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo  30.0
 
 ---------------------------
 
-Vetor
-[ -1 -1 ]
 	O nodo: 1 deve testar o(s) nodo(s): [ 0 ]
 O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo  30.0
 O nodo 1 recebeu informação sobre o(s) nodo(s): [ 1 ]
@@ -77,8 +80,6 @@ O nodo 1 recebeu informação sobre o(s) nodo(s): [ 1 ]
 
 ---------------------------
 
-Vetor
-[ -1 -1 ]
 	O nodo: 2 deve testar o(s) nodo(s): [ 3 ]
 O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
 
@@ -99,8 +100,6 @@ O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo  30.0
 
 ---------------------------
 
-Vetor
-[ -1 -1 ]
 	O nodo: 3 deve testar o(s) nodo(s): [ 2 ]
 O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo  30.0
 O nodo 3 recebeu informação sobre o(s) nodo(s): [ 3 ]
@@ -123,8 +122,6 @@ O nodo 3 recebeu informação sobre o(s) nodo(s): [ 3 ]
 
 ---------------------------
 
-Vetor
-[ -1 -1 ]
 	O nodo: 4 deve testar o(s) nodo(s): [ 5 ]
 O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo  30.0
 
@@ -145,8 +142,6 @@ O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo  30.0
 
 ---------------------------
 
-Vetor
-[ -1 -1 ]
 	O nodo: 5 deve testar o(s) nodo(s): [ 4 ]
 O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo  30.0
 O nodo 5 recebeu informação sobre o(s) nodo(s): [ 5 ]
@@ -169,8 +164,6 @@ O nodo 5 recebeu informação sobre o(s) nodo(s): [ 5 ]
 
 ---------------------------
 
-Vetor
-[ -1 -1 ]
 	O nodo: 6 deve testar o(s) nodo(s): [ 7 ]
 O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo  30.0
 
@@ -191,8 +184,6 @@ O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo  30.0
 
 ---------------------------
 
-Vetor
-[ -1 -1 ]
 	O nodo: 7 deve testar o(s) nodo(s): [ 6 ]
 O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo  30.0
 O nodo 7 recebeu informação sobre o(s) nodo(s): [ 7 ]
@@ -215,13 +206,16 @@ O nodo 7 recebeu informação sobre o(s) nodo(s): [ 7 ]
 
 ---------------------------
 
-Vetor
-[ -1 -1 ]
 ************************** TERMINOU O WARMUP**************************
 
 			+------------------------+
 			|Rodada de teste atual: 2|
 			+------------------------+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  Início de uma nova transmissão de mensagem por braodcast
+					Nodo transmissor é o: 0
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 DEFAULT CLUSTER >> 1
 
 TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
@@ -235,25 +229,9 @@ Tempo AGORA 330.0
 TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
 
 
-
-SENDER: 0  |  CLUSTER: 1  |  FOUND: 1  |  POSSIBLE NODE: 1 
-
-
 /////////////////////////////////////////////////////
-			MENSAGEM ENVIADA PELO NODO 0
-	Nodo que enviou a mensagem >> 0
-	Nodo destino da mensagem >> 1
-	A mensagem foi enviada no tempo >> 330.0
-	A mensagem foi recebida no tempo >>  -1.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Sim
-	A mensagem foi recebida? >> Não
-	O cluster atual é >> 1
-	O contador de mensagens está em >> 1
+	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 1
 /////////////////////////////////////////////////////
-
-Vetor
-[ -1 -1 ]
 			+------------------------+
 			|Rodada de teste atual: 3|
 			+------------------------+
@@ -269,7 +247,7 @@ Tempo AGORA 331.0
 
 
 /////////////////////////////////////////////////////
-			MENSAGEM RECEBIDA PELO NODO 1
+		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 1
 	Nodo que enviou a mensagem >> 0
 	Nodo destino da mensagem >> 1
 	A mensagem foi enviada no tempo >> 330.0
@@ -284,25 +262,9 @@ Tempo AGORA 331.0
 TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
 
 
-
-SENDER: 0  |  CLUSTER: 2  |  FOUND: 1  |  POSSIBLE NODE: 2 
-
-
 /////////////////////////////////////////////////////
-			MENSAGEM ENVIADA PELO NODO 0
-	Nodo que enviou a mensagem >> 0
-	Nodo destino da mensagem >> 2
-	A mensagem foi enviada no tempo >> 331.0
-	A mensagem foi recebida no tempo >>  -1.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Sim
-	A mensagem foi recebida? >> Não
-	O cluster atual é >> 2
-	O contador de mensagens está em >> 2
+	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 2
 /////////////////////////////////////////////////////
-
-Vetor
-[ -1 -1 ]
 			+------------------------+
 			|Rodada de teste atual: 4|
 			+------------------------+
@@ -318,7 +280,7 @@ Tempo AGORA 332.0
 
 
 /////////////////////////////////////////////////////
-			MENSAGEM RECEBIDA PELO NODO 2
+		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 2
 	Nodo que enviou a mensagem >> 0
 	Nodo destino da mensagem >> 2
 	A mensagem foi enviada no tempo >> 331.0
@@ -333,25 +295,9 @@ Tempo AGORA 332.0
 TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
 
 
-
-SENDER: 2  |  CLUSTER: 1  |  FOUND: 1  |  POSSIBLE NODE: 3 
-
-
 /////////////////////////////////////////////////////
-			MENSAGEM ENVIADA PELO NODO 2
-	Nodo que enviou a mensagem >> 2
-	Nodo destino da mensagem >> 3
-	A mensagem foi enviada no tempo >> 332.0
-	A mensagem foi recebida no tempo >>  -1.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Sim
-	A mensagem foi recebida? >> Não
-	O cluster atual é >> 1
-	O contador de mensagens está em >> 3
+	MENSAGEM ENVIADA PELO NODO 2 PARA O NODO 3
 /////////////////////////////////////////////////////
-
-Vetor
-[ -1 -1 ]
 			+------------------------+
 			|Rodada de teste atual: 5|
 			+------------------------+
@@ -367,7 +313,7 @@ Tempo AGORA 333.0
 
 
 /////////////////////////////////////////////////////
-			MENSAGEM RECEBIDA PELO NODO 3
+		MENSAGEM DO NODO 2 RECEBIDA PELO NODO 3
 	Nodo que enviou a mensagem >> 2
 	Nodo destino da mensagem >> 3
 	A mensagem foi enviada no tempo >> 332.0
@@ -382,25 +328,9 @@ Tempo AGORA 333.0
 TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
 
 
-
-SENDER: 0  |  CLUSTER: 3  |  FOUND: 1  |  POSSIBLE NODE: 4 
-
-
 /////////////////////////////////////////////////////
-			MENSAGEM ENVIADA PELO NODO 0
-	Nodo que enviou a mensagem >> 0
-	Nodo destino da mensagem >> 4
-	A mensagem foi enviada no tempo >> 333.0
-	A mensagem foi recebida no tempo >>  -1.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Sim
-	A mensagem foi recebida? >> Não
-	O cluster atual é >> 3
-	O contador de mensagens está em >> 4
+	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 4
 /////////////////////////////////////////////////////
-
-Vetor
-[ -1 -1 ]
 			+------------------------+
 			|Rodada de teste atual: 6|
 			+------------------------+
@@ -416,7 +346,7 @@ Tempo AGORA 334.0
 
 
 /////////////////////////////////////////////////////
-			MENSAGEM RECEBIDA PELO NODO 4
+		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 4
 	Nodo que enviou a mensagem >> 0
 	Nodo destino da mensagem >> 4
 	A mensagem foi enviada no tempo >> 333.0
@@ -431,25 +361,9 @@ Tempo AGORA 334.0
 TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
 
 
-
-SENDER: 4  |  CLUSTER: 2  |  FOUND: 1  |  POSSIBLE NODE: 6 
-
-
 /////////////////////////////////////////////////////
-			MENSAGEM ENVIADA PELO NODO 4
-	Nodo que enviou a mensagem >> 4
-	Nodo destino da mensagem >> 6
-	A mensagem foi enviada no tempo >> 334.0
-	A mensagem foi recebida no tempo >>  -1.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Sim
-	A mensagem foi recebida? >> Não
-	O cluster atual é >> 2
-	O contador de mensagens está em >> 5
+	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 6
 /////////////////////////////////////////////////////
-
-Vetor
-[ 4 1 ]
 			+------------------------+
 			|Rodada de teste atual: 7|
 			+------------------------+
@@ -465,7 +379,7 @@ Tempo AGORA 335.0
 
 
 /////////////////////////////////////////////////////
-			MENSAGEM RECEBIDA PELO NODO 6
+		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 6
 	Nodo que enviou a mensagem >> 4
 	Nodo destino da mensagem >> 6
 	A mensagem foi enviada no tempo >> 334.0
@@ -480,25 +394,9 @@ Tempo AGORA 335.0
 TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
 
 
-
-SENDER: 6  |  CLUSTER: 1  |  FOUND: 1  |  POSSIBLE NODE: 7 
-
-
 /////////////////////////////////////////////////////
-			MENSAGEM ENVIADA PELO NODO 6
-	Nodo que enviou a mensagem >> 6
-	Nodo destino da mensagem >> 7
-	A mensagem foi enviada no tempo >> 335.0
-	A mensagem foi recebida no tempo >>  -1.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Sim
-	A mensagem foi recebida? >> Não
-	O cluster atual é >> 1
-	O contador de mensagens está em >> 6
+	MENSAGEM ENVIADA PELO NODO 6 PARA O NODO 7
 /////////////////////////////////////////////////////
-
-Vetor
-[ 4 1 ]
 			+------------------------+
 			|Rodada de teste atual: 8|
 			+------------------------+
@@ -514,7 +412,7 @@ Tempo AGORA 336.0
 
 
 /////////////////////////////////////////////////////
-			MENSAGEM RECEBIDA PELO NODO 7
+		MENSAGEM DO NODO 6 RECEBIDA PELO NODO 7
 	Nodo que enviou a mensagem >> 6
 	Nodo destino da mensagem >> 7
 	A mensagem foi enviada no tempo >> 335.0
@@ -529,29 +427,9 @@ Tempo AGORA 336.0
 TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
 
 
-
-SENDER: 0  |  CLUSTER: 4  |  FOUND: 1  |  POSSIBLE NODE: 0 
-
-
-
-SENDER: 4  |  CLUSTER: 1  |  FOUND: 1  |  POSSIBLE NODE: 5 
-
-
 /////////////////////////////////////////////////////
-			MENSAGEM ENVIADA PELO NODO 4
-	Nodo que enviou a mensagem >> 4
-	Nodo destino da mensagem >> 5
-	A mensagem foi enviada no tempo >> 336.0
-	A mensagem foi recebida no tempo >>  -1.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Sim
-	A mensagem foi recebida? >> Não
-	O cluster atual é >> 1
-	O contador de mensagens está em >> 7
+	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 5
 /////////////////////////////////////////////////////
-
-Vetor
-[ -1 -1 ]
 			+------------------------+
 			|Rodada de teste atual: 9|
 			+------------------------+
@@ -567,7 +445,7 @@ Tempo AGORA 337.0
 
 
 /////////////////////////////////////////////////////
-			MENSAGEM RECEBIDA PELO NODO 5
+		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 5
 	Nodo que enviou a mensagem >> 4
 	Nodo destino da mensagem >> 5
 	A mensagem foi enviada no tempo >> 336.0
@@ -581,8 +459,257 @@ Tempo AGORA 337.0
 
 TOTAL NÃO FALHO: 7  |  RECEBIDOS: 7
 
-Vetor
-[ -1 -1 ]
+			+-------------------------+
+			|Rodada de teste atual: 10|
+			+-------------------------+
 
-**** Simulation Error at Time 337.000
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  Início de uma nova transmissão de mensagem por braodcast
+					Nodo transmissor é o: 4
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+DEFAULT CLUSTER >> 1
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
+
+
+Função do if: 0
+
+
+Tempo AGORA 360.0
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
+
+
+/////////////////////////////////////////////////////
+	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 5
+/////////////////////////////////////////////////////
+			+-------------------------+
+			|Rodada de teste atual: 11|
+			+-------------------------+
+DEFAULT CLUSTER >> 2
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 0
+
+
+Função do if: 0
+
+
+Tempo AGORA 361.0
+
+
+/////////////////////////////////////////////////////
+		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 5
+	Nodo que enviou a mensagem >> 4
+	Nodo destino da mensagem >> 5
+	A mensagem foi enviada no tempo >> 360.0
+	A mensagem foi recebida no tempo >> 361.0
+	O conteúdo da mensagem  é >> 95
+	A mensagem é nova? >> Não
+	A mensagem foi recebida? >> Sim
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 8
+/////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
+
+
+/////////////////////////////////////////////////////
+	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 6
+/////////////////////////////////////////////////////
+			+-------------------------+
+			|Rodada de teste atual: 12|
+			+-------------------------+
+DEFAULT CLUSTER >> 3
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 1
+
+
+Função do if: 0
+
+
+Tempo AGORA 362.0
+
+
+/////////////////////////////////////////////////////
+		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 6
+	Nodo que enviou a mensagem >> 4
+	Nodo destino da mensagem >> 6
+	A mensagem foi enviada no tempo >> 361.0
+	A mensagem foi recebida no tempo >> 362.0
+	O conteúdo da mensagem  é >> 95
+	A mensagem é nova? >> Não
+	A mensagem foi recebida? >> Sim
+	O cluster atual é >> 2
+	O contador de mensagens está em >> 9
+/////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
+
+
+/////////////////////////////////////////////////////
+	MENSAGEM ENVIADA PELO NODO 6 PARA O NODO 7
+/////////////////////////////////////////////////////
+			+-------------------------+
+			|Rodada de teste atual: 13|
+			+-------------------------+
+DEFAULT CLUSTER >> 3
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 2
+
+
+Função do if: 0
+
+
+Tempo AGORA 363.0
+
+
+/////////////////////////////////////////////////////
+		MENSAGEM DO NODO 6 RECEBIDA PELO NODO 7
+	Nodo que enviou a mensagem >> 6
+	Nodo destino da mensagem >> 7
+	A mensagem foi enviada no tempo >> 362.0
+	A mensagem foi recebida no tempo >> 363.0
+	O conteúdo da mensagem  é >> 95
+	A mensagem é nova? >> Não
+	A mensagem foi recebida? >> Sim
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 10
+/////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
+
+
+/////////////////////////////////////////////////////
+	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 0
+/////////////////////////////////////////////////////
+			+-------------------------+
+			|Rodada de teste atual: 14|
+			+-------------------------+
+DEFAULT CLUSTER >> 4
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 3
+
+
+Função do if: 0
+
+
+Tempo AGORA 364.0
+
+
+/////////////////////////////////////////////////////
+		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 0
+	Nodo que enviou a mensagem >> 4
+	Nodo destino da mensagem >> 0
+	A mensagem foi enviada no tempo >> 363.0
+	A mensagem foi recebida no tempo >> 364.0
+	O conteúdo da mensagem  é >> 95
+	A mensagem é nova? >> Não
+	A mensagem foi recebida? >> Sim
+	O cluster atual é >> 3
+	O contador de mensagens está em >> 11
+/////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
+
+
+/////////////////////////////////////////////////////
+	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 2
+/////////////////////////////////////////////////////
+			+-------------------------+
+			|Rodada de teste atual: 15|
+			+-------------------------+
+DEFAULT CLUSTER >> 4
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 4
+
+
+Função do if: 0
+
+
+Tempo AGORA 365.0
+
+
+/////////////////////////////////////////////////////
+		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 2
+	Nodo que enviou a mensagem >> 0
+	Nodo destino da mensagem >> 2
+	A mensagem foi enviada no tempo >> 364.0
+	A mensagem foi recebida no tempo >> 365.0
+	O conteúdo da mensagem  é >> 95
+	A mensagem é nova? >> Não
+	A mensagem foi recebida? >> Sim
+	O cluster atual é >> 2
+	O contador de mensagens está em >> 12
+/////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
+
+
+/////////////////////////////////////////////////////
+	MENSAGEM ENVIADA PELO NODO 2 PARA O NODO 3
+/////////////////////////////////////////////////////
+			+-------------------------+
+			|Rodada de teste atual: 16|
+			+-------------------------+
+DEFAULT CLUSTER >> 4
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 5
+
+
+Função do if: 0
+
+
+Tempo AGORA 366.0
+
+
+/////////////////////////////////////////////////////
+		MENSAGEM DO NODO 2 RECEBIDA PELO NODO 3
+	Nodo que enviou a mensagem >> 2
+	Nodo destino da mensagem >> 3
+	A mensagem foi enviada no tempo >> 365.0
+	A mensagem foi recebida no tempo >> 366.0
+	O conteúdo da mensagem  é >> 95
+	A mensagem é nova? >> Não
+	A mensagem foi recebida? >> Sim
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 13
+/////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
+
+
+/////////////////////////////////////////////////////
+	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 1
+/////////////////////////////////////////////////////
+			+-------------------------+
+			|Rodada de teste atual: 17|
+			+-------------------------+
+DEFAULT CLUSTER >> 4
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 6
+
+
+Função do if: 0
+
+
+Tempo AGORA 367.0
+
+
+/////////////////////////////////////////////////////
+		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 1
+	Nodo que enviou a mensagem >> 0
+	Nodo destino da mensagem >> 1
+	A mensagem foi enviada no tempo >> 366.0
+	A mensagem foi recebida no tempo >> 367.0
+	O conteúdo da mensagem  é >> 95
+	A mensagem é nova? >> Não
+	A mensagem foi recebida? >> Sim
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 14
+/////////////////////////////////////////////////////
+
+TOTAL NÃO FALHO: 7  |  RECEBIDOS: 7
+
+
+**** Simulation Error at Time 367.000
      Empty Event List
