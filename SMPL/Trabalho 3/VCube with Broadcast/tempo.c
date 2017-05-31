@@ -688,7 +688,8 @@ void receiveMessage(){
 void sendMessage(int sender, int cluster, int destination, double timeNow, int message){
     newMessage(sender, cluster, destination, timeNow, message);
     puts("\n======================================================");
-    printf("\t\tNODO %d ENVIOU MENSAGEM PARA O NODO %d",sender, destination);
+    printf("\t\tNODO %d ENVIOU MENSAGEM PARA O NODO %d\n",sender, destination);
+    printf("\t\tTEMPO AGORA: %5.1lf",time());
     puts("\n======================================================\n");
     // puts("\n/////////////////////////////////////////////////////\n");
     // printMessage();
@@ -717,6 +718,7 @@ void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, i
             else{
                 schedule(BROADCAST, 1.0, defaultNodeBroadcast);
                 defaultClusterBroadcast++;
+                mensagem.cluster = defaultClusterBroadcast;
             }
         }
         else{

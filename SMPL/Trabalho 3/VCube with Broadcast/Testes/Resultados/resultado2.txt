@@ -4863,6 +4863,7 @@ O nodo 6 TESTOU o nodo 3 como SEM FALHA no tempo 900.0
 
 ======================================================
 		NODO 3 ENVIOU MENSAGEM PARA O NODO 2
+		TEMPO AGORA: 930.0
 ======================================================
 
 	O nodo: 1 deve testar o(s) nodo(s): [ 0 ]
@@ -5001,6 +5002,7 @@ O nodo 6 TESTOU o nodo 7 como FALHO no tempo 930.0
 
 ======================================================
 		NODO 3 ENVIOU MENSAGEM PARA O NODO 1
+		TEMPO AGORA: 931.0
 ======================================================
 
 
@@ -5019,6 +5021,7 @@ O nodo 6 TESTOU o nodo 7 como FALHO no tempo 930.0
 
 ======================================================
 		NODO 1 ENVIOU MENSAGEM PARA O NODO 0
+		TEMPO AGORA: 932.0
 ======================================================
 
 
@@ -5037,6 +5040,7 @@ O nodo 6 TESTOU o nodo 7 como FALHO no tempo 930.0
 
 ======================================================
 		NODO 3 ENVIOU MENSAGEM PARA O NODO 6
+		TEMPO AGORA: 933.0
 ======================================================
 
 
@@ -5055,6 +5059,7 @@ O nodo 6 TESTOU o nodo 7 como FALHO no tempo 930.0
 
 ======================================================
 		NODO 6 ENVIOU MENSAGEM PARA O NODO 5
+		TEMPO AGORA: 934.0
 ======================================================
 
 
@@ -5967,6 +5972,82 @@ O nodo 6 TESTOU o nodo 7 como FALHO no tempo 1110.0
 	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 -1 -1 ] 
 
 ---------------------------
+
+
+======================================================
+		NODO 6 ENVIOU MENSAGEM PARA O NODO 5
+		TEMPO AGORA: 1112.0
+======================================================
+
+
+*****************************************************
+		NODO 5 RECEBEU MENSAGEM DO NODO 6
+
+	Nodo que enviou a mensagem >> 6
+	Nodo destino da mensagem >> 5
+	A mensagem foi enviada no tempo >> 1112.0
+	A mensagem foi recebida no tempo >> 1113.0
+	O conteúdo da mensagem  é >> 1110
+	O cluster atual é >> 2
+	O contador de mensagens está em >> 6
+*****************************************************
+
+
+======================================================
+		NODO 6 ENVIOU MENSAGEM PARA O NODO 2
+		TEMPO AGORA: 1114.0
+======================================================
+
+
+*****************************************************
+		NODO 2 RECEBEU MENSAGEM DO NODO 6
+
+	Nodo que enviou a mensagem >> 6
+	Nodo destino da mensagem >> 2
+	A mensagem foi enviada no tempo >> 1114.0
+	A mensagem foi recebida no tempo >> 1115.0
+	O conteúdo da mensagem  é >> 1110
+	O cluster atual é >> 3
+	O contador de mensagens está em >> 7
+*****************************************************
+
+
+======================================================
+		NODO 2 ENVIOU MENSAGEM PARA O NODO 0
+		TEMPO AGORA: 1115.0
+======================================================
+
+
+*****************************************************
+		NODO 0 RECEBEU MENSAGEM DO NODO 2
+
+	Nodo que enviou a mensagem >> 2
+	Nodo destino da mensagem >> 0
+	A mensagem foi enviada no tempo >> 1115.0
+	A mensagem foi recebida no tempo >> 1116.0
+	O conteúdo da mensagem  é >> 1110
+	O cluster atual é >> 2
+	O contador de mensagens está em >> 8
+*****************************************************
+
+
+======================================================
+		NODO 0 ENVIOU MENSAGEM PARA O NODO 1
+		TEMPO AGORA: 1116.0
+======================================================
+
+
+*****************************************************
+		NODO 1 RECEBEU MENSAGEM DO NODO 0
+
+	Nodo que enviou a mensagem >> 0
+	Nodo destino da mensagem >> 1
+	A mensagem foi enviada no tempo >> 1116.0
+	A mensagem foi recebida no tempo >> 1117.0
+	O conteúdo da mensagem  é >> 1110
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 9
+*****************************************************
 
 			+-------------------------+
 			|Rodada de teste atual: 38|

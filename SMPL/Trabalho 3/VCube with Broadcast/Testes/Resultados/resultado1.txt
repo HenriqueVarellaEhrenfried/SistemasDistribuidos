@@ -803,6 +803,7 @@ O nodo 2 TESTOU o nodo 3 como FALHO no tempo 330.0
 
 ======================================================
 		NODO 0 ENVIOU MENSAGEM PARA O NODO 1
+		TEMPO AGORA: 360.0
 ======================================================
 
 	O nodo: 0 deve testar o(s) nodo(s): [ 2 ]
@@ -884,6 +885,7 @@ O nodo 2 TESTOU o nodo 1 como SEM FALHA no tempo 360.0
 
 ======================================================
 		NODO 0 ENVIOU MENSAGEM PARA O NODO 2
+		TEMPO AGORA: 361.0
 ======================================================
 
 
@@ -958,6 +960,47 @@ O nodo 2 TESTOU o nodo 3 como FALHO no tempo 390.0
 
 ---------------------------
 
+
+======================================================
+		NODO 2 ENVIOU MENSAGEM PARA O NODO 0
+		TEMPO AGORA: 392.0
+======================================================
+
+
+*****************************************************
+		NODO 0 RECEBEU MENSAGEM DO NODO 2
+
+	Nodo que enviou a mensagem >> 2
+	Nodo destino da mensagem >> 0
+	A mensagem foi enviada no tempo >> 392.0
+	A mensagem foi recebida no tempo >> 393.0
+	O conteúdo da mensagem  é >> 390
+	O cluster atual é >> 2
+	O contador de mensagens está em >> 3
+*****************************************************
+
+
+======================================================
+		NODO 0 ENVIOU MENSAGEM PARA O NODO 1
+		TEMPO AGORA: 393.0
+======================================================
+
+
+*****************************************************
+		NODO 1 RECEBEU MENSAGEM DO NODO 0
+
+	Nodo que enviou a mensagem >> 0
+	Nodo destino da mensagem >> 1
+	A mensagem foi enviada no tempo >> 393.0
+	A mensagem foi recebida no tempo >> 394.0
+	O conteúdo da mensagem  é >> 390
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 4
+*****************************************************
+
+
+>> Mensagem com origem no nodo 2 foi enviada com sucesso para todos os outros nodos sem falha
+
 			+-------------------------+
 			|Rodada de teste atual: 14|
 			+-------------------------+
@@ -1015,6 +1058,25 @@ O nodo 2 TESTOU o nodo 1 como SEM FALHA no tempo 420.0
 	Ação Executada: TEST
 	Contador de eventos: 1
  	Contador de testes: 52
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 1 ] 
+	Nodo 1 >> [ 0 0 0 1 ] 
+	Nodo 2 >> [ 0 0 0 1 ] 
+	Nodo 3 >> [ -1 -1 -1 -1 ] 
+
+---------------------------
+
+			+-------------------------+
+			|Rodada de teste atual: 15|
+			+-------------------------+
+	O nodo: 0 deve testar o(s) nodo(s): [ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 450.0
+
+	Tempo atual: 450.0
+	Ação Executada: TEST
+	Contador de eventos: 1
+ 	Contador de testes: 53
  
 	Vetores STATE: 
 	Nodo 0 >> [ 0 0 0 1 ] 
