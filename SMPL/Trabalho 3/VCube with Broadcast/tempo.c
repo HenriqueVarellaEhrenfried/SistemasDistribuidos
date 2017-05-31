@@ -299,7 +299,7 @@ void printState(char * place) {
     }
     puts("\n---------------------------\n");
 }
-
+//Função que verifia se um nodo (qNode) foi testado
 int isInTested(int qNode){
     int i;
     for(i = 0; i < N; i++){
@@ -309,14 +309,14 @@ int isInTested(int qNode){
     }
     return FALSE;
 }
-
+//Função que limpa o vetor de testados
 void cleanTested(){
     int i;
     for(i = 0; i < N; i++){
         tested[i]=-1;
     }
 }
-
+//Função que adiciona um nodo no vetor de testados
 void addInTested(int n){
     int i;
     for(i = 0; i < N; i++){
@@ -326,8 +326,7 @@ void addInTested(int n){
         }
     }
 }
-
-
+//Função que verifica se um nodo (qNode) recebeu uma mensagem
 int wasSend(int qNode){
     int i;
     for(i = 0; i < N; i++){
@@ -337,14 +336,14 @@ int wasSend(int qNode){
     }
     return FALSE;
 }
-
+//Função que limpa o vetor de nodos que receberam mensagem
 void cleanSend2(){
     int i;
     for(i = 0; i < N; i++){
         send2[i]=-1;
     }
 }
-
+//Função auxiliar para adicionar um nodo no vetor de nodos que receberam mensagens
 void addInSend2(int n){
     int i;
     for(i = 0; i < N; i++){
@@ -354,6 +353,7 @@ void addInSend2(int n){
         }
     }
 }
+//Função que verifica se todos os nodos sem falha receberam a mensagem
 int allNotFailedReceivedMsg(){
     int i, received, totalNotFailed;
     for(i = 0, received = 0, totalNotFailed = 0; i < N; i++ ){
@@ -372,7 +372,6 @@ int allNotFailedReceivedMsg(){
     else
         return FALSE;
 }
-
 //Função para atualizar o vetor STATE de um nodo
 void updateState(int token2, int st, tcis table_cis[N][N_CLUSTERS]) {
     int i, newInfoIndex, totalInfo, clusterNodes;
@@ -410,7 +409,6 @@ int testarNodo(int token, int token2, tcis table_cis[N][N_CLUSTERS]) {
     updateState(token2, st, table_cis);
     return st;
 }
-
 //Função que conta número de caracteres '\n' e ' ' para definir quantos indices deve ser considerados
 //na função split
 int words(const char sentence[ ]) {
@@ -569,6 +567,7 @@ int * calculateTests(int currentCluster, tcis table_cis[N][N_CLUSTERS]){
     printvec(k, toTest);
     return toTest;
 }
+// Função que retorna quantos nodos deverão ser testados
 int numNodosTest(int testes_token[N-1]){
     int i, sum;
     for (i = 0, sum = 0; i < N-1; i++){
@@ -578,6 +577,7 @@ int numNodosTest(int testes_token[N-1]){
     }
     return sum;
 }
+//Função para imprimir um vetor de tamanho 'size'
 printvec(int size, int*array){
     int i;
     printf("[ ");
@@ -586,11 +586,13 @@ printvec(int size, int*array){
     }
     printf("]\n");
 }
+//Função para calcular quantos dígitos um número tem
 int numberOfDigits(int n){
     if (n == 0)
         return 0;
     return floor( log10( abs( n ) ) ) + 1;
 }
+// Função para imprimir a rodada de testes atual
 void printRoundTest(){
     int auxPrint;
     printf("\t\t\t+");
@@ -603,6 +605,7 @@ void printRoundTest(){
         printf("-");
     puts("------------------------+");
 }
+//Função para recuperor o último índice de um vetor
 int lastIndex(int * array){
     int i;
     int size = 2*N;
@@ -613,7 +616,7 @@ int lastIndex(int * array){
     }
     return i;
 }
-
+//Função para remover elementos do vetor otherNodesArray
 void removeElements(int * array, int size){
     //Size desta função é size-1 
     int i;
@@ -621,7 +624,6 @@ void removeElements(int * array, int size){
         array[i-2] = array[i];
     }
 }
-
 //Função para incializar a variável mensagem, que comtém uma mensagem
 void initMessage(double time){
     mensagem.sender = MESSAGE_UNKNOWN;
@@ -647,6 +649,17 @@ void printMessage(){
     printf("\tO contador de mensagens está em >> %d\n",mensagem.messageNumber);
     puts("/////////////////////////////////////////////////////\n");
 }
+//Função para imprimir a variável mensagem com simplificações
+void printMessageSimpler(){
+    printf("\tNodo que enviou a mensagem >> %d\n",mensagem.sender);
+    printf("\tNodo destino da mensagem >> %d\n",mensagem.destination);
+    printf("\tA mensagem foi enviada no tempo >> %5.1lf\n",mensagem.timeSent);
+    printf("\tA mensagem foi recebida no tempo >> %5.1lf\n",mensagem.timeReceived);
+    printf("\tO conteúdo da mensagem  é >> %d\n",mensagem.message);
+    printf("\tO cluster atual é >> %d\n",mensagem.cluster);
+    printf("\tO contador de mensagens está em >> %d\n",mensagem.messageNumber);
+    puts("*****************************************************\n");
+}
 //Função para criar nova mensagem
 void newMessage(int sender, int cluster, int destination, double actualTime, int message){
     mensagem.sender = sender;
@@ -666,16 +679,18 @@ void receiveMessage(){
         mensagem.received = TRUE;
         mensagem.newMessage = FALSE;
         addInSend2(mensagem.destination);
-        puts("\n/////////////////////////////////////////////////////");
-        printf("\t\tMENSAGEM DO NODO %d RECEBIDA PELO NODO %d\n",mensagem.sender, mensagem.destination);
-        printMessage();
+        puts("\n*****************************************************");
+        printf("\t\tNODO %d RECEBEU MENSAGEM DO NODO %d\n\n",mensagem.sender, mensagem.destination);
+        printMessageSimpler();
     }
 }
+//Função que simula o envio de uma mensagem
 void sendMessage(int sender, int cluster, int destination, double timeNow, int message){
     newMessage(sender, cluster, destination, timeNow, message);
-    puts("\n/////////////////////////////////////////////////////");
-    printf("\tMENSAGEM ENVIADA PELO NODO %d PARA O NODO %d",sender, destination);
-    puts("\n/////////////////////////////////////////////////////");
+    puts("\n======================================================");
+    printf("\t\tNODO %d ENVIOU MENSAGEM PARA O NODO %d",sender, destination);
+    puts("\n======================================================\n");
+    // puts("\n/////////////////////////////////////////////////////\n");
     // printMessage();
 }
 //Função para gerenciar o envio e recebimento de mensagem
@@ -734,6 +749,7 @@ void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, i
     }
     else{
         cleanSend2();
+        printf("\n>> Mensagem com origem no nodo %d foi enviada com sucesso para todos os outros nodos sem falha\n\n",defaultNodeBroadcast);
     }
 }
 //Função para calcular o destino da mensagem
@@ -757,7 +773,7 @@ int messageDestination(int sender, int cluster ,tcis table_cis[N][N_CLUSTERS]){
         return ALL_NODES_FROM_CLUSTER_WITH_ERROR;
     }
 }
-
+//Função para iniciar o vetor otherNodesArray, que é responsável por guardar os próximos envios de mensagens 
 void initOtherNodesArray(){
     int i;
     int size = 2*N;
@@ -765,7 +781,7 @@ void initOtherNodesArray(){
         otherNodes2SendMessage[i] = -1;
     }
 }
-
+//Função que verifica se o evento de broadcast atual é um novo broadcast ou não
 int isNewBroadcastEvent(tbcast * arr,  int size, double timeNow){
     //Return -1 if isn't and the index if there is
     int i;
@@ -885,9 +901,15 @@ int main(int argc, char * argv[]){
     while(time() < simulationTime) {
         cause(&event, &token);
         if (timeNow != time()){
-            roundTest++;
-            shouldPrintRoundTest = TRUE;
-            timeNow = time();
+            // roundTest++;
+            roundTest = (int)floor(time()/TEST_INTERVAL);
+            if(time() < timeNow+TEST_INTERVAL){
+                shouldPrintRoundTest = FALSE;
+            }
+            else{
+                shouldPrintRoundTest = TRUE;                
+                timeNow = time();
+            }
         }
         else{
             shouldPrintRoundTest = FALSE;
@@ -915,7 +937,7 @@ int main(int argc, char * argv[]){
                 testando++;
                 printState("TEST");
             }while (testando < nodos_a_testar);
-            // schedule(TEST, TEST_INTERVAL, token);
+            schedule(TEST, TEST_INTERVAL, token);
             cleanTested();
             break;
 
@@ -948,13 +970,17 @@ int main(int argc, char * argv[]){
          case BROADCAST:
             indexBcast = isNewBroadcastEvent(eventsBcast, countBcast, time());
             if(indexBcast != -1){
-                printf("\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
-                printf("  Início de uma nova transmissão de mensagem por braodcast\n\t\t\t\t\tNodo transmissor é o: %d",eventsBcast[indexBcast].node);
-                printf("\n$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$\n");
+                printf("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
+                printf("|  Início de uma nova transmissão de mensagem por braodcast |\n");
+                printf("|\t\t\t\t\tNodo transmissor é o: %d                 |",eventsBcast[indexBcast].node);
+                printf("\n+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+\n");
                 defaultClusterBroadcast = 1;
                 defaultNodeBroadcast = eventsBcast[indexBcast].node;
+                //Como se entrou neste if é um broadcast novo, então pode ser configurado qual mensagem será transmitida,
+                //neste caso, o tempo em que a mensagem começou a ser enviada
+                mensagem.message = (int)time();
             }
-            messageHandler(table_cis, token, time(), 95);
+            messageHandler(table_cis, token, time(), mensagem.message);
             break;
         }
         

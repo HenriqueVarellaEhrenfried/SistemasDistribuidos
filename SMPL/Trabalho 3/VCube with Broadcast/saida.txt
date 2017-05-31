@@ -206,318 +206,2123 @@ O nodo 7 recebeu informação sobre o(s) nodo(s): [ 7 ]
 
 ---------------------------
 
-************************** TERMINOU O WARMUP**************************
-
 			+------------------------+
 			|Rodada de teste atual: 2|
 			+------------------------+
+	O nodo: 0 deve testar o(s) nodo(s): [ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo  60.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 3 ]
 
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-  Início de uma nova transmissão de mensagem por braodcast
-					Nodo transmissor é o: 0
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 1
-/////////////////////////////////////////////////////
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 9
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 0 -1 -1 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 0 ] 
+
+---------------------------
+
+	O nodo: 1 deve testar o(s) nodo(s): [ 3 ]
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo  60.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 2 ]
+
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 10
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ -1 -1 -1 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 0 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo  60.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 1 2 ]
+
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 11
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ -1 -1 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 1 ]
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo  60.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 0 ]
+
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 12
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 -1 -1 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 6 ]
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo  60.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 7 ]
+
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 13
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 -1 -1 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 7 ]
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo  60.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 6 ]
+
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 14
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 -1 -1 -1 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 4 ]
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo  60.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 5 6 ]
+
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 15
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 -1 -1 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 5 ]
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo  60.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 4 ]
+
+
+	Tempo atual:  60.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 16
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 1 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+
+---------------------------
+
 			+------------------------+
 			|Rodada de teste atual: 3|
 			+------------------------+
-
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 1
-	Nodo que enviou a mensagem >> 0
-	Nodo destino da mensagem >> 1
-	A mensagem foi enviada no tempo >> 330.0
-	A mensagem foi recebida no tempo >> 331.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
-	O cluster atual é >> 1
-	O contador de mensagens está em >> 1
-/////////////////////////////////////////////////////
+	O nodo: 0 deve testar o(s) nodo(s): [ 4 ]
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo  90.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 5 6 7 ]
 
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 2
-/////////////////////////////////////////////////////
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 17
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 2 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 1 deve testar o(s) nodo(s): [ 5 ]
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo  90.0
+O nodo 1 recebeu informação sobre o(s) nodo(s): [ 4 6 7 ]
+
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 18
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 3 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 6 ]
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo  90.0
+O nodo 2 recebeu informação sobre o(s) nodo(s): [ 4 5 7 ]
+
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 19
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 -1 -1 -1 -1 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 7 ]
+O nodo 3 TESTOU o nodo 7 como SEM FALHA no tempo  90.0
+O nodo 3 recebeu informação sobre o(s) nodo(s): [ 4 5 6 ]
+
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 20
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ -1 -1 -1 -1 -1 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 0 ]
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo  90.0
+O nodo 4 recebeu informação sobre o(s) nodo(s): [ 1 2 3 4 ]
+
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 21
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 1 ]
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo  90.0
+O nodo 5 recebeu informação sobre o(s) nodo(s): [ 0 2 3 ]
+
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 22
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 2 ]
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo  90.0
+O nodo 6 recebeu informação sobre o(s) nodo(s): [ 0 1 3 ]
+
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 23
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ -1 -1 -1 -1 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 3 ]
+O nodo 7 TESTOU o nodo 3 como SEM FALHA no tempo  90.0
+O nodo 7 recebeu informação sobre o(s) nodo(s): [ 0 1 2 ]
+
+
+	Tempo atual:  90.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 24
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ -1 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
 			+------------------------+
 			|Rodada de teste atual: 4|
 			+------------------------+
-
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 2
-	Nodo que enviou a mensagem >> 0
-	Nodo destino da mensagem >> 2
-	A mensagem foi enviada no tempo >> 331.0
-	A mensagem foi recebida no tempo >> 332.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
-	O cluster atual é >> 2
-	O contador de mensagens está em >> 2
-/////////////////////////////////////////////////////
+	O nodo: 0 deve testar o(s) nodo(s): [ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 120.0
+O nodo 0 recebeu informação sobre o(s) nodo(s): [ 0 ]
 
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 2 PARA O NODO 3
-/////////////////////////////////////////////////////
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 25
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 1 deve testar o(s) nodo(s): [ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 120.0
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 26
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 3 ]
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 120.0
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 27
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 2 ]
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 120.0
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 28
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 5 ]
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 120.0
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 29
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 4 ]
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 120.0
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 30
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 7 ]
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 120.0
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 31
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 6 ]
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 120.0
+
+	Tempo atual: 120.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 32
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+************************** TERMINOU O WARMUP**************************
+
 			+------------------------+
 			|Rodada de teste atual: 5|
 			+------------------------+
+	O nodo: 0 deve testar o(s) nodo(s): [ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 150.0
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 2 RECEBIDA PELO NODO 3
-	Nodo que enviou a mensagem >> 2
-	Nodo destino da mensagem >> 3
-	A mensagem foi enviada no tempo >> 332.0
-	A mensagem foi recebida no tempo >> 333.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
-	O cluster atual é >> 1
-	O contador de mensagens está em >> 3
-/////////////////////////////////////////////////////
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 33
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
 
+---------------------------
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 4
-/////////////////////////////////////////////////////
+	O nodo: 1 deve testar o(s) nodo(s): [ 3 ]
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 150.0
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 34
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 0 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 150.0
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 35
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 1 ]
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 150.0
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 36
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 6 ]
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 150.0
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 37
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 7 ]
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 150.0
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 38
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 4 ]
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 150.0
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 39
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 5 ]
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo 150.0
+
+	Tempo atual: 150.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 40
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
 			+------------------------+
 			|Rodada de teste atual: 6|
 			+------------------------+
+	O nodo: 0 deve testar o(s) nodo(s): [ 4 ]
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 180.0
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 4
-	Nodo que enviou a mensagem >> 0
-	Nodo destino da mensagem >> 4
-	A mensagem foi enviada no tempo >> 333.0
-	A mensagem foi recebida no tempo >> 334.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
-	O cluster atual é >> 3
-	O contador de mensagens está em >> 4
-/////////////////////////////////////////////////////
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 41
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
 
+---------------------------
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 6
-/////////////////////////////////////////////////////
+	O nodo: 1 deve testar o(s) nodo(s): [ 5 ]
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 180.0
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 42
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 6 ]
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 180.0
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 43
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 7 ]
+O nodo 3 TESTOU o nodo 7 como SEM FALHA no tempo 180.0
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 44
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 0 ]
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo 180.0
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 45
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 1 ]
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 180.0
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 46
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 2 ]
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 180.0
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 47
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 3 ]
+O nodo 7 TESTOU o nodo 3 como SEM FALHA no tempo 180.0
+
+	Tempo atual: 180.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 48
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
 			+------------------------+
 			|Rodada de teste atual: 7|
 			+------------------------+
+	O nodo: 0 deve testar o(s) nodo(s): [ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 210.0
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 6
-	Nodo que enviou a mensagem >> 4
-	Nodo destino da mensagem >> 6
-	A mensagem foi enviada no tempo >> 334.0
-	A mensagem foi recebida no tempo >> 335.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
-	O cluster atual é >> 2
-	O contador de mensagens está em >> 5
-/////////////////////////////////////////////////////
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 49
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
 
+---------------------------
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 6 PARA O NODO 7
-/////////////////////////////////////////////////////
+	O nodo: 1 deve testar o(s) nodo(s): [ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 210.0
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 50
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 3 ]
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 210.0
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 51
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 2 ]
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 210.0
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 52
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 5 ]
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 210.0
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 53
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 4 ]
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 210.0
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 54
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 7 ]
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 210.0
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 55
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 6 ]
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 210.0
+
+	Tempo atual: 210.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 56
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
 			+------------------------+
 			|Rodada de teste atual: 8|
 			+------------------------+
+	O nodo: 0 deve testar o(s) nodo(s): [ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 240.0
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 6 RECEBIDA PELO NODO 7
-	Nodo que enviou a mensagem >> 6
-	Nodo destino da mensagem >> 7
-	A mensagem foi enviada no tempo >> 335.0
-	A mensagem foi recebida no tempo >> 336.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
-	O cluster atual é >> 1
-	O contador de mensagens está em >> 6
-/////////////////////////////////////////////////////
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 57
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
 
+---------------------------
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 5
-/////////////////////////////////////////////////////
+	O nodo: 1 deve testar o(s) nodo(s): [ 3 ]
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 240.0
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 58
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 0 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 240.0
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 59
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 1 ]
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 240.0
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 60
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 6 ]
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 240.0
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 61
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 7 ]
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 240.0
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 62
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 4 ]
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 240.0
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 63
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 5 ]
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo 240.0
+
+	Tempo atual: 240.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 64
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
 			+------------------------+
 			|Rodada de teste atual: 9|
 			+------------------------+
+	O nodo: 0 deve testar o(s) nodo(s): [ 4 ]
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 270.0
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 5
-	Nodo que enviou a mensagem >> 4
-	Nodo destino da mensagem >> 5
-	A mensagem foi enviada no tempo >> 336.0
-	A mensagem foi recebida no tempo >> 337.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
-	O cluster atual é >> 1
-	O contador de mensagens está em >> 7
-/////////////////////////////////////////////////////
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 65
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 1 deve testar o(s) nodo(s): [ 5 ]
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 270.0
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 66
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 6 ]
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 270.0
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 67
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 7 ]
+O nodo 3 TESTOU o nodo 7 como SEM FALHA no tempo 270.0
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 68
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 0 ]
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo 270.0
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 69
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 1 ]
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 270.0
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 70
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 2 ]
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 270.0
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 71
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 3 ]
+O nodo 7 TESTOU o nodo 3 como SEM FALHA no tempo 270.0
+
+	Tempo atual: 270.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 72
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
 
 			+-------------------------+
 			|Rodada de teste atual: 10|
 			+-------------------------+
+	O nodo: 0 deve testar o(s) nodo(s): [ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 300.0
 
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
-  Início de uma nova transmissão de mensagem por braodcast
-					Nodo transmissor é o: 4
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 73
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 5
-/////////////////////////////////////////////////////
+---------------------------
+
+	O nodo: 1 deve testar o(s) nodo(s): [ 0 ]
+O nodo 1 TESTOU o nodo 0 como SEM FALHA no tempo 300.0
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 74
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 3 ]
+O nodo 2 TESTOU o nodo 3 como SEM FALHA no tempo 300.0
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 75
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 2 ]
+O nodo 3 TESTOU o nodo 2 como SEM FALHA no tempo 300.0
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 76
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 5 ]
+O nodo 4 TESTOU o nodo 5 como SEM FALHA no tempo 300.0
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 77
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 4 ]
+O nodo 5 TESTOU o nodo 4 como SEM FALHA no tempo 300.0
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 78
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 7 ]
+O nodo 6 TESTOU o nodo 7 como SEM FALHA no tempo 300.0
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 79
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 6 ]
+O nodo 7 TESTOU o nodo 6 como SEM FALHA no tempo 300.0
+
+	Tempo atual: 300.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 80
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
 			+-------------------------+
 			|Rodada de teste atual: 11|
 			+-------------------------+
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 5
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|  Início de uma nova transmissão de mensagem por braodcast |
+|					Nodo transmissor é o: 0                 |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+======================================================
+		NODO 0 ENVIOU MENSAGEM PARA O NODO 1
+======================================================
+
+	O nodo: 0 deve testar o(s) nodo(s): [ 2 ]
+O nodo 0 TESTOU o nodo 2 como SEM FALHA no tempo 330.0
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 81
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 1 deve testar o(s) nodo(s): [ 3 ]
+O nodo 1 TESTOU o nodo 3 como SEM FALHA no tempo 330.0
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 82
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 0 ]
+O nodo 2 TESTOU o nodo 0 como SEM FALHA no tempo 330.0
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 83
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 1 ]
+O nodo 3 TESTOU o nodo 1 como SEM FALHA no tempo 330.0
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 84
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 6 ]
+O nodo 4 TESTOU o nodo 6 como SEM FALHA no tempo 330.0
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 85
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 7 ]
+O nodo 5 TESTOU o nodo 7 como SEM FALHA no tempo 330.0
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 86
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 4 ]
+O nodo 6 TESTOU o nodo 4 como SEM FALHA no tempo 330.0
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 87
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 5 ]
+O nodo 7 TESTOU o nodo 5 como SEM FALHA no tempo 330.0
+
+	Tempo atual: 330.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 88
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+
+*****************************************************
+		NODO 0 RECEBEU MENSAGEM DO NODO 1
+
+	Nodo que enviou a mensagem >> 0
+	Nodo destino da mensagem >> 1
+	A mensagem foi enviada no tempo >> 330.0
+	A mensagem foi recebida no tempo >> 331.0
+	O conteúdo da mensagem  é >> 330
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 1
+*****************************************************
+
+
+======================================================
+		NODO 0 ENVIOU MENSAGEM PARA O NODO 2
+======================================================
+
+
+*****************************************************
+		NODO 0 RECEBEU MENSAGEM DO NODO 2
+
+	Nodo que enviou a mensagem >> 0
+	Nodo destino da mensagem >> 2
+	A mensagem foi enviada no tempo >> 331.0
+	A mensagem foi recebida no tempo >> 332.0
+	O conteúdo da mensagem  é >> 330
+	O cluster atual é >> 2
+	O contador de mensagens está em >> 2
+*****************************************************
+
+
+======================================================
+		NODO 2 ENVIOU MENSAGEM PARA O NODO 3
+======================================================
+
+
+*****************************************************
+		NODO 2 RECEBEU MENSAGEM DO NODO 3
+
+	Nodo que enviou a mensagem >> 2
+	Nodo destino da mensagem >> 3
+	A mensagem foi enviada no tempo >> 332.0
+	A mensagem foi recebida no tempo >> 333.0
+	O conteúdo da mensagem  é >> 330
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 3
+*****************************************************
+
+
+======================================================
+		NODO 0 ENVIOU MENSAGEM PARA O NODO 4
+======================================================
+
+
+*****************************************************
+		NODO 0 RECEBEU MENSAGEM DO NODO 4
+
+	Nodo que enviou a mensagem >> 0
+	Nodo destino da mensagem >> 4
+	A mensagem foi enviada no tempo >> 333.0
+	A mensagem foi recebida no tempo >> 334.0
+	O conteúdo da mensagem  é >> 330
+	O cluster atual é >> 3
+	O contador de mensagens está em >> 4
+*****************************************************
+
+
+======================================================
+		NODO 4 ENVIOU MENSAGEM PARA O NODO 6
+======================================================
+
+
+*****************************************************
+		NODO 4 RECEBEU MENSAGEM DO NODO 6
+
+	Nodo que enviou a mensagem >> 4
+	Nodo destino da mensagem >> 6
+	A mensagem foi enviada no tempo >> 334.0
+	A mensagem foi recebida no tempo >> 335.0
+	O conteúdo da mensagem  é >> 330
+	O cluster atual é >> 2
+	O contador de mensagens está em >> 5
+*****************************************************
+
+
+======================================================
+		NODO 6 ENVIOU MENSAGEM PARA O NODO 7
+======================================================
+
+
+*****************************************************
+		NODO 6 RECEBEU MENSAGEM DO NODO 7
+
+	Nodo que enviou a mensagem >> 6
+	Nodo destino da mensagem >> 7
+	A mensagem foi enviada no tempo >> 335.0
+	A mensagem foi recebida no tempo >> 336.0
+	O conteúdo da mensagem  é >> 330
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 6
+*****************************************************
+
+
+======================================================
+		NODO 4 ENVIOU MENSAGEM PARA O NODO 5
+======================================================
+
+
+*****************************************************
+		NODO 4 RECEBEU MENSAGEM DO NODO 5
+
 	Nodo que enviou a mensagem >> 4
 	Nodo destino da mensagem >> 5
-	A mensagem foi enviada no tempo >> 360.0
-	A mensagem foi recebida no tempo >> 361.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
+	A mensagem foi enviada no tempo >> 336.0
+	A mensagem foi recebida no tempo >> 337.0
+	O conteúdo da mensagem  é >> 330
 	O cluster atual é >> 1
-	O contador de mensagens está em >> 8
-/////////////////////////////////////////////////////
+	O contador de mensagens está em >> 7
+*****************************************************
 
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 6
-/////////////////////////////////////////////////////
+>> Mensagem com origem no nodo 0 foi enviada com sucesso para todos os outros nodos sem falha
+
 			+-------------------------+
 			|Rodada de teste atual: 12|
 			+-------------------------+
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 6
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|  Início de uma nova transmissão de mensagem por braodcast |
+|					Nodo transmissor é o: 4                 |
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+======================================================
+		NODO 4 ENVIOU MENSAGEM PARA O NODO 5
+======================================================
+
+	O nodo: 0 deve testar o(s) nodo(s): [ 4 ]
+O nodo 0 TESTOU o nodo 4 como SEM FALHA no tempo 360.0
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 89
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 1 deve testar o(s) nodo(s): [ 5 ]
+O nodo 1 TESTOU o nodo 5 como SEM FALHA no tempo 360.0
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 90
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 2 deve testar o(s) nodo(s): [ 6 ]
+O nodo 2 TESTOU o nodo 6 como SEM FALHA no tempo 360.0
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 91
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 3 deve testar o(s) nodo(s): [ 7 ]
+O nodo 3 TESTOU o nodo 7 como SEM FALHA no tempo 360.0
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 92
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 4 deve testar o(s) nodo(s): [ 0 ]
+O nodo 4 TESTOU o nodo 0 como SEM FALHA no tempo 360.0
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 93
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 5 deve testar o(s) nodo(s): [ 1 ]
+O nodo 5 TESTOU o nodo 1 como SEM FALHA no tempo 360.0
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 94
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 6 deve testar o(s) nodo(s): [ 2 ]
+O nodo 6 TESTOU o nodo 2 como SEM FALHA no tempo 360.0
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 95
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+	O nodo: 7 deve testar o(s) nodo(s): [ 3 ]
+O nodo 7 TESTOU o nodo 3 como SEM FALHA no tempo 360.0
+
+	Tempo atual: 360.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 96
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
+
+*****************************************************
+		NODO 4 RECEBEU MENSAGEM DO NODO 5
+
+	Nodo que enviou a mensagem >> 4
+	Nodo destino da mensagem >> 5
+	A mensagem foi enviada no tempo >> 360.0
+	A mensagem foi recebida no tempo >> 361.0
+	O conteúdo da mensagem  é >> 360
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 8
+*****************************************************
+
+
+======================================================
+		NODO 4 ENVIOU MENSAGEM PARA O NODO 6
+======================================================
+
+
+*****************************************************
+		NODO 4 RECEBEU MENSAGEM DO NODO 6
+
 	Nodo que enviou a mensagem >> 4
 	Nodo destino da mensagem >> 6
 	A mensagem foi enviada no tempo >> 361.0
 	A mensagem foi recebida no tempo >> 362.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
+	O conteúdo da mensagem  é >> 360
 	O cluster atual é >> 2
 	O contador de mensagens está em >> 9
-/////////////////////////////////////////////////////
+*****************************************************
 
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 6 PARA O NODO 7
-/////////////////////////////////////////////////////
-			+-------------------------+
-			|Rodada de teste atual: 13|
-			+-------------------------+
+======================================================
+		NODO 6 ENVIOU MENSAGEM PARA O NODO 7
+======================================================
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 6 RECEBIDA PELO NODO 7
+
+*****************************************************
+		NODO 6 RECEBEU MENSAGEM DO NODO 7
+
 	Nodo que enviou a mensagem >> 6
 	Nodo destino da mensagem >> 7
 	A mensagem foi enviada no tempo >> 362.0
 	A mensagem foi recebida no tempo >> 363.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
+	O conteúdo da mensagem  é >> 360
 	O cluster atual é >> 1
 	O contador de mensagens está em >> 10
-/////////////////////////////////////////////////////
+*****************************************************
 
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 4 PARA O NODO 0
-/////////////////////////////////////////////////////
-			+-------------------------+
-			|Rodada de teste atual: 14|
-			+-------------------------+
+======================================================
+		NODO 4 ENVIOU MENSAGEM PARA O NODO 0
+======================================================
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 4 RECEBIDA PELO NODO 0
+
+*****************************************************
+		NODO 4 RECEBEU MENSAGEM DO NODO 0
+
 	Nodo que enviou a mensagem >> 4
 	Nodo destino da mensagem >> 0
 	A mensagem foi enviada no tempo >> 363.0
 	A mensagem foi recebida no tempo >> 364.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
+	O conteúdo da mensagem  é >> 360
 	O cluster atual é >> 3
 	O contador de mensagens está em >> 11
-/////////////////////////////////////////////////////
+*****************************************************
 
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 2
-/////////////////////////////////////////////////////
-			+-------------------------+
-			|Rodada de teste atual: 15|
-			+-------------------------+
+======================================================
+		NODO 0 ENVIOU MENSAGEM PARA O NODO 2
+======================================================
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 2
+
+*****************************************************
+		NODO 0 RECEBEU MENSAGEM DO NODO 2
+
 	Nodo que enviou a mensagem >> 0
 	Nodo destino da mensagem >> 2
 	A mensagem foi enviada no tempo >> 364.0
 	A mensagem foi recebida no tempo >> 365.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
+	O conteúdo da mensagem  é >> 360
 	O cluster atual é >> 2
 	O contador de mensagens está em >> 12
-/////////////////////////////////////////////////////
+*****************************************************
 
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 2 PARA O NODO 3
-/////////////////////////////////////////////////////
-			+-------------------------+
-			|Rodada de teste atual: 16|
-			+-------------------------+
+======================================================
+		NODO 2 ENVIOU MENSAGEM PARA O NODO 3
+======================================================
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 2 RECEBIDA PELO NODO 3
+
+*****************************************************
+		NODO 2 RECEBEU MENSAGEM DO NODO 3
+
 	Nodo que enviou a mensagem >> 2
 	Nodo destino da mensagem >> 3
 	A mensagem foi enviada no tempo >> 365.0
 	A mensagem foi recebida no tempo >> 366.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
+	O conteúdo da mensagem  é >> 360
 	O cluster atual é >> 1
 	O contador de mensagens está em >> 13
-/////////////////////////////////////////////////////
+*****************************************************
 
 
-/////////////////////////////////////////////////////
-	MENSAGEM ENVIADA PELO NODO 0 PARA O NODO 1
-/////////////////////////////////////////////////////
-			+-------------------------+
-			|Rodada de teste atual: 17|
-			+-------------------------+
+======================================================
+		NODO 0 ENVIOU MENSAGEM PARA O NODO 1
+======================================================
 
-/////////////////////////////////////////////////////
-		MENSAGEM DO NODO 0 RECEBIDA PELO NODO 1
+
+*****************************************************
+		NODO 0 RECEBEU MENSAGEM DO NODO 1
+
 	Nodo que enviou a mensagem >> 0
 	Nodo destino da mensagem >> 1
 	A mensagem foi enviada no tempo >> 366.0
 	A mensagem foi recebida no tempo >> 367.0
-	O conteúdo da mensagem  é >> 95
-	A mensagem é nova? >> Não
-	A mensagem foi recebida? >> Sim
+	O conteúdo da mensagem  é >> 360
 	O cluster atual é >> 1
 	O contador de mensagens está em >> 14
-/////////////////////////////////////////////////////
+*****************************************************
 
 
-**** Simulation Error at Time 367.000
-     Empty Event List
+>> Mensagem com origem no nodo 4 foi enviada com sucesso para todos os outros nodos sem falha
+
+			+-------------------------+
+			|Rodada de teste atual: 13|
+			+-------------------------+
+	O nodo: 0 deve testar o(s) nodo(s): [ 1 ]
+O nodo 0 TESTOU o nodo 1 como SEM FALHA no tempo 390.0
+
+	Tempo atual: 390.0
+	Ação Executada: TEST
+	Contador de eventos: 0
+ 	Contador de testes: 97
+ 
+	Vetores STATE: 
+	Nodo 0 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 1 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 2 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 3 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 4 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 5 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 6 >> [ 0 0 0 0 0 0 0 0 ] 
+	Nodo 7 >> [ 0 0 0 0 0 0 0 0 ] 
+
+---------------------------
+
