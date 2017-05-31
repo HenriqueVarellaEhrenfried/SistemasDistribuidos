@@ -624,6 +624,13 @@ void removeElements(int * array, int size){
         array[i-2] = array[i];
     }
 }
+//Função que limpa o vetor de nodos para enviar mensagem
+void cleanotherNodes2SendMessage(){
+    int i;
+    for(i = 0; i < 2*N; i++){
+        otherNodes2SendMessage[i]=-1;
+    }
+}
 //Função para incializar a variável mensagem, que comtém uma mensagem
 void initMessage(double time){
     mensagem.sender = MESSAGE_UNKNOWN;
@@ -710,8 +717,10 @@ void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, i
                 schedule(BROADCAST, 1.0, destination);
                 messageCluster--;
                 while(messageCluster > 0){
-                    otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)+1] = sender;
-                    otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)+1] = messageCluster;
+                    if(sender != defaultNodeBroadcast){
+                        otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)+1] = sender;
+                        otherNodes2SendMessage[lastIndex(otherNodes2SendMessage)+1] = messageCluster;
+                    }
                     messageCluster--;
                 }
             }
@@ -751,6 +760,7 @@ void messageHandler(tcis table_cis[N][N_CLUSTERS], int sender, double timeNow, i
     }
     else{
         cleanSend2();
+        cleanotherNodes2SendMessage();
         printf("\n>> Mensagem com origem no nodo %d foi enviada com sucesso para todos os outros nodos sem falha\n\n",defaultNodeBroadcast);
     }
 }

@@ -6049,6 +6049,28 @@ O nodo 6 TESTOU o nodo 7 como FALHO no tempo 1110.0
 	O contador de mensagens está em >> 9
 *****************************************************
 
+
+======================================================
+		NODO 2 ENVIOU MENSAGEM PARA O NODO 3
+		TEMPO AGORA: 1117.0
+======================================================
+
+
+*****************************************************
+		NODO 3 RECEBEU MENSAGEM DO NODO 2
+
+	Nodo que enviou a mensagem >> 2
+	Nodo destino da mensagem >> 3
+	A mensagem foi enviada no tempo >> 1117.0
+	A mensagem foi recebida no tempo >> 1118.0
+	O conteúdo da mensagem  é >> 1110
+	O cluster atual é >> 1
+	O contador de mensagens está em >> 10
+*****************************************************
+
+
+>> Mensagem com origem no nodo 6 foi enviada com sucesso para todos os outros nodos sem falha
+
 			+-------------------------+
 			|Rodada de teste atual: 38|
 			+-------------------------+
