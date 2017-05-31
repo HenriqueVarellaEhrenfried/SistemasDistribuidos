@@ -680,7 +680,7 @@ void receiveMessage(){
         mensagem.newMessage = FALSE;
         addInSend2(mensagem.destination);
         puts("\n*****************************************************");
-        printf("\t\tNODO %d RECEBEU MENSAGEM DO NODO %d\n\n",mensagem.sender, mensagem.destination);
+        printf("\t\tNODO %d RECEBEU MENSAGEM DO NODO %d\n\n", mensagem.destination, mensagem.sender);
         printMessageSimpler();
     }
 }
